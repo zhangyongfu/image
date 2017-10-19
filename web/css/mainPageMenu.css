@@ -1,0 +1,33 @@
+ul{
+    list-style-type: none;
+    line-height:60px;
+    background-color:transparent;
+    text-align: center;
+}
+li{
+    display: inline;
+}
+a{
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+
+    margin:0;
+    padding:9px 40px;
+    word-spacing:5px;
+}
+#login{
+    position: absolute;
+    font-style: italic;
+    right:5%;
+    top: 20px;
+}#register{
+     position:absolute;
+     font-style: italic;
+     right:2%;
+     top: 20px;
+}
+body{
+    background: cadetblue;
+    /*background-image: url("/i/background.jpg");*/
+}
