@@ -1,21 +1,30 @@
-ul{
+#menu{
     list-style-type: none;
     line-height:60px;
     background-color:transparent;
     text-align: center;
+    font-size:25px;
+    padding:10px 60px;
+    word-spacing:8px;
+    text-decoration: none;
+    color:white;
+    margin:0;
+
 }
 li{
     display: inline;
+    padding:10px 60px;
+    word-spacing:8px;
 }
-a{
+/*a{
     text-decoration: none;
     color:white;
-    font-size: 18px;
-
+    font-size: 25px;
     margin:0;
-    padding:9px 40px;
-    word-spacing:5px;
-}
+    background:blue;
+    padding:10px 60px;
+    word-spacing:8px;
+}*/
 #login{
     position: absolute;
     font-style: italic;
