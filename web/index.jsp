@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"  />
   <title>Image</title>
@@ -103,5 +104,117 @@
   </script>
   <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
   </div>
+
+
+<%--
+  <div class="list">
+    <a name="2015"></a>
+    <h1>2015年程序员</h1>
+    <div class="image_list">
+
+      <dl>
+        <dt><a target="_blank" href="#" ><img src="./images/list/0.jpg" alt="2015年1月A" width="350px" height="200px" /></a></dt>
+        <dd><a target="_blank" href="#" >2015年1月A</a></dd>
+      </dl>
+      <dl>
+        <dt><a target="_blank" href="#" ><img src="./images/list/1.jpg" alt="2015年1月A" width="350px" height="200px" /></a></dt>
+        <dd><a target="_blank" href="#" >2015年1月A</a></dd>
+      </dl>
+
+
+    </div>
+    <div class="clear"></div>
+  </div>
+
+
+--%>
+
+
+
+
+
+
+  <div class="list">
+    <div class="img">
+    <a target="_blank" href="#">
+      <img src="./images/list/0.jpg" alt="Ballade" width="300px" height="200px">
+    </a>
+    <div class="desc">图片1</div>
+  </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/1.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片2</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/2.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片3</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/3.jpg" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">图片4</div>
+    </div>
+
+    <div class="img">
+    <a target="_blank" href="#">
+      <img src="./images/list/4.jpg" alt="Ballade" width="300px" height="200px">
+    </a>
+    <div class="desc">图片5</div>
+  </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/5.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片6</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/6.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片7</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/7.jpg" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">图片8</div>
+    </div>
+    <div class="img">
+    <a target="_blank" href="#">
+      <img src="./images/list/8.jpg" alt="Ballade" width="300px" height="200px">
+    </a>
+    <div class="desc">图片9</div>
+  </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/9.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片10</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/10.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片11</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/11.jpg" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">图片12</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/12.jpg" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">图片13</div>
+    </div>
+  </div>
+
   </body>
 </html>
