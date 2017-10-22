@@ -10,7 +10,6 @@ html{
     color:#666666;
     line-height:25px;
     background-attachment: fixed;
-    /*background:#f2f2f2 url(../i/background2.jpg) repeat-x 200px 55px;height:2000PX;*/
     background-image: url(../i/background2.jpg);
 }
 img{
@@ -60,10 +59,26 @@ ul, ul li{
     width:auto!important;
     height:60px;
     float:left;
-    margin-right: 30px;
     position:relative;
     left:300px;
     z-index:1;
+    outline:none;
+}
+#navul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.nav_z a:link{
+    color: red;
+}
+.nav_z a:visited{
+    color: #C6C6C6;
+}
+.nav_z a:hover{
+    color: #FFFFFF;
+    text-decoration:underline;
 }
 #navul li{
     float:left;
@@ -80,6 +95,9 @@ ul, ul li{
     top:20px;
     height: 55px;
     float: right;
+}
+#top_login a:hover{
+    color: #FFFFFF;
 }
 .cl li a{
     font-size: 20px;
@@ -245,7 +263,7 @@ a{
      background-color: mediumslateblue;
      width:auto;
      margin-bottom: 15px;
-     margin-right: 5px;
+     margin-right: 10px;
      float:left;
      text-align:center;
  }
@@ -254,6 +272,15 @@ div.img img
     display:inline;
     margin:2px;
     border:1px solid #bebebe;
+}
+
+div.img a:link img{
+    border:1px solid #eeeeee;
+
+}
+div.img a:visited img
+{
+    border:1px solid #eebebe;
 }
 div.img a:hover img
 {
@@ -266,4 +293,15 @@ div.desc
     font-size:15px;
     color: #000;
     margin:10px 5px 10px 5px;
+}
+
+.back_to_top{
+    position:fixed;
+    padding:3px;
+    bottom:60px;
+    background-color:mediumslateblue;
+    font-size:12px;
+    color: #000;
+    right: 25px;
+    border:1px solid #888;
 }

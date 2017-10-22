@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
   <head>
 
@@ -20,11 +21,10 @@
   <div id="top_bg">
     <div class="top">
       <a class="logo_l" href="/" title="返回首页"></a>
-      <!--导航开始-->
       <div class="nav_z">
         <ul id="navul" class="cl">
           <li id="start">
-            <a href="#">首页</a>
+            <a href="/">首页</a>
           </li>
           <li id="view">
             <a href="#">浏览</a>
@@ -102,38 +102,6 @@
           });
       })
   </script>
-  <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-  </div>
-
-
-<%--
-  <div class="list">
-    <a name="2015"></a>
-    <h1>2015年程序员</h1>
-    <div class="image_list">
-
-      <dl>
-        <dt><a target="_blank" href="#" ><img src="./images/list/0.jpg" alt="2015年1月A" width="350px" height="200px" /></a></dt>
-        <dd><a target="_blank" href="#" >2015年1月A</a></dd>
-      </dl>
-      <dl>
-        <dt><a target="_blank" href="#" ><img src="./images/list/1.jpg" alt="2015年1月A" width="350px" height="200px" /></a></dt>
-        <dd><a target="_blank" href="#" >2015年1月A</a></dd>
-      </dl>
-
-
-    </div>
-    <div class="clear"></div>
-  </div>
-
-
---%>
-
-
-
-
-
-
   <div class="list">
     <div class="img">
     <a target="_blank" href="#">
@@ -215,6 +183,10 @@
       <div class="desc">图片13</div>
     </div>
   </div>
+
+  <button class="back_to_top">
+    返回顶部
+  </button>
 
   </body>
 </html>
