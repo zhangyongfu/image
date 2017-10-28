@@ -1,0 +1,69 @@
+html{
+    background-image: url(../i/background2.jpg);
+}
+
+#title{
+    position: absolute;
+    top:20%;
+    left:44%;font-style: inherit;
+    font-size: 25px;
+
+}
+
+form{
+/*width:60%;*/
+position: relative;
+    width:70%;
+    margin-left:40%;;
+    margin-top:14%;
+    background-color: transparent;
+/*text-align: center;*/
+text-align: left;
+    font-size:20px;
+
+}
+input{
+    margin:8px 0px 8px 0px;
+    width: 30%;
+    height:5%;
+    background-color: skyblue;
+    border:none;
+
+}
+#loginform a {
+    font-size: 15px;
+
+}
+#loginform span{
+    font-size: 15px;
+    text-indent:3em;
+}
+#loginform a:hover{
+    color: #FFFFFF;
+}
+#login{
+    background-color: mediumslateblue;
+    height: 44px;
+    font-size: 18px;
+    color:darkblue;
+    border:none;
+    outline:none;
+}
+#login:hover{
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+#register{
+    background-color: mediumslateblue;
+    height: 35px;
+    font-size: 18px;
+
+    color:darkblue;
+    border:none;
+    outline:none;
+}
+#register:hover{
+    background-color: royalblue;
+    cursor: pointer;
+}

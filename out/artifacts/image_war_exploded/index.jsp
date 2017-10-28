@@ -14,38 +14,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"  />
   <title>Image</title>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript"  src="js/nav.js"></script>
-  </head>
-  <body>
-  <div id="top_bg">
-    <div class="top">
-      <a class="logo_l" href="/" title="返回首页"></a>
-      <div class="nav_z">
-        <ul id="navul" class="cl">
-          <li id="start">
-            <a href="/">首页</a>
-          </li>
-          <li id="view">
-            <a href="#">浏览</a>
-          </li>
-          <li id="about">
-            <a href="#">关于</a>
+
+    <div id="top_bg">
+      <div class="top">
+        <a class="logo_l" href="/" title="返回首页"></a>
+        <div class="nav_z">
+          <ul id="navul" class="cl">
+            <li id="start">
+              <a href="/" target="main">首页</a>
+            </li>
+            <li id="view">
+              <a href="#">浏览</a>
+            </li>
+            <li id="about">
+              <a href="/jsp/about.jsp">关于</a>
+            </li>
+          </ul>
+        </div>
+        <ul>
+          <li id="top_login">
+            <a id="login" href="/jsp/login.jsp">登录</a>
+            |
+            <a id="register" href="/jsp/goregister.jsp">注册</a>
           </li>
         </ul>
       </div>
-      <ul>
-        <li id="top_login">
-          <a id="login" href="#">登录</a>
-          |
-          <a id="register" href="#">注册</a>
-        </li>
-      </ul>
     </div>
-  </div>
-  <div class="container">
-    <div class="leftsidebar_box">
-      <div class="line"></div>
+
+  </head>
+  <body>
+
+  <div class="leftmenu">
+    <div class="leftmunubar">
+      <div class="leftmunubarline"></div>
       <dl class="system_log">
         <dt onClick="changeImage()">菜单1<img src="images/left/select_xl01.png"></dt>
         <dd class="first_dd"><a href="#">菜单1-1</a></dd>
@@ -86,19 +87,20 @@
   </div>
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript">
-      $(".leftsidebar_box dt").css({"background-color":"mediumslateblue"});
-      $(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
+      $(".leftmunubar dt").css({"background-color":"mediumslateblue"});
+      $(".leftmunubar dt img").attr("src","images/left/select_xl01.png");
       $(function(){
-          $(".leftsidebar_box dd").hide();
-          $(".leftsidebar_box dt").click(function(){
-              $(".leftsidebar_box dt").css({"background-color":"mediumslateblue"})
-              $(this).css({"background-color": "#215ee4"});
-              $(this).parent().find('dd').removeClass("menu_chioce");
-              $(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
+          $(".leftmunubar dt").click(function(){
+              //每次点击都把所有“dt”设置为"mediumslateblue"颜色
+              $(".leftmunubar dt").css({"background-color":"mediumslateblue"})
+              //把本次点击的对象设置为"midnightblue"颜色
+              $(this).css({"background-color": "midnightblue"});
+              $(this).parent().find('dd').removeClass("chioced_menu");
+              $(".leftmunubar dt img").attr("src","images/left/select_xl01.png");
               $(this).parent().find('img').attr("src","images/left/select_xl.png");
-              $(".menu_chioce").slideUp();
+              $(".chioced_menu").slideUp();
               $(this).parent().find('dd').slideToggle();
-              $(this).parent().find('dd').addClass("menu_chioce");
+              $(this).parent().find('dd').addClass("chioced_menu");
           });
       })
   </script>
