@@ -31,13 +31,20 @@
             </li>
           </ul>
         </div>
+        <%
+          if(true){
+        %>
         <ul>
           <li id="top_login">
+            <span id="show_user" >我是游客</span>
             <a id="login" href="/jsp/login.jsp">登录</a>
             |
             <a id="register" href="/jsp/goregister.jsp">注册</a>
           </li>
         </ul>
+        <%
+          }
+        %>
       </div>
     </div>
 

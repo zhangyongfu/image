@@ -15,7 +15,7 @@
 <body>
 <span id="title">IMAGE VIEWER</span>
 <div class="goregister">
-    <form id="loginform" action="/" method="post">
+    <form id="loginform" action="/login" method="post">
         <input type="text" id="name" name="name" placeholder="name"/><br/>
         <input type="password" id="password" name="password" placeholder="password"/>
         <a href="/">忘记密码</a><br/>

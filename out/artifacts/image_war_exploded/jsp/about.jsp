@@ -1,4 +1,7 @@
-<%--
+<%@ page import="org.image.model.User" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="org.image.DAO.DatabaseConnection" %>
+<%@ page import="org.image.DAO.ImageUserDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-10-28
@@ -76,5 +79,24 @@
     们关于我们关于我们关于我们关于我们    关于我们关于我们关于我们关于我们关于我们
 
 </p>
+
+<%
+    DatabaseConnection databaseConnection = new DatabaseConnection();
+    ImageUserDaoImpl imageUserDao = new ImageUserDaoImpl();
+    String email = request.getParameter("email");
+    String name = request.getParameter("name");
+    String password = request.getParameter("password");
+    User user = new User(email,name,password);
+    imageUserDao.addImageUser(user);
+%>
+
+<%--<tr>
+    <td><%=u.getEmail() %></td>
+    <td><%=u.getName() %></td>
+    <td><%=u.getPassword() %></td>
+</tr>--%>
+<%--<%
+    }
+%>--%>
 </body>
 </html>

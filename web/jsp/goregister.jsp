@@ -1,4 +1,6 @@
-<%--
+<%@ page import="org.image.DAO.DatabaseConnection" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="org.image.model.User" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-10-28
@@ -14,7 +16,7 @@
 </head>
 <body>
 <div class="goregister">
-    <form id="registerform" action="/jsp/registersuccess.jsp" method="post">
+    <form id="registerform" action="/register" method="post">
         <h2>IMAGE VIEWER</h2>
         <input type="text" id="email" name="email" placeholder="email"/><br/>
         <input type="text" id="name" name="name" placeholder="name"/><br/>
@@ -22,5 +24,7 @@
         <input id="register" type="submit" value="注册"/>
     </form>
 </div>
+
+
 </body>
 </html>
