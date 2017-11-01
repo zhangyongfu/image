@@ -8,10 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <%--<title>Title</title>--%>
+    <link href="/css/loginandregister.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-sorry,you regist fail.
-<a href="goregister.jsp">return to try again</a>
+<div id="registfail">
+    @ _ @ 注册失败了
+    <a href="goregister.jsp">再试一次</a>
+</div>
+
 </body>
 </html>

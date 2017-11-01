@@ -18,10 +18,14 @@
 <div class="goregister">
     <form id="registerform" action="/register" method="post">
         <h2>IMAGE VIEWER</h2>
+        <%--邮箱：--%>
         <input type="text" id="email" name="email" placeholder="email"/><br/>
+        <%--姓名：--%>
         <input type="text" id="name" name="name" placeholder="name"/><br/>
+        <%--密码：--%>
         <input type="password" id="password" name="password" placeholder="password"/><br/>
-        <input id="register" type="submit" value="注册"/>
+        <input id="register" type="submit" value="注册"/><br/>
+        <span id="cannotlogin"><a href="help.jsp">无法注册？</a> </span>
     </form>
 </div>
 

@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <%--<title>Title</title>--%>
+    <link href="/css/loginandregister.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-you login fail!!
-<a href="login.jsp">try again</a>
+@ _ @ 登录失败了
+<a href="login.jsp">再试一次</a>
 </body>
 </html>

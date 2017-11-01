@@ -61,15 +61,7 @@ ul, ul li{
     z-index:1;
     outline:none;
 }
-#navul{
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
 
-.nav_z a:visited{
-    color: #C6C6C6;
-}
 .nav_z a:hover{
     color: #FFFFFF;
     text-decoration:underline;
@@ -90,59 +82,56 @@ ul, ul li{
     height: 55px;
     float: right;
 }
+#top_login_success{
+    position: fixed;
+    font-size:20px;
+    top:20px;
+    right:12%;
+}
+
+#top_login_success a{
+    font-size: 18px;
+    font-style: inherit;
+    color:firebrick;
+}
+#loginout input{
+    font-size: 18px;
+    font-style: inherit;
+    color:firebrick;
+    position: fixed;
+    right:9%;
+    top:25px;
+    background:transparent;
+    border:none;
+}
+#loginout input:hover{
+    color: gainsboro;
+    cursor: pointer;
+}
+
+#top_login_success a:hover{
+    font-size: 18px;
+    font-style: inherit;
+    color:gainsboro;
+}
+
+
 #top_login #show_user{
     color:black;
 
 }
-#top_login a:hover{
-    color: #FFFFFF;
-}
 .cl li a{
     font-size: 20px;
     word-spacing:20px;
-    /*color: midnightblue;*/
+    color: #000;
     background-color: transparent;
+}
+#top_login a:hover{
+    color: #FFFFFF;
 }
 #top_login a{
     color: #000;
     font-size:15px;
-}
-#navul li ul li{
-    display:block;
-    width:78px;
-    float:none;
-    height:35px;
-    position:relative;
-    line-height:35px;
-    border-bottom:#C6C6C6 1px solid;
-    font-size:10px;
-    overflow:hidden
-}
-#navul li.navmoon{
-    background:#E6E6E6;
-    border:#C6C6C6 1px solid;
-    width:78px;
-    height:53px;
-    line-height:53px;
-}
-#navul li.navmoon a{
-    color:#404a58;
-}
-#navul li.navhome a:hover{
-    color:#FCFF00;
-}
-#navul li.navmoon ul{
-    display:block;
-}
-#navul li.navmoon ul a{
-    display:block;
-    width:78px;
-    height:35px;
-    line-height:35px;
-}
-#navul li.navmoon ul a:hover{
-    color:#0573bd;
-    background:#FFF;
 }
 body{
     margin:0;

@@ -1,0 +1,27 @@
+
+
+#title{
+    /*margin-top: auto;*/
+    width:100%;
+    position: absolute;
+    margin:auto;
+    top:10%;
+    /*left:50%;*/
+    font-size: 20px;
+    text-align: center;
+    color:black;
+}
+
+
+
+
+
+#text_about{
+    margin-top: auto;
+    width:70%;
+    position: absolute;
+    top:18%;
+    left:15%;
+    font-size: 15px;
+    color:black;
+}

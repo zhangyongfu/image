@@ -37,8 +37,5 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
             return;
         }
         response.sendRedirect("/jsp/registfail.jsp");
-
-
-
     }
 }

@@ -24,7 +24,7 @@ text-align: left;
 }
 input{
     margin:8px 0px 8px 0px;
-    width: 30%;
+    width: 35%;
     height:5%;
     background-color: skyblue;
     border:none;
@@ -66,4 +66,27 @@ input{
 #register:hover{
     background-color: royalblue;
     cursor: pointer;
+}
+
+#cannotlogin{
+    font-size: 14px;
+}
+#cannotlogin a:hover{
+    font-size: 15px;
+    color: #0573bd;
+}
+
+#registfail{
+    font-size: 20px;
+    /*text-align: center;*/
+}
+#registfail a:hover{
+    color: #0573bd;
+}
+#loginfail{
+    font-size: 20px;
+    /*text-align: center;*/
+}
+#loginfail a:hover{
+    color: #0573bd;
 }

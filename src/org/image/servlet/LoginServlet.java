@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -39,7 +40,10 @@ public class LoginServlet extends HttpServlet {
             try{
                 //如果用户姓名和密码都正确，则登录成功。
                 if(name.equals(user.getName()) && password.equals(user.getPassword())){//会发生空指针异常
-                    request.getRequestDispatcher("/jsp/about.jsp").forward(request,response);
+
+                    HttpSession httpSession = request.getSession();
+                    httpSession.setAttribute("userName",user);
+                    request.getRequestDispatcher("/index.jsp").forward(request,response);
                     return;
                 }
                 //否则登录失败。

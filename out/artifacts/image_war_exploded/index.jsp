@@ -1,4 +1,5 @@
-<%--
+<%@ page import="org.image.model.User" %>
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-10-18
@@ -32,11 +33,29 @@
           </ul>
         </div>
         <%
-          if(true){
+          HttpSession httpSession = request.getSession();
+          User user = (User)httpSession.getAttribute("userName");
+          if(user != null){
         %>
+        <ul id="">
+          <li id="top_login_success">
+            <a href="/jsp/userpage.jsp">
+              <%
+                out.print(user.getName());
+              %>
+            </a>
+            |
+          </li>
+          <form id="loginout" action="/loginout" method="post">
+            <input type="submit" value="注销">
+          </form>
+        </ul>
+        <%
+          }
+          else{
+              %>
         <ul>
           <li id="top_login">
-            <span id="show_user" >我是游客</span>
             <a id="login" href="/jsp/login.jsp">登录</a>
             |
             <a id="register" href="/jsp/goregister.jsp">注册</a>
@@ -45,6 +64,10 @@
         <%
           }
         %>
+        <div>
+
+        </div>
+
       </div>
     </div>
 

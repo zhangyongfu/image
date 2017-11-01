@@ -1,19 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: zyj
-  Date: 17-10-31
-  Time: 下午3:03
+  Date: 17-11-1
+  Time: 下午8:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%--<title>Title</title>--%>
-    <link href="/css/loginandregister.css" rel="stylesheet" type="text/css" />
-
+    <title>个人中心</title>
 </head>
 <body>
-@ _ @ 登录失败了
-<a href="login.jsp">再试一次</a>
+<center>
+    这里是个人中心
+</center>
 </body>
 </html>
