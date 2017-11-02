@@ -25,7 +25,7 @@
               <a href="/" target="main">首页</a>
             </li>
             <li id="view">
-              <a href="#">浏览</a>
+              <a href="/jsp/mygallery.jsp">图库</a>
             </li>
             <li id="about">
               <a href="/jsp/about.jsp">关于</a>
@@ -44,10 +44,10 @@
                 out.print(user.getName());
               %>
             </a>
-            |
           </li>
           <form id="loginout" action="/loginout" method="post">
             <input type="submit" value="注销">
+
           </form>
         </ul>
         <%
