@@ -3,7 +3,7 @@
 #calltologin{
     text-align: center;
     position: fixed;
-    top:40px;
+    top:8%;
     left:0;
     font-style: inherit;
     font-size: 20px;
@@ -24,7 +24,7 @@
 #wel_show{
     text-align: center;
     position: fixed;
-    top:40px;
+    top:8%;
     left:0;
     font-style: inherit;
     font-size: 20px;

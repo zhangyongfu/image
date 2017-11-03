@@ -53,6 +53,115 @@
 
 
 
+
+
+
+<div class="list">
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/13.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片13</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/14.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片2</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/15.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片3</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/16.jpg" alt="Ballade" width="300" height="200px">
+        </a>
+        <div class="desc">图片4</div>
+    </div>
+
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/17.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片5</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/18.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片6</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/19.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片7</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/20.jpg" alt="Ballade" width="300" height="200px">
+        </a>
+        <div class="desc">图片8</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/21.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片9</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/22.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片10</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/23.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片11</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/24.jpg" alt="Ballade" width="300" height="200px">
+        </a>
+        <div class="desc">图片12</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/12.jpg" alt="Ballade" width="300" height="200px">
+        </a>
+        <div class="desc">图片13</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/23.jpg" alt="Ballade" width="300px" height="200px">
+        </a>
+        <div class="desc">图片11</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/24.jpg" alt="Ballade" width="300" height="200px">
+        </a>
+        <div class="desc">图片12</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="#">
+            <img src="../images/list/12.jpg" alt="Ballade" width="300" height="200px">
+        </a>
+        <div class="desc">图片13</div>
+    </div>
+</div>
+
+
+
+
+
+
+
         <%
     }
     else{

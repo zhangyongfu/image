@@ -1,0 +1,89 @@
+body{
+    font-family:sans-serif;
+    line-height:25px;
+    text-align: center;
+    background-attachment: fixed;
+    background-image: url(../i/background2.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+img{
+    margin-top: 30px;
+    vertical-align:middle;
+    border:0;
+
+}
+
+ul, ul li{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+}
+#top_bg{
+    height:55px;
+    width:100%;
+    background:mediumslateblue;
+    position:fixed;
+    z-index:1;
+    left:0;
+}
+
+.logo_l{
+    width:200px;
+    height:55px;
+    float:left;
+    background:url(../images/logo.png) no-repeat left;
+}
+.nav_z{
+    width:300px;
+    height:60px;
+    float:left;
+    position:fixed;
+    left:500px;
+    display: inline;
+}
+
+
+.nav_z a:hover{
+    color: #FFFFFF;
+    text-decoration:underline;
+}
+
+
+#navul li{
+
+    margin-left:auto;
+    margin-right: auto;
+
+    float:left;
+    width:80px;
+    height:55px;
+    position:relative;
+    text-align:center;
+    line-height:55px;
+}
+
+#tit{
+    padding-top: 60px;
+    font-size: larger;
+}
+
+table{
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:30px;
+}
+
+.in{
+    width: 250px;
+}
+.intime{
+    width:80px;
+}
+
+.sex{
+    margin-left: 35px;
+}
