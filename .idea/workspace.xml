@@ -7,21 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbb32f81-3976-41ef-b5fb-b2305e4070f6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/head.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/userInf.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/userInf.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/i/snow.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.iml" afterPath="$PROJECT_DIR$/image.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/css/about.css" afterPath="$PROJECT_DIR$/out/artifacts/image_war_exploded/css/about.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/css/gallerystyle.css" afterPath="$PROJECT_DIR$/out/artifacts/image_war_exploded/css/gallerystyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/jsp/about.jsp" afterPath="$PROJECT_DIR$/out/artifacts/image_war_exploded/jsp/about.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/jsp/mygallery.jsp" afterPath="$PROJECT_DIR$/out/artifacts/image_war_exploded/jsp/mygallery.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/css/userInf.css" afterPath="$PROJECT_DIR$/out/artifacts/image_war_exploded/css/userInf.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/image_war_exploded/jsp/userpage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/image_war_exploded/jsp/userpage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/image/DAO/DatabaseConnection.java" afterPath="$PROJECT_DIR$/src/org/image/DAO/DatabaseConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/about.css" afterPath="$PROJECT_DIR$/web/css/about.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/gallerystyle.css" afterPath="$PROJECT_DIR$/web/css/gallerystyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/about.jsp" afterPath="$PROJECT_DIR$/web/jsp/about.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/mygallery.jsp" afterPath="$PROJECT_DIR$/web/jsp/mygallery.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/userInf.css" afterPath="$PROJECT_DIR$/web/css/userInf.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/userpage.jsp" afterPath="$PROJECT_DIR$/web/jsp/userpage.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -76,8 +66,8 @@
       <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/jsp/userpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            <state relative-caret-position="78">
+              <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -86,8 +76,8 @@
       <file leaf-file-name="userInf.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/userInf.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+            <state relative-caret-position="112">
+              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -221,7 +211,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="599" />
     <option name="y" value="26" />
     <option name="width" value="667" />
@@ -639,7 +629,7 @@
       <workItem from="1509554833145" duration="3955000" />
       <workItem from="1509600483300" duration="3659000" />
       <workItem from="1509604367782" duration="8470000" />
-      <workItem from="1509669208708" duration="26680000" />
+      <workItem from="1509669208708" duration="27360000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片显示(17.10.22)">
       <created>1508664797048</created>
@@ -652,7 +642,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179643000" />
+    <option name="totallyTimeSpent" value="180323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -664,7 +654,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="26" width="1372" height="745" extended-state="6" />
+    <frame x="-3" y="26" width="1372" height="745" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1049,16 +1039,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/jsp/userpage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        <state relative-caret-position="78">
+          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/userInf.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+        <state relative-caret-position="112">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding />
         </state>
       </provider>

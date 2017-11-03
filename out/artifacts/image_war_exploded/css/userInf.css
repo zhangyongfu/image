@@ -17,6 +17,10 @@ img{
 
 }
 
+.textpad{
+    padding-right:8px;
+}
+
 ul, ul li{
     list-style-type:none;
     margin:0px;
@@ -54,9 +58,6 @@ ul, ul li{
 
 
 #navul li{
-
-    margin-left:auto;
-    margin-right: auto;
 
     float:left;
     width:80px;

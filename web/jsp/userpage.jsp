@@ -38,7 +38,7 @@
 <div> <img src="../images/head.png" alt="头像" width="80px" height="80px"></div>
 <table id="info">
     <tr>
-        <td>姓名</td>
+        <td class="textpad">姓名</td>
         <td>
             <input class="in" type="text" name="姓名" maxlength="20"/>
         </td>
@@ -74,7 +74,7 @@
         </td>
     </tr>
     <tr>
-        <td>个人介绍</td>
+        <td>简介</td>
         <td>
             <textarea class="in" name="selfIntro" id="selfIntro" maxlength="200" cols="30" rows="3"></textarea>
         </td>
