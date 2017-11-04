@@ -1,5 +1,5 @@
 
-// 控制生日时间
+// 控制出生日期
 function limitYear(o) {
     var value = o.value;
     var date = new Date();

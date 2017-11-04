@@ -5,10 +5,70 @@ body{
     background-attachment: fixed;
     background-image: url(../i/background2.jpg);
     background-repeat:no-repeat;
-    margin:0;
-    padding:0;
     overflow-x:hidden;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.main{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    right: 5%;
+    left: 5%;
+    top: 5%;
+    bottom: 5%;
+    /*background-color:silver;*/
+}
+
+.areas{
+    float: left;
+}
+.a{
+    width: 20%;
+    height: 100%;
+    /*background-color: #0573bd;*/
+    background-image: url("../i/snow.jpg");
+
+}
+.b{
+    width: 80%;
+    height: 100%;
+    /*background-color: blueviolet;*/
+    background-image: url("../i/hill.jpg");
+
+}
+.aa{
+    width: 100%;
+    height: 10%;
+
+
+}
+.ab{
+    padding-top: 15px;
+    width: auto;
+    height: 80%;
+    background-color: white;
+    margin: 15px;
+
+}
+
+ul{
+    list-style-type:none;
+    position: absolute;
+    right: 2%;
+}
+li{
+    list-style-type:none;
+    float:left;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
 
 img{
     margin-top: 30px;
@@ -19,72 +79,34 @@ img{
 
 .textpad{
     padding-right:8px;
-}
-
-ul, ul li{
-    list-style-type:none;
-    margin:0px;
-    padding:0px;
-}
-#top_bg{
-    height:55px;
-    width:100%;
-    background:mediumslateblue;
-    position:fixed;
-    z-index:1;
-    left:0;
-}
-
-.logo_l{
-    width:200px;
-    height:55px;
-    float:left;
-    background:url(../images/logo.png) no-repeat left;
-}
-.nav_z{
-    width:300px;
-    height:60px;
-    float:left;
-    position:fixed;
-    left:500px;
-    display: inline;
-}
-
-
-.nav_z a:hover{
-    color: #FFFFFF;
-    text-decoration:underline;
-}
-
-
-#navul li{
-
-    float:left;
-    width:80px;
-    height:55px;
-    position:relative;
-    text-align:center;
-    line-height:55px;
-}
-
-#tit{
-    padding-top: 60px;
-    font-size: larger;
+    text-align: justify;
+    text-align-last: justify;
 }
 
 table{
-    margin-left:auto;
-    margin-right: auto;
-    margin-top:30px;
+    /*margin-left:auto;*/
+    /*margin-right: auto;*/
+    margin-top:40px;
 }
+
+/*tr{*/
+    /*display:block; !*将tr设置为块体元素*!*/
+    /*margin:10px 10px;  !*设置tr间距为2px*!*/
 
 .in{
     width: 250px;
 }
 .intime{
     width:80px;
+    height: 18px;
+
 }
 
 .sex{
     margin-left: 35px;
+}
+
+.intro{
+    width: 500px;
+    height: 100px;
 }
