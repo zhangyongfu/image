@@ -1,0 +1,41 @@
+
+
+#calltologin{
+    text-align: center;
+    position: fixed;
+    top:8%;
+    left:0;
+    font-style: inherit;
+    font-size: 20px;
+    color:black;
+}
+
+#calltologin a{
+    color:blue;
+    font-size: 20px;
+    font-style: italic;
+}
+#calltologin a:hover{
+    color:darkblue;
+    font-size: 20px;
+    font-style: italic;
+}
+
+#wel_show{
+    text-align: center;
+    position: fixed;
+    top:8%;
+    left:0;
+    font-style: inherit;
+    font-size: 20px;
+    color:black;
+}
+#wel_show a{
+    color:blue;
+    font-size: 20px;
+    font-style: italic;
+}
+#wel_show a:hover{
+    color:darkblue;
+}
+
