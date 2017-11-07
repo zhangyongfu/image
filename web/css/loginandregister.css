@@ -1,5 +1,5 @@
 html{
-    background-image: url(../i/background2.jpg);
+    background-image: url(../images/background2.jpg);
 }
 
 #title{
@@ -28,6 +28,8 @@ input{
     height:5%;
     background-color: skyblue;
     border:none;
+}
+#checkText{
 
 }
 #loginform a {

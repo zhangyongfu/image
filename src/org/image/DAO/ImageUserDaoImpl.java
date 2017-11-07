@@ -2,6 +2,7 @@ package org.image.DAO;
 
 import org.image.model.User;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,6 +23,49 @@ public class ImageUserDaoImpl implements ImageUserDao {
 
     ArrayList users = new ArrayList();
     Connection connection = null;
+
+
+    public String getUserName(User user){
+
+
+        try{
+            connection = databaseConnection.getDbConnection();
+            if(connection != null){
+                String sql = "select id,email,username from users where username=? and email=?";
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                preparedStatement.setString(1,user.getName());
+
+//                System.out.println("username:" + user.getName());
+
+                preparedStatement.setString(2,user.getEmail());
+//                System.out.println("email:" + user.getEmail());
+
+
+//                preparedStatement.setString(2,user.getEmail());
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()){
+//                    user.setId(resultSet.getInt("id"));
+                    user.setName(resultSet.getString("username"));
+                }
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
+
+//        System.out.println("username:"+ user.getName());
+        return user.getName();
+
+
+    }
+
 
 
     /**
@@ -79,6 +123,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
     public User deleteImageUser(User user) {
         return null;
     }
+
 
 
     /**

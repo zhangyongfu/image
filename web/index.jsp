@@ -22,13 +22,14 @@
         <div class="nav_z">
           <ul id="navul" class="cl">
             <li id="start">
-              <a href="/" target="main">首页</a>
+              <a href="/" target="main" title="首页">首页</a>
             </li>
             <li id="view">
-              <a href="/jsp/mygallery.jsp">图库</a>
+              <a href="/jsp/mygallery.jsp" title="我的图库">图库</a>
+              <%--<a href="/jsp/test.jsp" title="我的图库">图库</a>--%>
             </li>
             <li id="about">
-              <a href="/jsp/about.jsp">关于</a>
+              <a href="/jsp/about.jsp" title="关于我们">关于</a>
             </li>
           </ul>
         </div>
@@ -46,7 +47,7 @@
             </a>
           </li>
           <form id="loginout" action="/loginout" method="post">
-            <input type="submit" value="注销">
+            <input type="submit" title="注销" value="注销">
 
           </form>
         </ul>
@@ -135,6 +136,61 @@
       })
   </script>
   <div class="list">
+    <div class="img">
+    <a target="_blank" href="#">
+      <img src="./images/list/0.jpg" alt="Ballade" width="300px" height="200px">
+    </a>
+    <div class="desc">图片1</div>
+  </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/1.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片2</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/2.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片3</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/3.jpg" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">图片4</div>
+    </div>
+
+    <div class="img">
+    <a target="_blank" href="#">
+      <img src="./images/list/4.jpg" alt="Ballade" width="300px" height="200px">
+    </a>
+    <div class="desc">图片5</div>
+  </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/5.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片6</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/6.jpg" alt="Ballade" width="300px" height="200px">
+      </a>
+      <div class="desc">图片7</div>
+    </div>
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="./images/list/7.jpg" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">图片8</div>
+    </div>
+    <div class="img">
+    <a target="_blank" href="#">
+      <img src="./images/list/8.jpg" alt="Ballade" width="300px" height="200px">
+    </a>
+    <div class="desc">图片9</div>
+  </div>
     <div class="img">
     <a target="_blank" href="#">
       <img src="./images/list/0.jpg" alt="Ballade" width="300px" height="200px">

@@ -43,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 
                     HttpSession httpSession = request.getSession();
                     httpSession.setAttribute("userName",user);
+
                     request.getRequestDispatcher("/index.jsp").forward(request,response);
                     return;
                 }

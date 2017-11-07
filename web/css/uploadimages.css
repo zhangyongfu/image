@@ -1,0 +1,91 @@
+
+body{
+    background-color: #bebebe;
+}
+.selected_img{
+    position: absolute;
+    top:150px;
+    left:200px;
+    /*background-color: beige;*/
+    width:962px;
+}
+
+
+.selected_img .img-div{
+    position: relative;
+    /*left:240px;*/
+    padding: 5px 10px 5px 10px;
+    /*top:180px;*/
+    float:left;
+    /*width:800px;*/
+    overflow: hidden;
+    text-align: center;
+}
+.image{
+    width: 300px;
+    height: 200px;
+}
+.choose_img{
+    position: absolute;
+    top:240px;
+    text-align: center;
+    /*left:100px;*/
+    /*width:900px;*/
+}
+
+
+.choose_img input{
+    opacity: 0;
+    margin:0;
+    padding:0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 150px;
+}
+.choose_img input:hover{
+    cursor: pointer;
+}
+
+
+
+.choose_img .img_button{
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/list/11.jpg);
+}
+
+
+
+h2{
+    color:darkblue;
+    text-align: center;
+}
+
+.cancelupload{
+    position: absolute;
+    top:10px;
+
+    left:50px;
+}
+
+.sureupload{
+    position: absolute;
+    top:10px;
+    background-color: #0573bd;
+
+    height:50px;
+    font-size: 20px;
+    width:200px;
+    right:50px;
+}
+.cancelupload input,.sureupload input{
+    background-color: #0573bd;
+
+    height:50px;
+    font-size: 20px;
+    width:200px;
+}
+

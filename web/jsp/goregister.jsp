@@ -13,6 +13,30 @@
     <title>注册</title>
     <link href="/css/loginandregister.css" rel="stylesheet" type="text/css" />
 
+<%--    <script type="text/javascript">
+
+        function checkBlur(inputName) {
+            var checkText = document.getElementById("checkText");
+//            var inputName = document.getElementById("name").value;
+
+            if(inputName == ""){
+                checkText.innerHTML("<font color='red'>用户名不能为空</font>");
+            }else if(inputName.length < 6 || inputName.length > 15){
+                checkText.innerHTML("<font color='red'>用户名长度必须在6-15之间</font>");
+            }
+            else {
+                checkText.innerHTML("");
+            }
+        }
+        function checkFocus() {
+            var checkText = document.getElementById("checkText");
+            var inputName = document.getElementById("name");
+
+            checkText.innerHTML("");
+
+        }
+    </script>--%>
+
 </head>
 <body>
 <div class="goregister">
@@ -21,7 +45,10 @@
         <%--邮箱：--%>
         <input type="text" id="email" name="email" placeholder="email"/><br/>
         <%--姓名：--%>
-        <input type="text" id="name" name="name" placeholder="name"/><br/>
+        <input type="text" id="name" name="name" placeholder="name"
+        <%--onblur="checkBlur(this.value);" onfocus="checkFocus();"--%>
+        /><br/>
+        <%--<span id="checkText"></span><br/>--%>
         <%--密码：--%>
         <input type="password" id="password" name="password" placeholder="password"/><br/>
         <input id="register" type="submit" value="注册"/><br/>

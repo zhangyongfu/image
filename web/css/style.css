@@ -1,12 +1,20 @@
 @charset "utf-8";
 
+
+html{
+    margin:0 auto;
+
+
+}
 body{
     font-family:sans-serif;
     line-height:25px;
     text-align: center;
+
     background-attachment: fixed;
-    background-image: url(../i/background2.jpg);
-    background-repeat:no-repeat;
+    background-image: url(../images/background2.jpg);
+    /*background-repeat:no-repeat;*/
+    background-repeat:repeat-y;
 }
 
 img{
@@ -65,7 +73,7 @@ ul, ul li{
 #top_login{
     position: absolute;
     font-size:15px;
-    right:50px;
+    left:1050px;
     top:20px;
     height: 55px;
     float: right;
@@ -73,13 +81,14 @@ ul, ul li{
 #top_login_success{
     position: fixed;
     font-size:20px;
-    top:20px;
-    right:15%;
+    top:5px;
+    left:1060px;
 }
 
 #top_login_success a{
     font-size: 18px;
     font-style: inherit;
+    float:right;
     color:#bebebe;
 }
 #loginout input{
@@ -87,8 +96,8 @@ ul, ul li{
     font-style: inherit;
     color:#bebebe;
     position: fixed;
-    right:8%;
-    top:23px;
+    left:1050px;
+    top:30px;
     background:transparent;
     border:none;
 }
@@ -147,6 +156,8 @@ a{
 .leftmenu{
     width:100%;
     height:100%;
+    /*border-right:4px outset blue;*/
+
     margin:auto;
 }
 
@@ -221,50 +232,70 @@ a{
 .list{
     position: absolute;
     top:100px;
+    /*border-right:4px outset blue;*/
+    /*border-top:4px outset blue;*/
+    /*border-left:4px outset blue;*/
+    /*border-bottom:4px outset blue;*/
+    /*border: medium solid #0573bd;*/
+    /*border:1px;*/
     left:300px;
+    width:1000px;
 }
 .list div{
+}
 
+.mygallerylist{
+    position: absolute;
+    top:100px;
+    /*border-right:4px outset blue;*/
+    /*border-top:4px outset blue;*/
+    /*border-left:4px outset blue;*/
+    /*border-bottom:4px outset blue;*/
+    /*border: medium solid #0573bd;*/
+    /*border:1px;*/
+    left:300px;
+    float: left;
+    width:1000px;
 }
 
 
- div.img
+ div .img
  {
 
      border:1px solid #bebebe;
      height:auto;
-     background-color: #C6C6C6;
+     background-color: cornflowerblue;
      width:auto;
      margin-bottom: 15px;
      margin-right: 10px;
      float:left;
      text-align:center;
  }
-div.img img
+div .img img
 {
     display:inline;
     margin:2px;
     border:1px solid #bebebe;
 }
 
-div.img a:link img{
+div .img a:link img{
     border:1px solid #eeeeee;
 
 }
-div.img a:visited img
+div .img a:visited img
 {
     border:1px solid #eebebe;
 }
-div.img a:hover img
+div .img a:hover img
 {
     border:1px solid #333333;
 }
-div.desc
+div .desc
 {
     text-align:center;
     font-weight:normal;
     font-size:15px;
-    background-color: #C6C6C6;
+    background-color: transparent;
 
     color: #000;
     margin:10px 5px 10px 5px;
