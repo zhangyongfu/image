@@ -33,16 +33,16 @@
         <div class="areas b">
             <div class="aa">
                 <ul class="topul">
-                <li class="topli">
+                    <li class="topli">
                     <a href="/" target="main">前台首页</a>
                 </li>
-                <li class="topli">
+                    <li class="topli">
                     <a href="/jsp/mygallery.jsp">我的图库</a>
                 </li>
-                <li class="topli">
+                    <li class="topli">
                     <a href="/jsp/about.jsp">注销帐号</a>
                 </li>
-            </ul>
+                </ul>
             </div>
             <div id="tagdiv">
             <nav class="ab">
@@ -160,7 +160,14 @@
     </div>
 
     <div id="headid" class="headarea">
-        修改图片
+        <p>修改图片</p>
+        <img src="" alt="head" width="50px" height="50px">
+        <dl>
+            <dt>选择图片</dt>
+            <dd><input type="text"></dd>
+        </dl>
+        <p>从相册选择</p>
+        <input type="button" value="取消" onclick="cancalhead()"/>
     </div>
 </div>
 

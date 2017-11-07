@@ -10,6 +10,11 @@ function editHead(o) {
 
 
 }
+function cancalhead() {
+    document.getElementById("headid").style.display="none";  //隐藏弹出层
+    document.getElementById("hidebgid").style.display="none";  //隐藏隐藏层
+
+}
 
 // 控制出生日期
 function limitYear(o) {
