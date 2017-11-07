@@ -6,6 +6,7 @@ body{
     background-image: url(../i/background2.jpg);
     background-repeat:no-repeat;
     overflow-x:hidden;
+
 }
 
 *{
@@ -23,6 +24,7 @@ body{
     top: 5%;
     bottom: 5%;
     /*background-color:silver;*/
+
 }
 
 .areas{
@@ -49,6 +51,7 @@ body{
 
 }
 .ab{
+    position: relative;
     padding-top: 15px;
     width: auto;
     height: 80%;
@@ -57,18 +60,42 @@ body{
 
 }
 
-ul{
+
+.leftdiv{
+    margin-top:50px;
+}
+.on{
+    background-color: silver;
+    width:100%;
+    height:auto;
+    border: none;
+    font-size: larger;
+    line-height: 1.5;
+}
+.off{
+    background: transparent;
+    width:100%;
+    height:auto;
+    border: none;
+    font-size: larger;
+    line-height: 1.5;
+}
+
+
+.topul{
     list-style-type:none;
     position: absolute;
     right: 2%;
 }
-li{
+.topli{
     list-style-type:none;
     float:left;
     margin-top: 30px;
     margin-left: 20px;
 }
-
+.topli a:hover{
+    color:red;
+}
 
 img{
     margin-top: 30px;
@@ -78,7 +105,7 @@ img{
 }
 
 .textpad{
-    padding-right:8px;
+    padding-right:10px;
     text-align: justify;
     text-align-last: justify;
 }
@@ -89,9 +116,7 @@ table{
     margin-top:40px;
 }
 
-/*tr{*/
-    /*display:block; !*将tr设置为块体元素*!*/
-    /*margin:10px 10px;  !*设置tr间距为2px*!*/
+
 
 .in{
     width: 250px;
@@ -104,9 +129,69 @@ table{
 
 .sex{
     margin-left: 35px;
+    margin-right: 5px;
 }
 
 .intro{
     width: 500px;
-    height: 100px;
+    height: 150px;
+    resize: none;
+}
+
+.alterbut{
+    position: absolute;
+    right: 15px;
+    background: transparent;
+    border: none;
+    line-height: 1.5;
+}
+
+.alteraccount{
+    position: absolute;
+    left: 15px;
+}
+
+.leftposi{
+    text-align: left;
+}
+.margintop{
+    margin-top: 20px;
+}
+
+.h{
+    height:1px;border:none;border-top:1px solid silver;
+}
+
+.warn{
+    color: darkred;
+}
+
+.hide{display:none;}
+
+
+.headarea{
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    display: none;
+    position: absolute;
+    left:0; right:0; top:0; bottom:0;
+    margin:auto;
+    z-Index:3;
+
+}
+
+
+.hidebg {
+    position:absolute;left:0px;top:0px;
+    background-color:#000;
+    width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+    filter:alpha(opacity=60);  /*设置透明度为60%*/
+    opacity:0.6;  /*非IE浏览器下设置透明度为60%*/
+    display: none;
+    z-Index:2;
+}
+
+.test{
+    z-Index:1;
 }
