@@ -18,7 +18,9 @@
 
 <p>
 <div class="cancelupload">
-    <input type="button" value="取消上传">
+    <a href="mygallery.jsp">
+        <input type="button" value="取消上传">
+    </a>
 </div>
 <h2>
     选择你要上传的图片
@@ -36,15 +38,30 @@
 <div class="choose_img">
     <input class="img_input" type="file" name="selectedImage" multiple="multiple" title="点我选择图片"/>
     <div class="img_button">
+        点我上传图片
     </div>
-</div>
-<div class="selected_img">
-</div>
 
 
+</div>
+    <br/>
+    上传公共图片<input id="pub" name="pubOrPri" type="radio" /><br/><br/>
+    上传私有图片<input id="pri" name="pubOrPri" type="radio" />
+
+    <div class="selected_img">
+</div>
     <input type="submit" class="sureupload" value="确认上传" />
 
 </form>
+
+<script type="text/javascript">
+    var select = document.getElementsByName("pubOrPri");
+    if(select[0].checked == true){
+
+    }else if()
+
+
+</script>
+
 
 
 <script>

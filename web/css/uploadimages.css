@@ -54,7 +54,8 @@ body{
 .choose_img .img_button{
     width: 150px;
     height: 150px;
-    background-image: url(../images/list/11.jpg);
+    /*background-image: url(../images/list/11.jpg);*/
+    background-color: #0573bd;
 }
 
 
@@ -69,6 +70,13 @@ h2{
     top:10px;
 
     left:50px;
+}
+.cancelupload a{
+    text-decoration: none;
+}
+.cancelupload a:hover{
+    cursor: pointer;
+    color:deepskyblue;
 }
 
 .sureupload{
