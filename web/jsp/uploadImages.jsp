@@ -12,6 +12,26 @@
     <meta charset="UTF-8">
     <title></title>
     <link href="../css/uploadimages.css" rel="stylesheet" type="text/css"/>
+
+    <script>
+        function selected(){
+            var radios = document.getElementsByName('colors');
+//            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[0].checked) {
+                    // 弹出选中值
+                    alert("red");
+                    // 选中后退出循环
+//                    break;
+                }
+                else {
+                    alert("blue");
+//                    break;
+                }
+//            }
+        }
+    </script>
+
+
 </head>
 <body>
 
@@ -25,9 +45,7 @@
 <h2>
     选择你要上传的图片
 </h2>
-<%--<div class="sureupload">--%>
-    <%--<input type="button" value="确定上传">--%>
-<%--</div>--%>
+
 <hr/>
 </p>
 
@@ -38,30 +56,21 @@
 <div class="choose_img">
     <input class="img_input" type="file" name="selectedImage" multiple="multiple" title="点我选择图片"/>
     <div class="img_button">
-        点我上传图片
+        点我上传公有图片
     </div>
 
-
 </div>
-    <br/>
-    上传公共图片<input id="pub" name="pubOrPri" type="radio" /><br/><br/>
-    上传私有图片<input id="pri" name="pubOrPri" type="radio" />
+    <%--<input class="img_input" type="file" name="selectedImage" multiple="multiple" title="点我选择图片"/>--%>
+    <%--<div class="img_button">--%>
+        <%--点我上传私有图片--%>
+    <%--</div>--%>
 
     <div class="selected_img">
 </div>
-    <input type="submit" class="sureupload" value="确认上传" />
+    <input type="submit" class="sureupload" value="确认上传" onclick="selected()" />
+
 
 </form>
-
-<script type="text/javascript">
-    var select = document.getElementsByName("pubOrPri");
-    if(select[0].checked == true){
-
-    }else if()
-
-
-</script>
-
 
 
 <script>

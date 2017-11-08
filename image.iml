@@ -50,5 +50,6 @@
         <jarDirectory url="file://$USER_HOME$/code-idea/tomcat/apache-tomcat-9.0.0.M26/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

@@ -100,7 +100,15 @@ public class UploadImageServlet extends HttpServlet {
                         String userName = imageUserDaoImpl.getUserName(user);
 
                         imageAdd.addImageFilePath(filePath,userName);
+
+
 //                        request.setAttribute("message", "文件上传成功!");
+
+
+
+
+
+
                     }
                 }
             }

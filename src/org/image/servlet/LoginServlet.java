@@ -64,6 +64,10 @@ public class LoginServlet extends HttpServlet {
             System.out.println("fail");
             response.sendRedirect("/jsp/loginfail.jsp");
         }
+
+
     }
+
+
 
 }
