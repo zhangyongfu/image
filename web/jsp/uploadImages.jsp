@@ -27,11 +27,8 @@
                     alert("blue");
 //                    break;
                 }
-//            }
         }
     </script>
-
-
 </head>
 <body>
 
@@ -45,7 +42,6 @@
 <h2>
     选择你要上传的图片
 </h2>
-
 <hr/>
 </p>
 
@@ -58,19 +54,12 @@
     <div class="img_button">
         点我上传公有图片
     </div>
-
 </div>
-    <%--<input class="img_input" type="file" name="selectedImage" multiple="multiple" title="点我选择图片"/>--%>
-    <%--<div class="img_button">--%>
-        <%--点我上传私有图片--%>
-    <%--</div>--%>
-
     <div class="selected_img">
 </div>
     <input type="submit" class="sureupload" value="确认上传" onclick="selected()" />
-
-
 </form>
+
 
 
 <script>

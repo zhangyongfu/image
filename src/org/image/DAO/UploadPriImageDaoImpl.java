@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class UploadImageDaoImpl implements ImageDao {
+public class UploadPriImageDaoImpl implements ImageDao {
 
 
     private DatabaseConnection databaseConnection = new DatabaseConnection();

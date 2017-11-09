@@ -1,5 +1,5 @@
 <%@ page import="org.image.model.User" %>
-<%@ page import="org.image.DAO.UploadImageDaoImpl" %>
+<%@ page import="org.image.DAO.UploadPriImageDaoImpl" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: zyj
@@ -63,7 +63,8 @@
 <div class="funclist">
     <ul>
         <li id="upload">
-            <a href="/jsp/uploadImages.jsp" title="上传图片">上传图片</a>
+            <%--<a href="/jsp/uploadImages.jsp" title="上传图片">上传图片</a>--%>
+            <a href="/jsp/test.jsp" title="上传图片">上传图片</a>
         </li>
         <li id="sort">
             <a href="/jsp/sortImages.jsp" title="排序图片">排序图片</a>
@@ -92,7 +93,7 @@
 
 <div class="mygallerylist">
 <%
-    UploadImageDaoImpl uploadImage = new UploadImageDaoImpl();
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
     List<String> paths = uploadImage.getImageFilePath(user.getName());
 
     for(String path:paths) {
@@ -106,7 +107,7 @@
             <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="300" height="200px">
         </a>
         <div class="desc">
-            我的图图
+            我的图片${ph}
         </div>
     </div>
 

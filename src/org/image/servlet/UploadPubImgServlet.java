@@ -3,17 +3,13 @@ package org.image.servlet;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.image.DAO.UploadImageDaoImpl;
-import org.image.DAO.ImageUserDaoImpl;
-import org.image.model.User;
+import org.image.model.UploadPubImages;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,14 +17,14 @@ import java.util.List;
 
 
 /**
- * Servlet implementation class UploadImageServlet
+ * Servlet implementation class UploadPriImgServlet
  */
-@WebServlet("/jsp/UploadImageServlet")
-public class UploadImageServlet extends HttpServlet {
+@WebServlet("/jsp/UploadPubImgServlet")
+public class UploadPubImgServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // 上传文件存储目录
-    private static final String UPLOAD_DIRECTORY = "img";
+    private static final String UPLOAD_DIRECTORY = "pub_img";
 
     // 上传配置
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
@@ -69,7 +65,6 @@ public class UploadImageServlet extends HttpServlet {
 
         String uploadPath = getServletContext().getRealPath("/") + UPLOAD_DIRECTORY;
 
-//        System.out.println("--"+request.getSession().getServletContext().getRealPath(File.separator)+"---");
 
         // 如果目录不存在则创建
         File uploadDir = new File(uploadPath);
@@ -93,20 +88,14 @@ public class UploadImageServlet extends HttpServlet {
                         // 保存文件到硬盘
                         item.write(storeFile);
 
-                        UploadImageDaoImpl imageAdd = new UploadImageDaoImpl();
-                        HttpSession httpSession = request.getSession();
-                        User user = (User)httpSession.getAttribute("userName");
-                        ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
-                        String userName = imageUserDaoImpl.getUserName(user);
 
-                        imageAdd.addImageFilePath(filePath,userName);
+                        UploadPubImages imageAdd = new UploadPubImages();
+                        imageAdd.addImageFilePath(filePath);
+
+                        System.out.print("hello pub ");
 
 
 //                        request.setAttribute("message", "文件上传成功!");
-
-
-
-
 
 
                     }
@@ -116,7 +105,7 @@ public class UploadImageServlet extends HttpServlet {
             request.setAttribute("message",
                     "错误: " + ex.getMessage());
         }
-        getServletContext().getRequestDispatcher("/jsp/mygallery.jsp").forward(
-                request, response);
+
+        response.sendRedirect("/index.jsp");
     }
 }

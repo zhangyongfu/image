@@ -1,5 +1,7 @@
 <%@ page import="org.image.model.User" %>
-<%@ page import="java.io.PrintWriter" %><%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.List" %>
+<%@ page import="org.image.model.UploadPubImages" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-10-18
@@ -135,6 +137,39 @@
           });
       })
   </script>
+
+  <div class="list">
+    <%
+//      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+      UploadPubImages uploadPubImages = new UploadPubImages();
+
+      List<String> paths = uploadPubImages.getPubImgFilePath();
+
+      for(String path:paths) {
+        String[] strings = path.split("/");
+        String p = strings[strings.length - 1];
+        request.setAttribute("ph", p);
+
+    %>
+
+    <div class="img">
+      <a target="_blank" href="#">
+        <img id="allImages" src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="300" height="200px">
+      </a>
+      <div class="desc">
+        图片&nbsp;${ph}
+      </div>
+    </div>
+
+    <%
+        request.removeAttribute("ph");
+      }
+    %>
+
+  </div>
+
+<%--
+
   <div class="list">
     <div class="img">
     <a target="_blank" href="#">
@@ -271,6 +306,7 @@
       <div class="desc">图片13</div>
     </div>
   </div>
+--%>
 
   <button class="back_to_top">
     返回顶部

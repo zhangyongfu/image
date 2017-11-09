@@ -2,92 +2,77 @@
 &lt;%&ndash;
   Created by IntelliJ IDEA.
   User: zyj
-  Date: 17-11-4
-  Time: 下午5:12
+  Date: 17-11-2
+  Time: 下午9:41
   To change this template use File | Settings | File Templates.
-&ndash;%&gt;
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<%--
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <style>
+    <link href="../css/test.css" rel="stylesheet" type="text/css"/>
 
-        body{
-            background-color: #00b3ee;
+    <script type="text/javascript">
+
+        function priUpload(){
+            document.upload_form.method= "post";
+            document.upload_form.action= "UploadPriImgServlet";
+            document.upload_form.submit();
+            return true;
         }
-        .selected_img{
-            position: absolute;
-            top:150px;
-            left:200px;
-            background-color: beige;
-            width:962px;
+        function pubUpload(){
+            document.upload_form.method= "post";
+            document.upload_form.action= "UploadPubImgServlet";
+            document.upload_form.submit();
+            return true;
         }
 
-
-        .selected_img .img-div{
-            position: relative;
-            /*left:240px;*/
-            padding: 5px 10px 5px 10px;
-            /*top:180px;*/
-            float:left;
-            /*width:800px;*/
-            overflow: hidden;
-            text-align: center;
-        }
-        .image{
-            width: 300px;
-            height: 200px;
-        }
-        .choose_img{
-            position: absolute;
-            top:240px;
-            /*left:100px;*/
-            /*width:900px;*/
-        }
-        .choose_img input{
-            /*opacity: 0;*/
-            margin:0;
-            padding:0;
-            /*display: block;*/
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100px;
-            width: 1000px;
-        }
-        .choose_img .img_button{
-            width: 100px;
-            height: 100px;
-            background-image: url(../i/background2.jpg);
-        }
-    </style>
+    </script>
 </head>
 <body>
 
-<form action="/UpLoad" method="post"  enctype="multipart/form-data">
+
+<p>
+<div class="cancelupload" title="取消">
+    <a href="mygallery.jsp">
+        <%--<input type="button" value="取消上传">--%>
+        <img src="../images/icons/cancel_upload.png">
+    </a>
+</div>
+<h2>
+    选择你要上传的图片
+</h2>
+<hr/>
+</p>
+
+
+
+<%--<form method="post" action="UploadPriImgServlet" enctype="multipart/form-data">--%>
+<form name="upload_form" enctype="multipart/form-data">
 
     <div class="choose_img">
-        <input class="img_input" name="filename" type="file" multiple/>
+        <input class="img_input" type="file" name="selectedImage" multiple="multiple" title="选择图片"/>
         <div class="img_button">
         </div>
     </div>
-    <div class="selected_img">
+    <div class="selected_img" title="点击左边图标选择图片">
     </div>
-        <input type="submit" value="点我">
 
-
+    <div  class="sureupload" title="上传到私人图库">
+    <input type="submit" name="uploadImg" value="toPri" onclick="priUpload()" />
+    <div class="img_upload">
+        <img src="../images/icons/upload_pri.svg"/>
+    </div>
+    </div>
+    <div  class="suretopub" title="上传到公共图库">
+    <input type="submit" name="uploadImg" value="toPub" onclick="pubUpload()" />
+    <div class="img_upload">
+        <img src="../images/icons/upload_pub.svg"/>
+    </div>
+    </div>
 </form>
 
-
-
-<%
-    String filename = request.getParameter("filename");
-    System.out.println(filename);
-%>
 
 
 <script>
@@ -97,9 +82,6 @@
         var img=this;
         var img_name=this.files[0].name;
         var img_length=img.files.length;
-
-        var img_ids=new Array(1);
-        var imglen=0;
 
 
         for(var i=0;i<img_length;i++)
@@ -118,66 +100,17 @@
                 {
                     img_div.innerHTML=show_img;
                     img_div.appendChild(imgname_p);
-                    imgname_p.innerHTML=img_name;
+//                    imgname_p.innerHTML=img_name;
                     img_div.className="img-div";
-
-                    var img_id=new Date().getTime();
-                    img_div.id=img_id;
-//                    newlength=img_ids.push(img_id);
-                    img_ids[imglen]=img_id;
-                    imglen=imglen+1;
-                    img_ids.length=1;
                     document.getElementsByClassName("selected_img")[0].appendChild(img_div);
-
                 }else{
-                    alert("最多上传100张图片");
+                    alert("一次最多只能上传100张图片");
                 }
             };
             reader.readAsDataURL(img.files[i]);
-
         }
-
-//        alert(document.getElementsByClassName("image").src);
-
-        for(var i=0;i<img_ids.length;i++){
-            alert(img_ids[i]);
-        }
-//        alert(newlength);
-
     });
-
-
-    function getimages() {
-//        var images = document.getElementsByClassName("selected_img");
-        var image = document.getElementsByClassName("img-div");
-        for(var i=0;i<image.length;i++){
-            alert(image[i].src);
-        }
-
-    }
 </script>
-
-
-
 </body>
 </html>
 
---%>
-
-
-
-<html>
-<head>
-    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
-    <title>here</title>
-</head>
-<body>
-<h1>dsfasfdsfsdaf</h1>
-<form method="post" action="UploadImageServlet" enctype="multipart/form-data">
-    选择一个文件：
-    <input type="file" name="selectImage" multiple />
-    <br/><br/>
-    <input type="submit" value="go" />
-</form>
-</body>
-</html>
