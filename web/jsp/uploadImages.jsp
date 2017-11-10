@@ -13,30 +13,31 @@
     <title></title>
     <link href="../css/uploadimages.css" rel="stylesheet" type="text/css"/>
 
-    <script>
-        function selected(){
-            var radios = document.getElementsByName('colors');
-//            for (var i = 0, length = radios.length; i < length; i++) {
-                if (radios[0].checked) {
-                    // 弹出选中值
-                    alert("red");
-                    // 选中后退出循环
-//                    break;
-                }
-                else {
-                    alert("blue");
-//                    break;
-                }
+    <script type="text/javascript">
+
+        function priUpload(){
+            document.upload_form.method= "post";
+            document.upload_form.action= "UploadPriImgServlet";
+            document.upload_form.submit();
+            return true;
         }
+        function pubUpload(){
+            document.upload_form.method= "post";
+            document.upload_form.action= "UploadPubImgServlet";
+            document.upload_form.submit();
+            return true;
+        }
+
     </script>
 </head>
 <body>
 
 
 <p>
-<div class="cancelupload">
+<div class="cancelupload" title="取消">
     <a href="mygallery.jsp">
-        <input type="button" value="取消上传">
+        <%--<input type="button" value="取消上传">--%>
+        <img src="../images/icons/cancel_upload.png">
     </a>
 </div>
 <h2>
@@ -47,17 +48,29 @@
 
 
 
-<form method="post" action="UploadImageServlet" enctype="multipart/form-data">
+<%--<form method="post" action="UploadPriImgServlet" enctype="multipart/form-data">--%>
+<form name="upload_form" enctype="multipart/form-data">
 
-<div class="choose_img">
-    <input class="img_input" type="file" name="selectedImage" multiple="multiple" title="点我选择图片"/>
-    <div class="img_button">
-        点我上传公有图片
+    <div class="choose_img">
+        <input class="img_input" type="file" name="selectedImage" multiple="multiple" title="选择图片"/>
+        <div class="img_button">
+        </div>
     </div>
-</div>
-    <div class="selected_img">
-</div>
-    <input type="submit" class="sureupload" value="确认上传" onclick="selected()" />
+    <div class="selected_img" title="点击左边图标选择图片">
+    </div>
+
+    <div  class="sureupload" title="上传到私人图库">
+        <input type="submit" name="uploadImg" value="toPri" onclick="priUpload()" />
+        <div class="img_upload">
+            <img src="../images/icons/upload_pri.svg"/>
+        </div>
+    </div>
+    <div  class="suretopub" title="上传到公共图库">
+        <input type="submit" name="uploadImg" value="toPub" onclick="pubUpload()" />
+        <div class="img_upload">
+            <img src="../images/icons/upload_pub.svg"/>
+        </div>
+    </div>
 </form>
 
 

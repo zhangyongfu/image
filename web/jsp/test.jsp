@@ -1,11 +1,217 @@
+
+
+
+
+
+<html>
+<head>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("img").click(function(){
+            $(".div1").fadeToggle();
+        });
+    });
+</script>
+
+
+
+
+<p>演示带有不同参数的 fadeToggle() 方法。</p>
+<img src="../images/list/3.jpg" style="width: 100px;height: 100px;">点击这里，使三个矩形淡入淡出</img>
+<br><br>
+<img src="../images/list/3.jpg" class="div1" style="position: fixed;top:10px;left: 100px;display: none;" />
+<br>
 <%--
+<div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+<br>
+<div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+--%>
+
+
+</body>
+</html>
+
+
+
+<%--
+
+
+<html>
+<head>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/content_zoom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('div.small_pic a').fancyZoom({scaleImg: true, closeOnClick: true});
+            $('#zoom_word_1').fancyZoom({width:400, height:200});
+            $('#zoom_word_2').fancyZoom();
+            $('#zoom_flash').fancyZoom();
+        });
+    </script>
+</head>
+
+<body>
+<div class="zxx_out_box">
+    <div class="zxx_in_box">
+        <div class="zxx_header">
+        </div>
+        <div class="zxx_main_con fix mb20">
+            <div class="zxx_zoom_left">
+                <div class="small_pic">
+                    <a href="#pic_one">
+                        <img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" />
+                    </a>
+                </div>
+                <div class="small_pic">
+                    <a href="#pic_two">
+                        <img src="http://image.zhangxinxu.com/image/study/s/s128/mm2.jpg" />
+                    </a>
+                </div>
+                <div class="small_pic">
+                    <a href="#pic_three">
+                        <img src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg" />
+                    </a>
+                </div>
+                <div class="small_pic">
+                    <a href="#pic_four">
+                        <img src="http://image.zhangxinxu.com/image/study/s/s128/mm4.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 要放大显示的div -->
+<div id="pic_one" style="display:none;">
+    <img src="http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg" />
+</div>
+<div id="pic_two" style="display:none;">
+    <img src="http://image.zhangxinxu.com/image/study/s/s512/mm2.jpg" />
+</div>
+<div id="pic_three" style="display:none;">
+    <img src="http://image.zhangxinxu.com/image/study/s/s512/mm3.jpg" />
+</div>
+<div id="pic_four" style="display:none;">
+    <img src="http://image.zhangxinxu.com/image/study/s/s512/mm4.jpg" />
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;%&ndash;
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        点击图片全屏显示代码
+    </title>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    &lt;%&ndash;<script src="<%=request.getContextPath()%>/js/jquery-3.2.1.min.js"></script>&ndash;%&gt;
+    <script>
+        function imgShow(outerdiv, innerdiv, bigimg, _this){
+            var src = _this.attr("src");
+            $(bigimg).attr("src", src);
+            $("<img/>").attr("src", src).load(function(){
+                var windowW = $(window).width();
+                var windowH = $(window).height();
+                var realWidth = this.width;
+                var realHeight = this.height;
+                var imgWidth, imgHeight;
+                var scale = 0.8;
+                if(realHeight>windowH*scale) {
+                    imgHeight = windowH*scale;
+                    imgWidth = imgHeight/realHeight*realWidth;
+                    if(imgWidth>windowW*scale) {
+                        imgWidth = windowW*scale;
+                    }
+                } else if(realWidth>windowW*scale) {
+                    imgWidth = windowW*scale;
+                    imgHeight = imgWidth/realWidth*realHeight;
+                } else {
+                    imgWidth = realWidth;
+                    imgHeight = realHeight;
+                }
+                $(bigimg).css("width",imgWidth);
+                var w = (windowW-imgWidth)/2;
+                var h = (windowH-imgHeight)/2;
+                $(innerdiv).css({"top":h, "left":w});
+                $(outerdiv).fadeIn("fast");
+            });
+            $(outerdiv).click(function(){
+                $(this).fadeOut("fast");
+            });
+        }
+    </script>
+</head>
+<body style="background-color: #eeeeee;">
+<div class="col-md-6 col-xs-12">
+    <img class="pimg"  src="http://xiejiaming.com/wp-content/uploads/2014/08/jd5.png"  style="width:45%;" alt="...">
+    <img class="pimg"  src="http://xiejiaming.com/wp-content/uploads/2014/10/10.png"  style="width:45%;" alt="...">
+</div>
+<script>
+
+    $(function(){
+
+        $(".pimg").click(function(){
+
+            var _this = $(this);
+
+            imgShow("#outerdiv", "#innerdiv", "#bigimg", _this);
+        });
+    });
+</script>
+<div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.8);z-index:100;width:100%;height:100%;display:none;"><div id="innerdiv" style="position:absolute;"><img id="bigimg" style="border:5px solid #fff;" src="" /></div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;%&ndash;
+&lt;%&ndash;
 &lt;%&ndash;
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-11-2
   Time: 下午9:41
   To change this template use File | Settings | File Templates.
---%>
+&ndash;%&gt;
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head lang="en">
@@ -36,7 +242,7 @@
 <p>
 <div class="cancelupload" title="取消">
     <a href="mygallery.jsp">
-        <%--<input type="button" value="取消上传">--%>
+        &lt;%&ndash;<input type="button" value="取消上传">&ndash;%&gt;
         <img src="../images/icons/cancel_upload.png">
     </a>
 </div>
@@ -48,7 +254,7 @@
 
 
 
-<%--<form method="post" action="UploadPriImgServlet" enctype="multipart/form-data">--%>
+&lt;%&ndash;<form method="post" action="UploadPriImgServlet" enctype="multipart/form-data">&ndash;%&gt;
 <form name="upload_form" enctype="multipart/form-data">
 
     <div class="choose_img">
@@ -114,3 +320,6 @@
 </body>
 </html>
 
+&ndash;%&gt;
+&ndash;%&gt;
+--%>

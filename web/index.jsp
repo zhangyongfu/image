@@ -21,6 +21,15 @@
     <div id="top_bg">
       <div class="top">
         <a class="logo_l" href="/" title="返回首页"></a>
+
+        <form class="searchBar" action="SearchImgPage" method="get">
+          <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
+                 onfocus="this.style.backgroundColor='gainsboro'"
+                 onblur="this.style.backgroundColor='beige'">
+          <input class="goSearch" type="submit" value="搜索">
+        </form>
+
+
         <div class="nav_z">
           <ul id="navul" class="cl">
             <li id="start">
@@ -42,7 +51,7 @@
         %>
         <ul id="">
           <li id="top_login_success">
-            <a href="/jsp/userpage.jsp">
+            <a class="show_user" href="/jsp/userpage.jsp" title="<%=user.getName()%>">
               <%
                 out.print(user.getName());
               %>
@@ -73,6 +82,32 @@
 
       </div>
     </div>
+
+<%--
+    <style>
+      .max{
+        width:100%;
+        height:auto;}
+      .min{
+        width:300px;
+        height:auto;
+      }
+    </style>
+
+
+
+    <script defer="defer" language="JavaScript">
+        $(function () {
+            $('.pub_img').click(function () {
+                $(this).toggleClass('min');
+                $(this).toggleClass('max');
+
+            });
+
+        });
+    </script>
+
+--%>
 
   </head>
   <body>
@@ -152,10 +187,10 @@
 
     %>
 
-    <div class="img">
-      <a target="_blank" href="#">
-        <img id="allImages" src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="300" height="200px">
-      </a>
+    <div class="img" title="${ph}">
+      <%--<a target="_blank" href="#">--%>
+        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+      <%--</a>--%>
       <div class="desc">
         图片&nbsp;${ph}
       </div>
@@ -168,7 +203,8 @@
 
   </div>
 
-<%--
+
+  <%--
 
   <div class="list">
     <div class="img">

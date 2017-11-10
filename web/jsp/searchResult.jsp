@@ -23,11 +23,12 @@
 
 
     <a class="logo_l" href="/" title="返回首页"></a>
-    <form class="searchBar">
-        <input class="searchImg" type="search"  placeholder="搜索图片..">
+    <form class="searchBar" action="/SearchImgPage" method="get">
+        <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
+               onfocus="this.style.backgroundColor='gainsboro'"
+               onblur="this.style.backgroundColor='beige'">
         <input class="goSearch" type="submit" value="搜索">
     </form>
-
 
     <div class="nav_z">
         <ul id="navul" class="cl">
@@ -44,13 +45,13 @@
 
 
 
-        <%
+<%--        <%
             HttpSession httpSession = request.getSession();
             User user = (User)httpSession.getAttribute("userName");
             if(user != null){       //为了测试，先将此行注释
         %>
 
-        <%--遍历用户个人的图库--%>
+        &lt;%&ndash;遍历用户个人的图库&ndash;%&gt;
         <p id="wel_show">
             亲爱的
             <a href="/jsp/userpage.jsp">
@@ -60,32 +61,33 @@
                 %>
             </a>
             ,欢迎你。
-        </p>
+        </p>--%>
     </div>
 </div>
+
 
 
 <div class="mygallerylist">
     <%
 
-        ShowSearchResult searchResult = new ShowSearchResult();
-        List<String> paths = searchResult.getSearchImages();
+        HttpSession resultSession = request.getSession();
+        List<String> result = (List<String>)resultSession.getAttribute("result");
+        String SearchText = (String)resultSession.getAttribute("searchText");
+        request.setAttribute("text",SearchText);
 
-//        UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
-//        List<String> paths = uploadImage.getImageFilePath(user.getName());
-
-        for(String path:paths) {
+        for(String path:result) {
             String[] strings = path.split("/");
             String p = strings[strings.length - 1];
             request.setAttribute("ph", p);
 
+
     %>
     <div class="img">
-        <a target="_blank" href="#">
-            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
+        <a target="_blank" href="#" title="${ph}">
+            <img id="allImages" src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
         </a>
         <div class="desc">
-            我的图片${ph}
+            图${ph}
         </div>
     </div>
 
@@ -94,23 +96,33 @@
         }
     %>
 
+
+    <div class="searchPageTitle">
+        <p>
+            搜索"${text}"的结果
+        </p>
+
+    </div>
+
 </div>
 
 
 
 
 
-<%
+<%--<%
     }
     else{
-%>
-<p id="calltologin">
-    你好像还没有登录哦
-    <a href="/jsp/login.jsp">返回登录</a>
-</p>
+%>--%>
+<%--<p id="calltologin">--%>
+    <%--你好像还没有登录哦--%>
+    <%--<a href="/jsp/login.jsp">返回登录</a>--%>
+<%--</p>--%>
+<%--
 <%
     }
 %>
+--%>
 
 </body>
 </html>

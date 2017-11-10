@@ -4,10 +4,28 @@ body{
 }
 .selected_img{
     position: absolute;
-    top:150px;
+    top:120px;
     left:200px;
-    /*background-color: beige;*/
-    width:962px;
+    overflow-x: auto;
+    background-color: beige;
+    height:340px;
+    background-image:url(../images/icons/selected_img_background.png);
+
+    width: 990px;
+    transition: height 1.5s;
+
+    border-radius:25px;
+    -moz-transition:height 1.3s; /* Firefox 4 */
+    -webkit-transition:height 1.3s; /* Safari and Chrome */
+    -o-transition:height 1.3s; /* Opera */
+
+    box-shadow: 10px 10px 5px #888888;
+}
+.selected_img:hover{
+    /*transition: all 1.4s;*/
+    /*transform: scale(1.2);*/
+    height:440px;
+    cursor: crosshair;
 }
 
 
@@ -42,8 +60,8 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    height: 150px;
-    width: 150px;
+    height: 128px;
+    width: 128px;
 }
 .choose_img input:hover{
     cursor: pointer;
@@ -52,10 +70,10 @@ body{
 
 
 .choose_img .img_button{
-    width: 150px;
-    height: 150px;
-    /*background-image: url(../images/list/11.jpg);*/
-    background-color: #0573bd;
+    width: 128px;
+    height: 128px;
+    background-image: url(../images/icons/add_pic.png);
+    /*background-color: #0573bd;*/
 }
 
 
@@ -67,7 +85,7 @@ h2{
 
 .cancelupload{
     position: absolute;
-    top:10px;
+    top:8px;
 
     left:50px;
 }
@@ -76,24 +94,68 @@ h2{
 }
 .cancelupload a:hover{
     cursor: pointer;
-    color:deepskyblue;
 }
 
 .sureupload{
     position: absolute;
-    top:10px;
-    background-color: #0573bd;
+    top:140px;
+    /*background-color: #0573bd;*/
 
-    height:50px;
+    /*height:50px;*/
     font-size: 20px;
-    width:200px;
+    /*width:200px;*/
     right:50px;
 }
-.cancelupload input,.sureupload input{
-    background-color: #0573bd;
-
-    height:50px;
+.sureupload input{
+    position: absolute;
+    /*top:140px;*/
+    opacity: 0;
+    height:80px;
     font-size: 20px;
-    width:200px;
+    width:80px;
+    /*right:50px;*/
 }
+
+.sureupload input:hover{
+    cursor: pointer;
+
+}
+
+
+.suretopub{
+    position: absolute;
+    top:250px;
+    /*background-color: #0573bd;*/
+
+    /*height:50px;*/
+    font-size: 20px;
+    /*width:200px;*/
+    right:50px;
+}
+.suretopub input{
+    position: absolute;
+    /*top:140px;*/
+    opacity: 0;
+    height:100px;
+    font-size: 20px;
+    width:100px;
+    /*right:50px;*/
+}
+
+.suretopub input:hover{
+    cursor: pointer;
+
+}
+
+.img_upload img{
+    width:100px;
+    height:100px;
+}
+/*.cancelupload input,.sureupload input{*/
+/*background-color: #0573bd;*/
+
+/*height:50px;*/
+/*font-size: 20px;*/
+/*width:200px;*/
+/*}*/
 

@@ -23,6 +23,14 @@
 
 
     <a class="logo_l" href="/" title="返回首页"></a>
+    <form class="searchBar">
+        <input class="searchImg" type="search"  placeholder="搜索图片.."
+               onfocus="this.style.backgroundColor='gainsboro'"
+               onblur="this.style.backgroundColor='beige'">
+        <input class="goSearch" type="submit" value="搜索">
+    </form>
+
+
     <div class="nav_z">
         <ul id="navul" class="cl">
             <li id="start">
@@ -63,8 +71,8 @@
 <div class="funclist">
     <ul>
         <li id="upload">
-            <%--<a href="/jsp/uploadImages.jsp" title="上传图片">上传图片</a>--%>
-            <a href="/jsp/test.jsp" title="上传图片">上传图片</a>
+            <a href="/jsp/uploadImages.jsp" title="上传图片">上传图片</a>
+            <%--<a href="/jsp/test.jsp" title="上传图片">上传图片</a>--%>
         </li>
         <li id="sort">
             <a href="/jsp/sortImages.jsp" title="排序图片">排序图片</a>
@@ -102,9 +110,9 @@
         request.setAttribute("ph", p);
 
 %>
-    <div class="img">
+    <div class="img" title="${ph}">
         <a target="_blank" href="#">
-            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="300" height="200px">
+            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
         </a>
         <div class="desc">
             我的图片${ph}

@@ -43,7 +43,7 @@ ul, ul li{
 }
 
 .logo_l{
-    width:200px;
+    width:150px;
     height:55px;
     float:left;
     background:url(../images/logo.png) no-repeat left;
@@ -56,6 +56,38 @@ ul, ul li{
     left:500px;
     display: inline;
 }
+
+.searchBar{
+    float:left;
+}
+.searchImg{
+    position: fixed;
+    top:10px;
+    height:35px;
+    border-radius:5px;
+    background-color: beige;
+    border:none;
+
+    width:280px;
+}
+.goSearch{
+    position: fixed;
+    top:10px;
+
+    left:435px;
+    float: left;
+    height:35px;
+    background:beige;
+    border:none;
+    border-radius:5px;
+
+}
+.goSearch:hover{
+    cursor: pointer;
+    background-color: gainsboro;
+
+}
+
 
 
 .nav_z a:hover{
@@ -81,8 +113,16 @@ ul, ul li{
 #top_login_success{
     position: fixed;
     font-size:20px;
-    top:5px;
-    left:1060px;
+    top:18px;
+    background-color: #0573bd;
+    left:1050px;
+
+}
+.show_user{
+    width:80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #top_login_success a{
@@ -96,8 +136,8 @@ ul, ul li{
     font-style: inherit;
     color:#bebebe;
     position: fixed;
-    left:1050px;
-    top:30px;
+    left:1130px;
+    top:20px;
     background:transparent;
     border:none;
 }
@@ -238,10 +278,17 @@ a{
     /*border-bottom:4px outset blue;*/
     /*border: medium solid #0573bd;*/
     /*border:1px;*/
-    left:300px;
-    width:1000px;
+    left:220px;
+    width:1200px;
 }
 .list div{
+}
+
+
+.searchPageTitle{
+    position: fixed;
+    top:60px;
+    left:20px;
 }
 
 .mygallerylist{
@@ -253,9 +300,9 @@ a{
     /*border-bottom:4px outset blue;*/
     /*border: medium solid #0573bd;*/
     /*border:1px;*/
-    left:300px;
+    left:220px;
     float: left;
-    width:1000px;
+    width:1200px;
 }
 
 
@@ -265,7 +312,7 @@ a{
      border:1px solid #bebebe;
      height:auto;
      background-color: cornflowerblue;
-     width:auto;
+     width:260px;
      margin-bottom: 15px;
      margin-right: 10px;
      float:left;
@@ -278,29 +325,35 @@ div .img img
     border:1px solid #bebebe;
 }
 
-div .img a:link img{
+div .img img:link{
     border:1px solid #eeeeee;
 
 }
-div .img a:visited img
+div .img img:visited
 {
     border:1px solid #eebebe;
 }
-div .img a:hover img
+div .img img:hover
 {
-    transition: all 1s;
-    border:1px solid #333333;
+    transition: all 0.3s;
+    border:1px solid red;
+    cursor: pointer;
     transform: scale(1.2);
+    /*border-color: red;*/
 }
 div .desc
 {
     text-align:center;
     font-weight:normal;
     font-size:15px;
+    width:250px;
+    height:24px;
     background-color: transparent;
-
     color: #000;
-    margin:10px 5px 10px 5px;
+    margin:5px 3px 5px 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .back_to_top{
@@ -312,4 +365,27 @@ div .desc
     color: #000;
     right: 25px;
     border:1px solid #888;
+}
+
+
+.searchPageBar{
+    position: fixed;
+    top:270px;
+    left:400px;
+}
+.searchPageImg{
+    width: 500px;
+    height: 30px;
+}
+
+.searchPageGo{
+    height: 30px;
+    width: 80px;
+    background-color: deepskyblue;
+    border:none;
+    color:black;
+    cursor: pointer;
+}
+.searchPageGo:hover{
+    background-color: royalblue;
 }
