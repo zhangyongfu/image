@@ -16,17 +16,27 @@ public class UploadPubImages {
 
 
 
-    public String addImageFilePath(String imagePath) {
+    public String addImageFilePath(String imagePath,String userName,String imgName,float fileSize) {
 
 
         try{
             connection = databaseConnection.getDbConnection();
             if(connection != null)
             {
-                String sql = "insert into pubimages(pubimg_id,pubimg_path) values(null,?);";
+                String sql = "insert into pubimages(pubimg_id,pubimg_path,img_upload_time,img_upload_user,img_name,img_size_MB) values(null,?,now(),?,?,?);";
+
+//                connection.prepareStatement("create table if not exists pubimages(pubimg_id int(20) not null primary key auto_increment,pubimg_path varchar(255) not null,img_upload_time varchar(255) not null,img_upload_user varchar(255) not null,img_name varchar(255),img_size_MB float not null);");
+
+
                 java.sql.PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
                 preparedStatement.setString(1,imagePath);
+
+                preparedStatement.setString(2,userName);
+
+                preparedStatement.setString(3,imgName);
+
+                preparedStatement.setFloat(4,fileSize);
 
                 preparedStatement.executeUpdate();
             }
@@ -53,6 +63,9 @@ public class UploadPubImages {
             if(connection != null)
             {
                 String sql = "select pubimg_id,pubimg_path from pubimages;";
+
+//                connection.prepareStatement("create table if not exists pubimages(pubimg_id int(20) not null primary key auto_increment,pubimg_path varchar(255) not null,img_upload_time varchar(255) not null,img_upload_user varchar(255) not null,img_name varchar(255),img_size_MB float not null);");
+
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
 

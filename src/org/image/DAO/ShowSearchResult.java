@@ -21,7 +21,8 @@ public class ShowSearchResult {
             connection = databaseConnection.getDbConnection();
             if(connection != null)
             {
-                String sql = "select pubimg_id,pubimg_path from pubimages where pubimg_path like ?;";
+                String sql = "select img_name from pubimages where img_name like ?;";
+
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -31,7 +32,7 @@ public class ShowSearchResult {
                 ResultSet resultSet = preparedStatement.executeQuery();
 
                 while (resultSet.next()){
-                    paths.add(resultSet.getString("pubimg_path"));
+                    paths.add(resultSet.getString("img_name"));
                 }
             }
         }catch (Exception e){

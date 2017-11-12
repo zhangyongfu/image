@@ -3,13 +3,16 @@ package org.image.servlet;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.image.DAO.ImageUserDaoImpl;
 import org.image.model.UploadPubImages;
+import org.image.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,6 +39,8 @@ public class UploadPubImgServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request,HttpServletResponse response)
             throws ServletException, IOException {
+
+        response.setCharacterEncoding("UTF-8");
         // 检测是否为多媒体上传
         if (!ServletFileUpload.isMultipartContent(request)) {
             // 如果不是则停止
@@ -88,9 +93,19 @@ public class UploadPubImgServlet extends HttpServlet {
                         // 保存文件到硬盘
                         item.write(storeFile);
 
+                        float fileSize = storeFile.length()/1024.0f/1024.0f;
+
+//                        System.out.println("file:" + storeFile.length()/1024.0/1024.0 + "MB");
+
 
                         UploadPubImages imageAdd = new UploadPubImages();
-                        imageAdd.addImageFilePath(filePath);
+                        ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
+                        HttpSession httpSession = request.getSession();
+
+                        User user = (User)httpSession.getAttribute("userName");
+
+                        String userName = imageUserDaoImpl.getUserName(user);
+                        imageAdd.addImageFilePath(filePath,userName,fileName,fileSize);
 
                         System.out.print("hello pub ");
 

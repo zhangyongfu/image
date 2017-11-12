@@ -39,6 +39,7 @@ ul, ul li{
     background:mediumslateblue;
     position:fixed;
     z-index:1;
+
     left:0;
 }
 
@@ -46,16 +47,97 @@ ul, ul li{
     width:150px;
     height:55px;
     float:left;
+    margin:0 auto;
     background:url(../images/logo.png) no-repeat left;
 }
-.nav_z{
-    width:300px;
-    height:60px;
-    float:left;
-    position:fixed;
+.top_menu {
+    /*width: 500px;*/
+    height:55px;
+    position: fixed;
     left:500px;
-    display: inline;
+    /*margin: 0 auto;*/
+    background: mediumslateblue;
+    color: #f0f0f0;
 }
+.top_menu a {
+    display: block;
+    padding: 5px 15px;
+    line-height: inherit;
+    cursor: pointer;
+}
+.primary_menu {
+    line-height: 45px;
+    font-weight: bold;
+}
+.primary_menu a{
+
+    font-size: 18px;
+    color: #bebebe;
+}
+.primary_menu a:hover{
+    color: beige;
+}
+.menu_item {
+    display: inline-block;
+    width:120px;
+    position: relative;
+}
+.menu_item:hover {
+    background-color: #0573bd;
+}
+.menu_item:hover .sub_menu {
+    display: block;
+}
+.sub_menu {
+    font-weight: 300;
+    text-transform: none;
+    display: none;
+    position: absolute;
+    width: 120px;
+    background-color: #0573bd;
+}
+.sub_menu_item:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+/*.nav_z{*/
+    /*width:auto;*/
+    /*height:55px;*/
+    /*float:left;*/
+    /*position:fixed;*/
+    /*left:500px;*/
+    /*display: inline;*/
+/*}*/
+/*.cl li{*/
+    /*white-space: nowrap;*/
+/*}*/
+
+/*.top_menu{*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+/*}*/
+/*.top_menu:hover{*/
+    /*background-color: #9b59b6;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.top_menu:hover .subMenu{*/
+    /*display: block;*/
+
+/*}*/
+
+/*.subMenu{*/
+    /*font-weight: 300;*/
+    /*text-transform: none;*/
+    /*display: none;*/
+    /*position: absolute;*/
+    /*width: 220px;*/
+    /*background-color: #9b59b6;*/
+/*}*/
+
+/*.subItem{*/
+    /*background: rgba(0, 0, 0, 0.1);*/
+/*}*/
 
 .searchBar{
     float:left;
@@ -90,22 +172,22 @@ ul, ul li{
 
 
 
-.nav_z a:hover{
-    color: #FFFFFF;
-    text-decoration:underline;
-}
-#navul li{
-    float:left;
-    width:80px;
-    height:55px;
-    position:relative;
-    text-align:center;
-    line-height:55px;
-}
+/*.nav_z a:hover{*/
+    /*color: #FFFFFF;*/
+    /*text-decoration:underline;*/
+/*}*/
+/*#navul li{*/
+    /*float:left;*/
+    /*width:80px;*/
+    /*height:55px;*/
+    /*position:relative;*/
+    /*text-align:center;*/
+    /*line-height:55px;*/
+/*}*/
 #top_login{
     position: absolute;
     font-size:15px;
-    left:1050px;
+    left:1150px;
     top:20px;
     height: 55px;
     float: right;
@@ -206,9 +288,9 @@ a{
 .leftmunubar{
     width:200px;
     position:fixed;
-    top:30%;
-    height:auto;
-    background-color:mediumslateblue;
+    top:55px;
+    height:100%;
+    background-color: slategray;
 }
 .leftmunubarline{
     height:2px;
@@ -227,8 +309,9 @@ a{
     cursor:pointer;
 }
 .leftmunubar dd{
-    background-color:mediumslateblue;
+    background-color:slategray;
     padding-left:40px;
+    height:40px;
     display: none;
 }
 .leftmunubar dd a{
@@ -268,17 +351,41 @@ a{
     padding-bottom:10px;
 }
 
+.uploadDay{
+    position: relative;
+    bottom:12px;
+    left:-550px;
+}
+
+.new_img{
+    padding: 0 10px 0;
+    margin: 10px 0;
+    position: relative;
+    left:0px;
+    /*top:100px;*/
+    bottom:10px;
+    width:80px;
+    line-height: 5px;
+    border-left: 490px solid #ddd;
+    border-right: 490px solid #ddd;
+    text-align: center;
+
+}
+
+
 
 .list{
     position: absolute;
-    top:100px;
+    top:110px;
     /*border-right:4px outset blue;*/
     /*border-top:4px outset blue;*/
     /*border-left:4px outset blue;*/
     /*border-bottom:4px outset blue;*/
     /*border: medium solid #0573bd;*/
     /*border:1px;*/
-    left:220px;
+    left:130px;
+    /*display: table-cell;*/
+    /*margin:0 auto;*/
     width:1200px;
 }
 .list div{
@@ -293,7 +400,7 @@ a{
 
 .mygallerylist{
     position: absolute;
-    top:100px;
+    top:150px;
     /*border-right:4px outset blue;*/
     /*border-top:4px outset blue;*/
     /*border-left:4px outset blue;*/
@@ -304,7 +411,16 @@ a{
     float: left;
     width:1200px;
 }
+/*.button_text{*/
+    /*border:1px solid #f5f5dc;*/
+    /*position: relative;*/
+    /*width:1150px;*/
+    /*bottom:3px;*/
+/*}*/
 
+.button_text p{
+    margin:auto;
+}
 
  div .img
  {
@@ -367,6 +483,11 @@ div .desc
     border:1px solid #888;
 }
 
+/*.search_hint{*/
+    /*position: relative;*/
+    /*bottom:5px;*/
+    /*left:10px;*/
+/*}*/
 
 .searchPageBar{
     position: fixed;

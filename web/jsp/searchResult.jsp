@@ -30,20 +30,25 @@
         <input class="goSearch" type="submit" value="搜索">
     </form>
 
-    <div class="nav_z">
-        <ul id="navul" class="cl">
-            <li id="start">
-                <a href="/" target="main" title="首页">首页</a>
-            </li>
-            <li id="view">
-                <a href="/jsp/mygallery.jsp" title="我的图库">图库</a>
-            </li>
-            <li id="about">
-                <a href="/jsp/about.jsp" title="关于我们">关于</a>
-            </li>
-        </ul>
-
-
+        <nav class="top_menu">
+            <ul class="primary_menu">
+                <li class="menu_item"><a href="../">首页</a></li>
+                <li class="menu_item"><a style="color:white">图库</a>
+                    <ul class="sub_menu">
+                        <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp" target="_blank">公共图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">私人图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">创建图库</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a>关于</a>
+                    <ul class="sub_menu">
+                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">网站</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">团队</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">反馈</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
 <%--        <%
             HttpSession httpSession = request.getSession();
@@ -62,7 +67,7 @@
             </a>
             ,欢迎你。
         </p>--%>
-    </div>
+
 </div>
 
 

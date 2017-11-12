@@ -16,25 +16,27 @@
 
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../css/about.css" rel="stylesheet" type="text/css" />
-
-    <div id="top_bg">
-        <div class="top">
-            <a class="logo_l" href="/" title="返回首页"></a>
-            <div class="nav_z">
-                <ul id="navul" class="cl">
-                    <li id="start">
-                        <a href="/" target="main" title="首页">首页</a>
-                    </li>
-                    <li id="view">
-                        <a href="mygallery.jsp" title="我的图库">图库</a>
-                    </li>
-                    <li id="about">
-                        <a href="/jsp/about.jsp" title="关于我们">关于</a>
-                    </li>
+    <nav class="top_menu">
+        <ul class="primary_menu">
+            <li class="menu_item"><a href="../" >首页</a></li>
+            <li class="menu_item"><a>图库</a>
+                <ul class="sub_menu">
+                    <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp" target="_blank">公共图库</a></li>
+                    <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">私人图库</a></li>
+                    <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">创建图库</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
+            </li>
+            <li class="menu_item"><a style="color:white">关于</a>
+                <ul class="sub_menu">
+                    <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">网站</a></li>
+                    <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">团队</a></li>
+                    <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">反馈</a></li>
+                </ul>
+            </li>
+            <%--<li class="nav_menu-item"><a href="http://www.lanrentuku.com/" target="_blank">Blog</a></li>--%>
+            <%--<li class="nav_menu-item"><a href="http://www.lanrentuku.com/" target="_blank">Contact</a></li>--%>
+        </ul>
+    </nav>
 
 </head>
 <body>

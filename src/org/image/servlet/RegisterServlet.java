@@ -21,6 +21,7 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
         String name = request.getParameter("name");
         String password = request.getParameter("password");

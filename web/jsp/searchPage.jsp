@@ -18,20 +18,35 @@
         <div class="top">
             <a class="logo_l" href="/" title="返回首页"></a>
 
-            <div class="nav_z">
-                <ul id="navul" class="cl">
-                    <li id="start">
-                        <a href="/" target="main" title="首页">首页</a>
+            <%--<form class="searchBar" action="SearchImgPage" method="get">--%>
+                <%--<input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."--%>
+                       <%--onfocus="this.style.backgroundColor='gainsboro'"--%>
+                       <%--onblur="this.style.backgroundColor='beige'">--%>
+                <%--<input class="goSearch" type="submit" value="搜索">--%>
+            <%--</form>--%>
+
+
+
+            <nav class="top_menu">
+                <ul class="primary_menu">
+                    <li class="menu_item"><a href="/" style="color:white">首页</a></li>
+                    <li class="menu_item"><a>图库</a>
+                        <ul class="sub_menu">
+                            <li class="sub_menu_item"> <a href="pubgallery.jsp" target="_blank">公共图库</a></li>
+                            <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank">私人图库</a></li>
+                            <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank">创建图库</a></li>
+                        </ul>
                     </li>
-                    <li id="view">
-                        <a href="/jsp/mygallery.jsp" title="我的图库">图库</a>
-                        <%--<a href="/jsp/test.jsp" title="我的图库">图库</a>--%>
-                    </li>
-                    <li id="about">
-                        <a href="/jsp/about.jsp" title="关于我们">关于</a>
+                    <li class="menu_item"><a>关于</a>
+                        <ul class="sub_menu">
+                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">网站</a></li>
+                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">团队</a></li>
+                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">反馈</a></li>
+                        </ul>
                     </li>
                 </ul>
-            </div>
+            </nav>
+
             <%
                 HttpSession httpSession = request.getSession();
                 User user = (User)httpSession.getAttribute("userName");
@@ -39,7 +54,7 @@
             %>
             <ul id="">
                 <li id="top_login_success">
-                    <a class="show_user" href="/jsp/userpage.jsp" title="<%=user.getName()%>">
+                    <a class="show_user" href="../jsp/userpage.jsp" title="<%=user.getName()%>">
                         <%
                             out.print(user.getName());
                         %>
@@ -56,9 +71,9 @@
             %>
             <ul>
                 <li id="top_login">
-                    <a id="login" href="/jsp/login.jsp">登录</a>
+                    <a id="login" href="../jsp/login.jsp">登录</a>
                     |
-                    <a id="register" href="/jsp/goregister.jsp">注册</a>
+                    <a id="register" href="../jsp/goregister.jsp">注册</a>
                 </li>
             </ul>
             <%
@@ -74,7 +89,10 @@
 </head>
 <body>
 
-
+<div>
+<%--<div class="search_hint">--%>
+    <%--搜索所有超过100万张图片--%>
+<%--</div>--%>
 
 <form class="searchPageBar" action="/SearchImgPage" method="get">
     <input class="searchPageImg" type="search" name="searchText" placeholder="搜索图片..">
@@ -88,6 +106,6 @@
 
 
 %>
-
+</div>
 </body>
 </html>

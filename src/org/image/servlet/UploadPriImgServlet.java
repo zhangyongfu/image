@@ -39,6 +39,8 @@ public class UploadPriImgServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request,HttpServletResponse response)
             throws ServletException, IOException {
+
+        response.setCharacterEncoding("UTF-8");
         // 检测是否为多媒体上传
         if (!ServletFileUpload.isMultipartContent(request)) {
             // 如果不是则停止
@@ -95,15 +97,17 @@ public class UploadPriImgServlet extends HttpServlet {
 
 //                        if("toPri".equals(request.getParameter("uploadImg"))){
 
+                        float fileSize = storeFile.length()/1024.0f/1024.0f;
 
-                            UploadPriImageDaoImpl imageAdd = new UploadPriImageDaoImpl();
-                            HttpSession httpSession = request.getSession();
-                            User user = (User)httpSession.getAttribute("userName");
-                            ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
-                            String userName = imageUserDaoImpl.getUserName(user);
 
-                            imageAdd.addImageFilePath(filePath,userName);
-//                            System.out.print("hello");
+                        UploadPriImageDaoImpl imageAdd = new UploadPriImageDaoImpl();
+                        HttpSession httpSession = request.getSession();
+                        User user = (User)httpSession.getAttribute("userName");
+                        ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
+                        String userName = imageUserDaoImpl.getUserName(user);
+
+                        imageAdd.addImageFilePath(filePath,userName,fileName,fileSize);
+//                           System.out.print("hello");
 
 //                        }
 //                        else {

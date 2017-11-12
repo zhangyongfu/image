@@ -14,6 +14,8 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../css/gallerystyle.css" rel="stylesheet" type="text/css"/>
 
+    <link href="../css/imgdisplay.css" rel="stylesheet" type="text/css" />
+
 
 </head>
 <body>
@@ -22,7 +24,7 @@
 <div id="top_bg">
 
 
-    <a class="logo_l" href="/" title="返回首页"></a>
+    <a class="logo_l" href="../" title="返回首页"></a>
     <form class="searchBar">
         <input class="searchImg" type="search"  placeholder="搜索图片.."
                onfocus="this.style.backgroundColor='gainsboro'"
@@ -32,17 +34,25 @@
 
 
     <div class="nav_z">
-        <ul id="navul" class="cl">
-            <li id="start">
-                <a href="/" target="main" title="首页">首页</a>
-            </li>
-            <li id="view">
-                <a href="/jsp/mygallery.jsp" title="我的图库">图库</a>
-            </li>
-            <li id="about">
-                <a href="/jsp/about.jsp" title="关于我们">关于</a>
-            </li>
-        </ul>
+        <nav class="top_menu">
+            <ul class="primary_menu">
+                <li class="menu_item"><a href="../">首页</a></li>
+                <li class="menu_item"><a style="color:white">图库</a>
+                    <ul class="sub_menu">
+                        <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp" target="_blank">公共图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">私人图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">创建图库</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a>关于</a>
+                    <ul class="sub_menu">
+                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">网站</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">团队</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">反馈</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
 
 
@@ -55,7 +65,7 @@
         <%--遍历用户个人的图库--%>
         <p id="wel_show">
             亲爱的
-            <a href="/jsp/userpage.jsp">
+            <a href="../jsp/userpage.jsp">
                 <%
                     out.print(user.getName());
 //                    out.print(request.getServletContext().getRealPath("/"));
@@ -66,40 +76,120 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function showByUploadTime() {
+        var defau = document.getElementById("default_display");
+        var uptime = document.getElementById("by_uploadtime_display");
+        defau.className="hideall";
+        uptime.className="displayall";
+    }
+    function showByImgSize() {
+        var defau = document.getElementById("default_display");
+        defau.className="hideall";
+    }
+    function showByImgName() {
+        var defau = document.getElementById("default_display");
+        defau.className="hideall";
+    }
+//    function showByImgSize() {
+//        var defau = document.getElementById("default_display");
+//        defau.className="hideall";
+//    }
+</script>
 
 
+    <div id="upload" class="upload_img">
+        <a href="../jsp/uploadImages.jsp" title="上传图片">
+            <img src="../images/icons/upload.png"></a>
+        <%--<a href="/jsp/test.jsp" title="上传图片">上传图片</a>--%>
+    </div>
 <div class="funclist">
     <ul>
-        <li id="upload">
-            <a href="/jsp/uploadImages.jsp" title="上传图片">上传图片</a>
-            <%--<a href="/jsp/test.jsp" title="上传图片">上传图片</a>--%>
+        <li id="sort" onclick="showByUploadTime()">
+            <a title="上传时间排序">
+                <img src="../images/icons/up.png">
+                上传时间</a>
         </li>
-        <li id="sort">
-            <a href="/jsp/sortImages.jsp" title="排序图片">排序图片</a>
+        <li id="share" onclick="showByImgSize()">
+            <a href="../jsp/shareImages.jsp" title="图片大小排序">
+                <img src="../images/icons/up.png">
+                图片大小</a>
         </li>
-        <li id="share">
-            <a href="/jsp/shareImages.jsp" title="分享图片">分享图片</a>
-        </li>
-        <li id="upload1">
-            <a href="/jsp/mygallery.jsp" title="管理图片">管理图片</a>
+        <li id="upload1" onclick="showByImgName()">
+            <a href="../jsp/mygallery.jsp" title="图片名称排序">
+                <img src="../images/icons/up.png">
+                图片名称</a>
         </li>
         <li id="sort1">
-            <a href="/jsp/mygallery.jsp" title="功能待定">功能待定</a>
-        </li>
-        <li id="share1">
-            <a href="/jsp/mygallery.jsp" title="功能待定">功能待定</a>
-        </li>
-        <li id="upload2">
-            <a href="/jsp/mygallery.jsp" title="功能待定">功能待定</a>
-        </li>
-
+            <a href="../jsp/mygallery.jsp" title="未知">
+                <img src="../images/icons/up.png">
+                未知</a>
         </li>
     </ul>
 </div>
 
 
 
-<div class="mygallerylist">
+<div class="mygallerylist" id="default_display">
+<%
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+    List<String> paths = uploadImage.getImageFilePath(user.getName());
+
+
+    for(String path:paths) {
+        String[] strings = path.split("/");
+        String p = strings[strings.length - 1];
+        request.setAttribute("ph", p);
+
+%>
+    <div class="img" title="${ph}">
+        <a target="_blank" href="#">
+            <img src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
+        </a>
+        <div class="desc">
+            我的图片${ph}
+        </div>
+    </div>
+
+<%
+        request.removeAttribute("ph");
+    }
+%>
+
+</div>
+
+<%--
+
+<div class="mygallerylist" id="hideall">
+<%
+    UploadPriImageDaoImpl showImgByUploadtime = new UploadPriImageDaoImpl();
+    List<String> pathsbyUploadTime = showImgByUploadtime.getImagesUploadTime();
+
+    for(String path:pathsbyUploadTime) {
+        String[] strings = path.split("/");
+        String img = strings[strings.length - 1];
+        request.setAttribute("i", img);
+
+%>
+    <div class="img" title="${ph}">
+        <a target="_blank" href="#">
+            <img src="http://localhost:8080/i/img/${i}" alt="Ballade" width="250" height="170px">
+        </a>
+        <div class="desc">
+            我的图片${ph}
+        </div>
+    </div>
+
+<%
+        request.removeAttribute("ph");
+    }
+%>
+
+</div>
+--%>
+
+<%--
+<div class="mygallerylist" id="default_display">
 <%
     UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
     List<String> paths = uploadImage.getImageFilePath(user.getName());
@@ -125,6 +215,42 @@
 %>
 
 </div>
+
+
+<div class="mygallerylist" id="default_display">
+<%
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+    List<String> paths = uploadImage.getImageFilePath(user.getName());
+
+    for(String path:paths) {
+        String[] strings = path.split("/");
+        String p = strings[strings.length - 1];
+        request.setAttribute("ph", p);
+
+%>
+    <div class="img" title="${ph}">
+        <a target="_blank" href="#">
+            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
+        </a>
+        <div class="desc">
+            我的图片${ph}
+        </div>
+    </div>
+
+    --%>
+
+
+<%--<%--%>
+        <%--request.removeAttribute("ph");--%>
+    <%--}--%>
+<%--%>--%>
+
+<%--</div>--%>
+
+
+
+
+
 
 
 

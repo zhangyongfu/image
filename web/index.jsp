@@ -1,13 +1,17 @@
-<%@ page import="org.image.model.User" %>
-<%@ page import="java.io.PrintWriter" %>
-<%@ page import="java.util.List" %>
-<%@ page import="org.image.model.UploadPubImages" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-10-18
   Time: 下午8:29
   To change this template use File | Settings | File Templates.
 --%>
+
+<%@ page import="org.image.model.User" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.List" %>
+<%@ page import="org.image.model.UploadPubImages" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -16,34 +20,33 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"  />
   <title>Image</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <%--<link href="css/style.css" rel="stylesheet" type="text/css" />--%>
+    <link href="css/test.css" rel="stylesheet" type="text/css" />
 
     <div id="top_bg">
       <div class="top">
         <a class="logo_l" href="/" title="返回首页"></a>
 
-        <form class="searchBar" action="SearchImgPage" method="get">
-          <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
-                 onfocus="this.style.backgroundColor='gainsboro'"
-                 onblur="this.style.backgroundColor='beige'">
-          <input class="goSearch" type="submit" value="搜索">
-        </form>
-
-
-        <div class="nav_z">
-          <ul id="navul" class="cl">
-            <li id="start">
-              <a href="/" target="main" title="首页">首页</a>
+        <nav class="top_menu">
+          <ul class="primary_menu">
+            <li class="menu_item"><a href="/" style="color:white">首页</a></li>
+            <li class="menu_item"><a>图库</a>
+              <ul class="sub_menu">
+                <li class="sub_menu_item"> <a href="/jsp/pubgallery.jsp" target="_blank">公共图库</a></li>
+                <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank">私人图库</a></li>
+                <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank">创建图库</a></li>
+              </ul>
             </li>
-            <li id="view">
-              <a href="/jsp/mygallery.jsp" title="我的图库">图库</a>
-              <%--<a href="/jsp/test.jsp" title="我的图库">图库</a>--%>
-            </li>
-            <li id="about">
-              <a href="/jsp/about.jsp" title="关于我们">关于</a>
+            <li class="menu_item"><a>关于</a>
+              <ul class="sub_menu">
+                <li class="sub_menu_item"> <a href="/jsp/about.jsp" target="_blank">网站</a></li>
+                <li class="sub_menu_item"> <a href="/jsp/about.jsp" target="_blank">团队</a></li>
+                <li class="sub_menu_item"> <a href="/jsp/about.jsp" target="_blank">反馈</a></li>
+              </ul>
             </li>
           </ul>
-        </div>
+        </nav>
+
         <%
           HttpSession httpSession = request.getSession();
           User user = (User)httpSession.getAttribute("userName");
@@ -82,100 +85,52 @@
 
       </div>
     </div>
-
-<%--
-    <style>
-      .max{
-        width:100%;
-        height:auto;}
-      .min{
-        width:300px;
-        height:auto;
-      }
-    </style>
-
-
-
-    <script defer="defer" language="JavaScript">
-        $(function () {
-            $('.pub_img').click(function () {
-                $(this).toggleClass('min');
-                $(this).toggleClass('max');
-
-            });
-
-        });
-    </script>
-
---%>
-
   </head>
   <body>
 
-  <div class="leftmenu">
-    <div class="leftmunubar">
-      <div class="leftmunubarline"></div>
-      <dl class="system_log">
-        <dt onClick="changeImage()">菜单1<img src="images/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">菜单1-1</a></dd>
-        <dd><a href="#">菜单1-2</a></dd>
-        <dd><a href="#">菜单1-3</a></dd>
-      </dl>
-      <dl class="custom">
-        <dt onClick="changeImage()">菜单2<img src="images/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">菜单2-1</a></dd>
-        <dd><a href="#">菜单2-2</a></dd>
-        <dd><a href="#">菜单2-3</a></dd>
-      </dl>
-      <dl class="channel">
-        <dt>菜单3<img src="images/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">菜单3-1</a></dd>
-        <dd><a href="#">菜单3-2</a></dd>
-        <dd><a href="#">菜单3-3</a></dd>
-      </dl>
-      <dl class="app">
-        <dt onClick="changeImage()">菜单4<img src="images/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">菜单4-1</a></dd>
-        <dd><a href="#">菜单4-2</a></dd>
-        <dd><a href="#">菜单4-3</a></dd>
-      </dl>
-      <dl class="cloud">
-        <dt>菜单4<img src="images/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">菜单4-1</a></dd>
-        <dd class="first_dd"><a href="#">菜单4-2</a></dd>
-        <dd class="first_dd"><a href="#">菜单4-3</a></dd>
-      </dl>
-      <dl class="syetem_management">
-        <dt>菜单5<img src="images/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">菜单5-1</a></dd>
-        <dd><a href="#">菜单5-2</a></dd>
-        <dd><a href="#">菜单5-3</a></dd>
-      </dl>
-    </div>
-  </div>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript">
-      $(".leftmunubar dt").css({"background-color":"mediumslateblue"});
-      $(".leftmunubar dt img").attr("src","images/left/select_xl01.png");
-      $(function(){
-          $(".leftmunubar dt").click(function(){
-              //每次点击都把所有“dt”设置为"mediumslateblue"颜色
-              $(".leftmunubar dt").css({"background-color":"mediumslateblue"})
-              //把本次点击的对象设置为"midnightblue"颜色
-              $(this).css({"background-color": "midnightblue"});
-              $(this).parent().find('dd').removeClass("chioced_menu");
-              $(".leftmunubar dt img").attr("src","images/left/select_xl01.png");
-              $(this).parent().find('img').attr("src","images/left/select_xl.png");
-              $(".chioced_menu").slideUp();
-              $(this).parent().find('dd').slideToggle();
-              $(this).parent().find('dd').addClass("chioced_menu");
-          });
-      })
-  </script>
+  <div class="search_list">
 
-  <div class="list">
+
+  <form class="searchPageBar" action="/SearchImgPage" method="get">
+
+    <div class="web_logo">
+
+
+    <img src="images/icons/logo1.png">
+      IMAGE LOGO
+    </div>
+    <div class="search_hint">
+      <img src="images/icons/search.png">
+      百万张图片等你搜
+
+    </div>
+
+    <input class="searchPageImg" type="search" name="searchText" placeholder="搜索图片..">
+    <input class="searchPageGo" type="submit" value="搜索">
+
+
+  </form>
+  <%--<%--%>
+    <%--HttpSession text = request.getSession();--%>
+    <%--String searchText = (String)text.getAttribute("searchText");--%>
+    <%--out.print(searchText);--%>
+  <%--%>--%>
+  </div>
+  <div class="index_img">
+    <h2>
+      一图一故事
+    </h2>
+
+    <hr style="border: none;border-top:4px solid #eebebe;">
+
+    <div class="new_img">
+
+    </div>
+
+
+
     <%
-//      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+      //      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
       UploadPubImages uploadPubImages = new UploadPubImages();
 
       List<String> paths = uploadPubImages.getPubImgFilePath();
@@ -188,12 +143,9 @@
     %>
 
     <div class="img" title="${ph}">
-      <%--<a target="_blank" href="#">--%>
-        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-      <%--</a>--%>
-      <div class="desc">
-        图片&nbsp;${ph}
-      </div>
+      <a href="" target="_blank">
+      <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+      </a>
     </div>
 
     <%
@@ -204,149 +156,11 @@
   </div>
 
 
-  <%--
 
-  <div class="list">
-    <div class="img">
-    <a target="_blank" href="#">
-      <img src="./images/list/0.jpg" alt="Ballade" width="300px" height="200px">
-    </a>
-    <div class="desc">图片1</div>
-  </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/1.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片2</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/2.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片3</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/3.jpg" alt="Ballade" width="300" height="200px">
-      </a>
-      <div class="desc">图片4</div>
-    </div>
 
-    <div class="img">
-    <a target="_blank" href="#">
-      <img src="./images/list/4.jpg" alt="Ballade" width="300px" height="200px">
-    </a>
-    <div class="desc">图片5</div>
-  </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/5.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片6</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/6.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片7</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/7.jpg" alt="Ballade" width="300" height="200px">
-      </a>
-      <div class="desc">图片8</div>
-    </div>
-    <div class="img">
-    <a target="_blank" href="#">
-      <img src="./images/list/8.jpg" alt="Ballade" width="300px" height="200px">
-    </a>
-    <div class="desc">图片9</div>
-  </div>
-    <div class="img">
-    <a target="_blank" href="#">
-      <img src="./images/list/0.jpg" alt="Ballade" width="300px" height="200px">
-    </a>
-    <div class="desc">图片1</div>
-  </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/1.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片2</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/2.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片3</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/3.jpg" alt="Ballade" width="300" height="200px">
-      </a>
-      <div class="desc">图片4</div>
-    </div>
 
-    <div class="img">
-    <a target="_blank" href="#">
-      <img src="./images/list/4.jpg" alt="Ballade" width="300px" height="200px">
-    </a>
-    <div class="desc">图片5</div>
   </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/5.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片6</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/6.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片7</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/7.jpg" alt="Ballade" width="300" height="200px">
-      </a>
-      <div class="desc">图片8</div>
-    </div>
-    <div class="img">
-    <a target="_blank" href="#">
-      <img src="./images/list/8.jpg" alt="Ballade" width="300px" height="200px">
-    </a>
-    <div class="desc">图片9</div>
-  </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/9.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片10</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/10.jpg" alt="Ballade" width="300px" height="200px">
-      </a>
-      <div class="desc">图片11</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/11.jpg" alt="Ballade" width="300" height="200px">
-      </a>
-      <div class="desc">图片12</div>
-    </div>
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="./images/list/12.jpg" alt="Ballade" width="300" height="200px">
-      </a>
-      <div class="desc">图片13</div>
-    </div>
-  </div>
---%>
 
-  <button class="back_to_top">
-    返回顶部
-  </button>
 
   </body>
 </html>

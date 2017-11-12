@@ -48,25 +48,104 @@ public class UploadPriImageDaoImpl implements ImageDao {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
-
         return paths;
     }
 
+
+/*
+
+    public List<String> getImagesUploadTime() {
+
+        List<String> paths = new ArrayList<String>();
+
+        try{
+            connection = databaseConnection.getDbConnection();
+            if(connection != null)
+            {
+                String sql = "select img_id,img_path,priimg_upload_time from images order by priimg_upload_time desc;";
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()){
+                    paths.add(resultSet.getString("img_path"));
+                }
+
+//                for(String path:paths){
+
+//                    System.out.println("++++++" + path);
+//                    String[] strings = path.split("/");
+//                    System.out.println("======" + strings[strings.length-1]);
+//                }
+
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return paths;
+    }
+
+*/
+
+/*
+
+    public List<String> getImageFilePath(String username) {
+
+        List<String> paths = new ArrayList<String>();
+
+        try{
+            connection = databaseConnection.getDbConnection();
+            if(connection != null)
+            {
+                String sql = "select img_id,img_path,img_belong_user from images where img_belong_user=?;";
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                preparedStatement.setString(1,username);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()){
+                    paths.add(resultSet.getString("img_path"));
+                }
+
+//                for(String path:paths){
+
+//                    System.out.println("++++++" + path);
+//                    String[] strings = path.split("/");
+//                    System.out.println("======" + strings[strings.length-1]);
+//                }
+
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return paths;
+    }
+*/
+
     @Override
-    public String addImageFilePath(String imagePath,String username) {
+    public String addImageFilePath(String imagePath,String username,String imgName,float imgSize) {
 
 
         try{
             connection = databaseConnection.getDbConnection();
             if(connection != null)
             {
-                String sql = "insert into images values(null,?,?);";
+                String sql = "insert into images values(null,?,?,now(),?,?);";
+
+                connection.prepareStatement("create table if not exists images(img_id int(20) not null primary key auto_increment,img_path varchar(255) not null,img_belong_user varchar(255) not null,priimg_upload_time varchar(255) not null,priimg_name varchar(255),priimg_size_MB float not null);");
+
+
                 java.sql.PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
                 preparedStatement.setString(1,imagePath);
                 preparedStatement.setString(2,username);
+                preparedStatement.setString(3,imgName);
+                preparedStatement.setFloat(4,imgSize);
 
                 preparedStatement.executeUpdate();
             }

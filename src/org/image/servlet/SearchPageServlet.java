@@ -19,22 +19,23 @@ public class SearchPageServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         String IndexPageSearchText = request.getParameter("searchText");
         String SearchPageSearchText = request.getParameter("searchPageImg");
 
         HttpSession searchSession = request.getSession();
 //        searchSession.setAttribute("searchText",IndexPageSearchText);
 
-        if(IndexPageSearchText != null && !"".equals(IndexPageSearchText)){
+        if (IndexPageSearchText != null && !"".equals(IndexPageSearchText)) {
             System.out.println("search success");
 
             ShowSearchResult searchResult = new ShowSearchResult();
             List<String> paths = searchResult.getSearchImages(IndexPageSearchText);
-            searchSession.setAttribute("searchText",IndexPageSearchText);
-            searchSession.setAttribute("result",paths);
+            searchSession.setAttribute("searchText", IndexPageSearchText);
+            searchSession.setAttribute("result", paths);
 
 
-            for(String path:paths) {
+            for (String path : paths) {
                 System.out.print(path);
 //                String[] strings = path.split("/");
 //                String p = strings[strings.length - 1];
@@ -44,11 +45,15 @@ public class SearchPageServlet extends HttpServlet {
             System.out.println("text:" + IndexPageSearchText);
             response.sendRedirect("/jsp/searchResult.jsp");
 
-        }else {
+        } else {
             System.out.println("search fail");
             response.sendRedirect("/jsp/searchPage.jsp");
 
         }
+
+    }
+
+    public void SearchImg(){
 
     }
 }

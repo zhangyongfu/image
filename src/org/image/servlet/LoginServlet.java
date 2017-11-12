@@ -30,6 +30,8 @@ public class LoginServlet extends HttpServlet {
 //        response.setContentType("text/html;charset=GB18030");
 
         //获得需要登录的用户名和密码。
+//        response.setCharacterEncoding("UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
