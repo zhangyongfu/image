@@ -2,15 +2,15 @@ package org.image.model;
 
 public class User {
     private int id;
-    private String email;
+    private String tel;
     private String name;
     private String password;
 
     public User() {
     }
 
-    public User(String email, String name, String password) {
-        this.email = email;
+    public User(String tel, String name, String password) {
+        this.tel = tel;
         this.name = name;
         this.password = password;
     }
@@ -23,12 +23,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getTel() {
+        return tel;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public String getName() {

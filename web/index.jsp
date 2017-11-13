@@ -55,7 +55,7 @@
         %>
         <ul id="">
           <li id="top_login_success">
-            <a class="show_user" href="/jsp/userpage.jsp" title="<%=user.getName()%>">
+            <a class="show_user" href="/userinformation" title="<%=user.getName()%>">
               <%
                 out.print(user.getName());
               %>
@@ -156,27 +156,34 @@
 
 
       <%
+
+
         //      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
         UploadPubImages uploadPubImages = new UploadPubImages();
 
         List<String> paths = uploadPubImages.getPubImgFilePath();
 
-        for(int i =0;i<15;i++) {
-          String[] strings = paths.get(i).split("/");
-          String p = strings[strings.length - 1];
-          request.setAttribute("ph", p);
+        if(null !=paths && paths.size() != 0){
 
-      %>
 
-      <div class="img" title="${ph}">
-        <a href="" target="_blank">
-        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-        </a>
-      </div>
+          for(int i =0;i<15;i++) {
+            String[] strings = paths.get(i).split("/");
+            String p = strings[strings.length - 1];
+            request.setAttribute("ph", p);
 
-      <%
-          request.removeAttribute("ph");
+        %>
+
+        <div class="img" title="${ph}">
+          <a href="" target="_blank">
+          <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+          </a>
+        </div>
+
+        <%
+            request.removeAttribute("ph");
+          }
         }
+
       %>
 
     </div>

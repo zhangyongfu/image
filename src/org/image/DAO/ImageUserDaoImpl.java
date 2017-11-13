@@ -2,7 +2,6 @@ package org.image.DAO;
 
 import org.image.model.User;
 
-import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +30,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
         try{
             connection = databaseConnection.getDbConnection();
             if(connection != null){
-                String sql = "select id,email,username from users where username=? and email=?";
+                String sql = "select id,tel,username from users where username=? and email=?";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -39,7 +38,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
 
 //                System.out.println("username:" + user.getName());
 
-                preparedStatement.setString(2,user.getEmail());
+                preparedStatement.setString(2,user.getTel());
 //                System.out.println("email:" + user.getEmail());
 
 
@@ -86,7 +85,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
             connection = databaseConnection.getDbConnection();
             if(connection != null){
                 user = new User();
-                String sql = "select id,email,username,userpassword from users where username=? and userpassword=?";
+                String sql = "select id,tel,username,userpassword from users where username=? and userpassword=?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1,name);
                 preparedStatement.setString(2,password);
@@ -181,16 +180,16 @@ public class ImageUserDaoImpl implements ImageUserDao {
 
             if(connection != null){
 //                String sql = "select * from users";
-                String email = user.getEmail();
+                String tel = user.getTel();
                 String name = user.getName();
                 String password = user.getPassword();
-                String sql = "insert into users(email,username,userpassword) values(?,?,?)";
+                String sql = "insert into users(tel,username,userpassword) values(?,?,?)";
 
                 PreparedStatement preparedStatement =connection.prepareStatement(sql);
-                preparedStatement.setString(1,email);
+                preparedStatement.setString(1,tel);
                 preparedStatement.setString(2,name);
                 preparedStatement.setString(3,password);
-                if(email != null && name != null && password != null){
+                if(tel != null && name != null && password != null){
                     preparedStatement.executeUpdate();
                 }
             }

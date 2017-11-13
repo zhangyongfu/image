@@ -39,9 +39,9 @@
                 <li class="menu_item"><a href="../">首页</a></li>
                 <li class="menu_item"><a style="color:white">图库</a>
                     <ul class="sub_menu">
-                        <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp" target="_blank">公共图库</a></li>
-                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">私人图库</a></li>
-                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">创建图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp">公共图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp">私人图库</a></li>
+                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp">创建图库</a></li>
                     </ul>
                 </li>
                 <li class="menu_item"><a>关于</a>
@@ -65,7 +65,7 @@
         <%--遍历用户个人的图库--%>
         <p id="wel_show">
             亲爱的
-            <a href="../jsp/userpage.jsp">
+            <a href="/userinformation">
                 <%
                     out.print(user.getName());
 //                    out.print(request.getServletContext().getRealPath("/"));

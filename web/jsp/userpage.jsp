@@ -1,4 +1,4 @@
-<%--
+<%@ page import="org.image.model.UserInformation" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-11-1
@@ -17,7 +17,9 @@
 </head>
 <body>
 
-
+<%
+    UserInformation userInformation = (UserInformation) request.getAttribute("userInformation");
+%>
 
 <div class="main">
     <div class="test">
@@ -51,78 +53,108 @@
                     <table>
                         <tr>
                             <td class="textpad">姓名</td>
-                            <td>张永富</td>
+                            <td>
+                                <%
+                                    out.print(userInformation.getName());
+                                %>
+                            </td>
                         </tr>
                         <tr>
                             <td class="textpad">电子邮箱</td>
-                            <td>634626064@qq.com</td>
+                            <td>
+                                <%
+                                    out.print(userInformation.getEmail());
+                                %>
+                            </td>
                         </tr>
                         <tr>
                             <td class="textpad">出生时间</td>
-                            <td></td>
+                            <td>
+                                <%
+                                    out.print(userInformation.getBirthday());
+                                %>
+                            </td>
                         </tr>
                         <tr>
                             <td class="textpad">性别</td>
-                            <td>保密</td>
+                            <td>
+                                <%
+                                    out.print(userInformation.getSex());
+                                %>
+                            </td>
                         </tr>
                         <tr>
                             <td class="textpad">签名</td>
-                            <td>好好学习，天天向上。</td>
+                            <td>
+                                <%
+                                out.print(userInformation.getSignature());
+                                %>
+                            </td>
                         </tr>
                         <tr>
                             <td class="textpad">自我介绍</td>
-                            <td>我四年级了。</td>
+                            <td>
+                                <%
+                                    out.print(userInformation.getSelfintro());
+                                %>
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <div id="alterinfor" class="hide">
                     <h3>基本信息</h3>
-                    <table>
-                        <tr>
-                            <td class="textpad">姓名</td>
-                            <td>
-                                <input class="in" type="text" name="姓名" maxlength="20"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="textpad">电子邮箱</td>
-                            <td>
-                                <input class="in" type="email" name="email"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="textpad">出生时间</td>
-                            <td>
-                                <%--这里需要写一个js获取当前年份,输入时间要用js来判断--%>
-                                <input class="intime" type="number" name="quantity" value="1970" oninput="limitYear(this)">
-                                <input class="intime" type="number" name="quantity" value="1" oninput="limitMonth(this)">
-                                <input class="intime" type="number" name="quantity" value="1" oninput="limitDay(this)">
+                    <form id="alterinformation" action="/userinformation" method="post">
+                        <table>
+                            <tr>
+                                <td class="textpad">姓名</td>
+                                <td>
+                                    <input class="in" type="text" name="name" maxlength="20" value="<%out.print(userInformation.getName());%>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textpad">电子邮箱</td>
+                                <td>
+                                    <input class="in" type="email" name="email" value="<%out.print(userInformation.getEmail());%>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textpad">出生时间</td>
+                                <td>
+                                    <%--这里需要写一个js获取当前年份,输入时间要用js来判断--%>
+                                    <input class="intime" type="number" name="year" value="1970" oninput="limitYear(this)">
+                                    <input class="intime" type="number" name="month" value="1" oninput="limitMonth(this)">
+                                    <input class="intime" type="number" name="day" value="1" oninput="limitDay(this)">
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="textpad">性别</td>
-                            <td>
-                                <input class="sex" type="radio" name="sex" value="male" />男
-                                <input class="sex" type="radio" name="sex" value="female"/>女
-                                <input class="sex" type="radio" name="sex" value="null" checked/>保密
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="textpad">签名</td>
-                            <td>
-                                <input class="in" type="text" name="签名" value="" maxlength="20" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="textpad">自我介绍</td>
-                            <td>
-                                <textarea class="intro" name="selfIntro"></textarea>
-                            </td>
-                        </tr>
-                    </table>
-                    <input type="button" value="返回" onclick="backinfor(this)" style="margin-right: 60px"/>
-                    <input type="submit" value="提交" style="margin-top:25px"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textpad">性别</td>
+                                <td>
+                                    <input class="sex" type="radio" name="sex" value="male" />男
+                                    <input class="sex" type="radio" name="sex" value="female"/>女
+                                    <input class="sex" type="radio" name="sex" value="null" checked/>保密
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textpad">签名</td>
+                                <td>
+                                    <input class="in" type="text" name="signature" value="<%out.print(userInformation.getSignature());%>" maxlength="20" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textpad">自我介绍</td>
+                                <td>
+                                    <textarea class="intro" name="selfIntro">
+                                        <%
+                                            out.print(userInformation.getSelfintro());
+                                        %>
+                                    </textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="button" value="返回" onclick="backinfor(this)" style="margin-right: 60px"/>
+                        <input type="submit" value="提交" style="margin-top:25px"/>
+                    </form>
                 </div>
 
             </nav>

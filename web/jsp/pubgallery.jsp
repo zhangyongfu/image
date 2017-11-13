@@ -62,7 +62,7 @@
             %>
             <ul id="">
                 <li id="top_login_success">
-                    <a class="show_user" href="userpage.jsp" title="<%=user.getName()%>">
+                    <a class="show_user" href="/userinformation" title="<%=user.getName()%>">
                         <%
                             out.print(user.getName());
                         %>
@@ -213,184 +213,188 @@
                 //      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
                 UploadPubImages uploadPubImages = new UploadPubImages();
                 List<String> paths = uploadPubImages.getPubImgFilePath();
-                Collections.reverse(paths);
-                for(int i =0;i<8;i++) {
-                    String[] strings = paths.get(i).split("/");
-                    String p = strings[strings.length - 1];
-                    request.setAttribute("ph", p);
-            %>
-            <div class="img" title="${ph}">
-                <%--<a target="_blank" href="#">--%>
-                <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                <%--</a>--%>
-                <div class="desc">
-                    图片&nbsp;${ph}
-                </div>
-            </div>
-            <%
-                    request.removeAttribute("ph");
-                }
-            %>
-        </div>
-    </div>
-    <div class="list">
+                if(null != paths && paths.size() != 0){
 
-        <div class="uploadDay">
-            <ul>
-                <li class="time_title">
-                    <%
-                        Date today1 = new Date();
-                        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
-                        String dateString1 = formatter1.format(today1);
-                        out.print(dateString1);
-                    %>
-                    最新上传
-                </li>
-                <li class="more">
-                    <a href="">
+                    Collections.reverse(paths);
+                    for(int i =0;i<8;i++) {
+                        String[] strings = paths.get(i).split("/");
+                        String p = strings[strings.length - 1];
+                        request.setAttribute("ph", p);
+                %>
+                <div class="img" title="${ph}">
+                    <%--<a target="_blank" href="#">--%>
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <%--</a>--%>
+                    <div class="desc">
+                        图片&nbsp;${ph}
+                    </div>
+                </div>
+                <%
+                        request.removeAttribute("ph");
+                    }
+                %>
+            </div>
+        </div>
+        <div class="list">
 
-                    更多>>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="allImgs">
-            <%
-                for(int i =0;i<8;i++) {
-                    String[] strings = paths.get(i).split("/");
-                    String p = strings[strings.length - 1];
-                    request.setAttribute("ph", p);
-            %>
-            <div class="img" title="${ph}">
-                <%--<a target="_blank" href="#">--%>
-                <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                <%--</a>--%>
-                <div class="desc">
-                    图片&nbsp;${ph}
-                </div>
+            <div class="uploadDay">
+                <ul>
+                    <li class="time_title">
+                        <%
+                            Date today1 = new Date();
+                            SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
+                            String dateString1 = formatter1.format(today1);
+                            out.print(dateString1);
+                        %>
+                        最新上传
+                    </li>
+                    <li class="more">
+                        <a href="">
+
+                        更多>>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <%
-                    request.removeAttribute("ph");
-                }
-            %>
-        </div>
-    </div>
-    <div class="list">
-        <div class="uploadDay">
-            <ul>
-                <li class="time_title">
-                    <%
-                        Date today2 = new Date();
-                        SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
-                        String dateString2 = formatter2.format(today2);
-                        out.print(dateString2);
-                    %>
-                    最新上传
-                </li>
-                <li class="more">
-                    <a href="">
-                    更多>>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="allImgs">
-            <%
-                for(int i =0;i<8;i++) {
-                    String[] strings = paths.get(i).split("/");
-                    String p = strings[strings.length - 1];
-                    request.setAttribute("ph", p);
-            %>
-            <div class="img" title="${ph}">
-                <%--<a target="_blank" href="#">--%>
-                <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                <%--</a>--%>
-                <div class="desc">
-                    图片&nbsp;${ph}
+            <div class="allImgs">
+                <%
+                    for(int i =0;i<8;i++) {
+                        String[] strings = paths.get(i).split("/");
+                        String p = strings[strings.length - 1];
+                        request.setAttribute("ph", p);
+                %>
+                <div class="img" title="${ph}">
+                    <%--<a target="_blank" href="#">--%>
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <%--</a>--%>
+                    <div class="desc">
+                        图片&nbsp;${ph}
+                    </div>
                 </div>
+                <%
+                        request.removeAttribute("ph");
+                    }
+                %>
             </div>
-            <%
-                    request.removeAttribute("ph");
-                }
-            %>
         </div>
-    </div>
-    <div class="list">
-        <div class="uploadDay">
-            <ul>
-                <li class="time_title">
-                    <%
-                        Date today3 = new Date();
-                        SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy-MM-dd");
-                        String dateString3 = formatter3.format(today3);
-                        out.print(dateString3);
-                    %>
-                    最新上传
-                </li>
-                <li class="more">
-                    <a href="">
-                    更多>>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="allImgs">
-            <%
-                for(int i =0;i<8;i++) {
-                    String[] strings = paths.get(i).split("/");
-                    String p = strings[strings.length - 1];
-                    request.setAttribute("ph", p);
-            %>
-            <div class="img" title="${ph}">
-                <%--<a target="_blank" href="#">--%>
-                <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                <%--</a>--%>
-                <div class="desc">
-                    图片&nbsp;${ph}
+        <div class="list">
+            <div class="uploadDay">
+                <ul>
+                    <li class="time_title">
+                        <%
+                            Date today2 = new Date();
+                            SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
+                            String dateString2 = formatter2.format(today2);
+                            out.print(dateString2);
+                        %>
+                        最新上传
+                    </li>
+                    <li class="more">
+                        <a href="">
+                        更多>>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="allImgs">
+                <%
+                    for(int i =0;i<8;i++) {
+                        String[] strings = paths.get(i).split("/");
+                        String p = strings[strings.length - 1];
+                        request.setAttribute("ph", p);
+                %>
+                <div class="img" title="${ph}">
+                    <%--<a target="_blank" href="#">--%>
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <%--</a>--%>
+                    <div class="desc">
+                        图片&nbsp;${ph}
+                    </div>
                 </div>
+                <%
+                        request.removeAttribute("ph");
+                    }
+                %>
             </div>
-            <%
-                    request.removeAttribute("ph");
-                }
-            %>
         </div>
-    </div>
-    <div class="list">
-        <div class="uploadDay">
-            <ul>
-                <li class="time_title">
-                    <%
-                        Date today4 = new Date();
-                        SimpleDateFormat formatter4 = new SimpleDateFormat("yyyy-MM-dd");
-                        String dateString4 = formatter4.format(today4);
-                        out.print(dateString4);
-                    %>
-                    最新上传
-                </li>
-                <li class="more">
-                    <a href="">
-                    更多>>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="allImgs">
-            <%
-                for(int i =0;i<8;i++) {
-                    String[] strings = paths.get(i).split("/");
-                    String p = strings[strings.length - 1];
-                    request.setAttribute("ph", p);
-            %>
-            <div class="img" title="${ph}">
-                <%--<a target="_blank" href="#">--%>
-                <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                <%--</a>--%>
-                <div class="desc">
-                    图片&nbsp;${ph}
+        <div class="list">
+            <div class="uploadDay">
+                <ul>
+                    <li class="time_title">
+                        <%
+                            Date today3 = new Date();
+                            SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy-MM-dd");
+                            String dateString3 = formatter3.format(today3);
+                            out.print(dateString3);
+                        %>
+                        最新上传
+                    </li>
+                    <li class="more">
+                        <a href="">
+                        更多>>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="allImgs">
+                <%
+                    for(int i =0;i<8;i++) {
+                        String[] strings = paths.get(i).split("/");
+                        String p = strings[strings.length - 1];
+                        request.setAttribute("ph", p);
+                %>
+                <div class="img" title="${ph}">
+                    <%--<a target="_blank" href="#">--%>
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <%--</a>--%>
+                    <div class="desc">
+                        图片&nbsp;${ph}
+                    </div>
                 </div>
+                <%
+                        request.removeAttribute("ph");
+                    }
+                %>
             </div>
-            <%
-                    request.removeAttribute("ph");
+        </div>
+        <div class="list">
+            <div class="uploadDay">
+                <ul>
+                    <li class="time_title">
+                        <%
+                            Date today4 = new Date();
+                            SimpleDateFormat formatter4 = new SimpleDateFormat("yyyy-MM-dd");
+                            String dateString4 = formatter4.format(today4);
+                            out.print(dateString4);
+                        %>
+                        最新上传
+                    </li>
+                    <li class="more">
+                        <a href="">
+                        更多>>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="allImgs">
+                <%
+                    for(int i =0;i<8;i++) {
+                        String[] strings = paths.get(i).split("/");
+                        String p = strings[strings.length - 1];
+                        request.setAttribute("ph", p);
+                %>
+                <div class="img" title="${ph}">
+                    <%--<a target="_blank" href="#">--%>
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <%--</a>--%>
+                    <div class="desc">
+                        图片&nbsp;${ph}
+                    </div>
+                </div>
+                <%
+                        request.removeAttribute("ph");
+                    }
+
                 }
             %>
         </div>
