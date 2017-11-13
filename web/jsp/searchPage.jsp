@@ -1,10 +1,11 @@
-<%@ page import="org.image.model.User" %><%--
+<%--
+<%@ page import="org.image.model.User" %>&lt;%&ndash;
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-11-10
   Time: 下午5:56
   To change this template use File | Settings | File Templates.
---%>
+&ndash;%&gt;
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,12 +19,12 @@
         <div class="top">
             <a class="logo_l" href="/" title="返回首页"></a>
 
-            <%--<form class="searchBar" action="SearchImgPage" method="get">--%>
-                <%--<input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."--%>
-                       <%--onfocus="this.style.backgroundColor='gainsboro'"--%>
-                       <%--onblur="this.style.backgroundColor='beige'">--%>
-                <%--<input class="goSearch" type="submit" value="搜索">--%>
-            <%--</form>--%>
+            &lt;%&ndash;<form class="searchBar" action="SearchImgPage" method="get">&ndash;%&gt;
+                &lt;%&ndash;<input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."&ndash;%&gt;
+                       &lt;%&ndash;onfocus="this.style.backgroundColor='gainsboro'"&ndash;%&gt;
+                       &lt;%&ndash;onblur="this.style.backgroundColor='beige'">&ndash;%&gt;
+                &lt;%&ndash;<input class="goSearch" type="submit" value="搜索">&ndash;%&gt;
+            &lt;%&ndash;</form>&ndash;%&gt;
 
 
 
@@ -90,9 +91,9 @@
 <body>
 
 <div>
-<%--<div class="search_hint">--%>
-    <%--搜索所有超过100万张图片--%>
-<%--</div>--%>
+&lt;%&ndash;<div class="search_hint">&ndash;%&gt;
+    &lt;%&ndash;搜索所有超过100万张图片&ndash;%&gt;
+&lt;%&ndash;</div>&ndash;%&gt;
 
 <form class="searchPageBar" action="/SearchImgPage" method="get">
     <input class="searchPageImg" type="search" name="searchText" placeholder="搜索图片..">
@@ -109,3 +110,4 @@
 </div>
 </body>
 </html>
+--%>

@@ -32,8 +32,9 @@
             <li class="menu_item"><a href="/" style="color:white">首页</a></li>
             <li class="menu_item"><a>图库</a>
               <ul class="sub_menu">
-                <li class="sub_menu_item"> <a href="/jsp/pubgallery.jsp" target="_blank">公共图库</a></li>
-                <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank">私人图库</a></li>
+                <li class="sub_menu_item"> <a href="/jsp/pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
+                <%--<li class="sub_menu_item"> <a href="/jsp/test.jsp" target="_blank">公共图库</a></li>--%>
+                <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
                 <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank">创建图库</a></li>
               </ul>
             </li>
@@ -94,11 +95,14 @@
   <form class="searchPageBar" action="/SearchImgPage" method="get">
 
     <div class="web_logo">
+      <a href="/">
 
 
-    <img src="images/icons/logo1.png">
-      IMAGE LOGO
+      <img src="images/icons/logo1.png">
+        IMAGE LOGO
+      </a>
     </div>
+
     <div class="search_hint">
       <img src="images/icons/search.png">
       百万张图片等你搜
@@ -116,49 +120,72 @@
     <%--out.print(searchText);--%>
   <%--%>--%>
   </div>
-  <div class="index_img">
-    <h2>
-      一图一故事
-    </h2>
 
-    <hr style="border: none;border-top:4px solid #eebebe;">
+  <div class="index_div">
 
-    <div class="new_img">
+
+    <div class="index_img">
+
+      <div class="index_div_title">
+
+
+        <li class="index_img_title">
+          每日推荐
+        </li>
+
+        <li class="index_img_title_right">
+          <a href="">
+
+            更多>>
+          </a>
+        </li>
+        <%--<div class="index_img_title">--%>
+        <%--&lt;%&ndash;<h2>&ndash;%&gt;--%>
+          <%--&lt;%&ndash;一图一故事&ndash;%&gt;--%>
+        <%--&lt;%&ndash;</h2>&ndash;%&gt;--%>
+
+        <%--</div>--%>
+        <%--<hr>--%>
+      </div>
+      <div class="new_img">
+
+      </div>
+
+
+      <div class="index_beauty_img">
+
+
+      <%
+        //      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+        UploadPubImages uploadPubImages = new UploadPubImages();
+
+        List<String> paths = uploadPubImages.getPubImgFilePath();
+
+        for(int i =0;i<15;i++) {
+          String[] strings = paths.get(i).split("/");
+          String p = strings[strings.length - 1];
+          request.setAttribute("ph", p);
+
+      %>
+
+      <div class="img" title="${ph}">
+        <a href="" target="_blank">
+        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+        </a>
+      </div>
+
+      <%
+          request.removeAttribute("ph");
+        }
+      %>
 
     </div>
 
 
 
-    <%
-      //      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
-      UploadPubImages uploadPubImages = new UploadPubImages();
 
-      List<String> paths = uploadPubImages.getPubImgFilePath();
 
-      for(String path:paths) {
-        String[] strings = path.split("/");
-        String p = strings[strings.length - 1];
-        request.setAttribute("ph", p);
-
-    %>
-
-    <div class="img" title="${ph}">
-      <a href="" target="_blank">
-      <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-      </a>
     </div>
-
-    <%
-        request.removeAttribute("ph");
-      }
-    %>
-
-  </div>
-
-
-
-
-
   </div>
 
 

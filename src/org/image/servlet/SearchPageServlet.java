@@ -47,7 +47,7 @@ public class SearchPageServlet extends HttpServlet {
 
         } else {
             System.out.println("search fail");
-            response.sendRedirect("/jsp/searchPage.jsp");
+            response.sendRedirect("../index.jsp");
 
         }
 

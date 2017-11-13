@@ -352,11 +352,40 @@ a{
 }
 
 .uploadDay{
-    position: relative;
-    bottom:12px;
-    left:-550px;
+    /*position: relative;*/
+    /*bottom:12px;*/
+    /*!*background-color: #bebebe;*!*/
+    /*!*width:1200px;*!*/
+    /*left:-550px;*/
+
+
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 2px 5px 5px 5px;
+    background: #D6E6CC;
+    border: 1px solid #D6E6CC;
+    /*letter-spacing: -.5px;*/
+    color: #FFFFFF;
+
 }
 
+.time_title{
+    height: 30px;
+    margin-bottom: 3px;
+    padding: 5px 0px 2px 5px;
+    text-align: left;
+    color: #000;
+
+}
+.more{
+    float: right;
+    margin-top: -35px;
+    padding-right: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+}
 .new_img{
     padding: 0 10px 0;
     margin: 10px 0;
@@ -373,20 +402,35 @@ a{
 }
 
 
-
-.list{
-    position: absolute;
+.show_img_list{
+    position: relative;
+    left:100px;
     top:110px;
+    float: left;
+    /*width: 670px;*/
+    padding: 0;
+}
+.list{
+    /*position: relative;*/
+    /*top:110px;*/
     /*border-right:4px outset blue;*/
     /*border-top:4px outset blue;*/
     /*border-left:4px outset blue;*/
     /*border-bottom:4px outset blue;*/
     /*border: medium solid #0573bd;*/
     /*border:1px;*/
-    left:130px;
+    /*left:-100px;*/
+
     /*display: table-cell;*/
     /*margin:0 auto;*/
-    width:1200px;
+    width:1150px;
+    height:530px;
+
+    margin-bottom: 25px;
+    padding: 0px;
+    background: #FFFFFF;
+    border: 2px solid #D6E6CC;
+
 }
 .list div{
 }
@@ -421,6 +465,11 @@ a{
 .button_text p{
     margin:auto;
 }
+.allImgs{
+    padding: 2px 20px 10px 20px;
+    padding-bottom: 20px;
+    text-align: justify;
+}
 
  div .img
  {
@@ -429,9 +478,10 @@ a{
      height:auto;
      background-color: cornflowerblue;
      width:260px;
-     margin-bottom: 15px;
-     margin-right: 10px;
+     /*margin-bottom: 15px;*/
+     /*margin-right: 10px;*/
      float:left;
+     margin:10px 5px;
      text-align:center;
  }
 div .img img
@@ -470,6 +520,11 @@ div .desc
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.test{
+    position: relative;
+    top:20px;
 }
 
 .back_to_top{
