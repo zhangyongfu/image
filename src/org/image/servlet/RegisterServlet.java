@@ -22,16 +22,16 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
         response.setCharacterEncoding("UTF-8");
-        String email = request.getParameter("email");
+        String tel = request.getParameter("tel");
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
         //对注册信息进行判断，信息不能为空，并不能为空字符。满足条件时，将此用户加入数据库。
-        if(email != null && name != null &&
-                password != null && !"".equals(email) &&
+        if(tel != null && name != null &&
+                password != null && !"".equals(tel) &&
                 !"".equals(name) && !"".equals(password)){
 
-            User user = new User(email,name,password);
+            User user = new User(tel,name,password);
             ImageUserDaoImpl imageUser = new ImageUserDaoImpl();
             imageUser.addImageUser(user);
             response.sendRedirect("/jsp/registsuccess.jsp");

@@ -137,7 +137,7 @@ public class UploadPriImageDaoImpl implements ImageDao {
             {
                 String sql = "insert into images values(null,?,?,now(),?,?);";
 
-                connection.prepareStatement("create table if not exists images(img_id int(20) not null primary key auto_increment,img_path varchar(255) not null,img_belong_user varchar(255) not null,priimg_upload_time varchar(255) not null,priimg_name varchar(255),priimg_size_MB float not null);");
+//                connection.prepareStatement("create table if not exists images(img_id int(20) not null primary key auto_increment,img_path varchar(255) not null,img_belong_user varchar(255) not null,priimg_upload_time varchar(255) not null,priimg_name varchar(255),priimg_size_MB float not null);");
 
 
                 java.sql.PreparedStatement preparedStatement = connection.prepareStatement(sql);

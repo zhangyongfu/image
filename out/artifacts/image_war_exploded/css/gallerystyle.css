@@ -24,14 +24,19 @@
 #wel_show{
     text-align: center;
     position: fixed;
-    top:8%;
-    left:0;
+
+    /*background-color: #888888;*/
+    top:6px;
+    left:1000px;
+
     font-style: inherit;
-    font-size: 20px;
+    font-size: 12px;
     color:black;
 }
+
+
 #wel_show a{
-    color:blue;
+    color:skyblue;
     font-size: 20px;
     font-style: italic;
 }
@@ -39,3 +44,45 @@
     color:darkblue;
 }
 
+.funclist{
+    position: absolute;
+    /*top:150px;*/
+    left:220px;
+    float: left;
+    width:1200px;
+    /*position:fixed;*/
+    padding:0;
+    /*white-space: nowrap;*/
+
+    top:100px;
+}
+.upload_img{
+    position: fixed;
+    top:80px;
+    left:10px;
+}
+
+.funclist ul li{
+    float: left;
+    background-color:beige;
+
+    height:auto;
+    width:264px;
+
+
+}
+.funclist ul li:link:visited
+{
+    display:block;
+
+    font-weight:inherit;
+    font-size: 15px;
+    color:black;
+    text-align:center;
+    padding:2px;
+}
+.funclist ul li:hover{
+    background-color: #bebebe;
+    font-size: 17px;
+    cursor: pointer;
+}

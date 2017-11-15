@@ -1,28 +1,27 @@
 
-
 #title{
-    /*margin-top: auto;*/
-    /*width:100%;*/
+
+    margin-top: auto;
+    width:1000px;
     position: absolute;
-    margin:auto;
-    top:12%;
-    left:45%;
-    /*left:50%;*/
+    top:80px;
+    left:120px;
+
     font-size: 20px;
-    text-align: center;
     color:black;
 }
 
 
 
-
-
 #text_about{
 
-    width:70%;
+    margin-top: auto;
+    width:1000px;
+    border-left:2px outset deepskyblue;
+
     position: absolute;
-    top:18%;
-    left:15%;
+    top:120px;
+    left:150px;
     font-size: 15px;
     color:black;
 }

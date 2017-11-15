@@ -52,7 +52,6 @@ public class LoginServlet extends HttpServlet {
                 //否则登录失败。
                 else {
                     System.out.println("name or password not equals");
-                    response.sendRedirect("/jsp/loginfail.jsp");
                     return;
                 }
             }
@@ -63,8 +62,8 @@ public class LoginServlet extends HttpServlet {
         }
         //如果用户不存在，则登录失败。
         else {
-            System.out.println("fail");
-            response.sendRedirect("/jsp/loginfail.jsp");
+            System.out.println("login fail");
+
         }
 
 

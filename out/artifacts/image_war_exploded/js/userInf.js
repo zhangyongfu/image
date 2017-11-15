@@ -55,7 +55,7 @@ window.onload = function() {
         buttonarr[i].onclick = function () {
             for (var j = 0; j < buttonarr.length; j++) {
                 buttonarr[j].className = "off";
-                divarr[j].className = "ab hide";
+                divarr[j].className = "hide";
             }
             this.className = "on";
             divarr[this.index].className = "ab";
@@ -79,5 +79,6 @@ function backinfor(o) {
     alter.className="hide";
 
 }
+
 
 

@@ -3,7 +3,7 @@ body{
     line-height:25px;
     text-align: center;
     background-attachment: fixed;
-    background-image: url(../i/background2.jpg);
+    background-image: url(../images/background2.jpg);
     background-repeat:no-repeat;
     overflow-x:hidden;
 
@@ -23,25 +23,27 @@ body{
     left: 5%;
     top: 5%;
     bottom: 5%;
+
     /*background-color:silver;*/
 
 }
 
 .areas{
     float: left;
+
 }
 .a{
     width: 20%;
     height: 100%;
     /*background-color: #0573bd;*/
-    background-image: url("../i/snow.jpg");
+    background-image: url("../images/snow.jpg");
 
 }
 .b{
     width: 80%;
     height: 100%;
     /*background-color: blueviolet;*/
-    background-image: url("../i/hill.jpg");
+    background-image: url("../images/hill.jpg");
 
 }
 .aa{
@@ -57,6 +59,7 @@ body{
     height: 80%;
     background-color: white;
     margin: 15px;
+    border-radius:25px;
 
 }
 
