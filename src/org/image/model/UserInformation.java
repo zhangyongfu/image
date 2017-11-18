@@ -3,6 +3,7 @@ package org.image.model;
 public class UserInformation {
     int p_id;
     String email;
+    String head_img;
     String name;
     String img;
     String birthday;
@@ -14,6 +15,7 @@ public class UserInformation {
     public UserInformation(){
         p_id=0;
         email="";
+        head_img="";
         name="";
         img="";
         birthday="";
@@ -37,6 +39,12 @@ public class UserInformation {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getHead_img() { return head_img; }
+
+    public void setHead_img(String head_img) {
+        this.head_img = head_img;
     }
 
     public String getName() {

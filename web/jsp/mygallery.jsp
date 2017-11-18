@@ -103,30 +103,30 @@
             <img src="../images/icons/upload.png"></a>
         <%--<a href="/jsp/test.jsp" title="上传图片">上传图片</a>--%>
     </div>
-<div class="funclist">
-    <ul>
-        <li id="sort" onclick="showByUploadTime()">
-            <a title="上传时间排序">
-                <img src="../images/icons/up.png">
-                上传时间</a>
-        </li>
-        <li id="share" onclick="showByImgSize()">
-            <a href="../jsp/shareImages.jsp" title="图片大小排序">
-                <img src="../images/icons/up.png">
-                图片大小</a>
-        </li>
-        <li id="upload1" onclick="showByImgName()">
-            <a href="../jsp/mygallery.jsp" title="图片名称排序">
-                <img src="../images/icons/up.png">
-                图片名称</a>
-        </li>
-        <li id="sort1">
-            <a href="../jsp/mygallery.jsp" title="未知">
-                <img src="../images/icons/up.png">
-                未知</a>
-        </li>
-    </ul>
-</div>
+<%--<div class="funclist">--%>
+    <%--<ul>--%>
+        <%--<li id="sort" onclick="showByUploadTime()">--%>
+            <%--<a title="上传时间排序">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--上传时间</a>--%>
+        <%--</li>--%>
+        <%--<li id="share" onclick="showByImgSize()">--%>
+            <%--<a href="../jsp/shareImages.jsp" title="图片大小排序">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--图片大小</a>--%>
+        <%--</li>--%>
+        <%--<li id="upload1" onclick="showByImgName()">--%>
+            <%--<a href="../jsp/mygallery.jsp" title="图片名称排序">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--图片名称</a>--%>
+        <%--</li>--%>
+        <%--<li id="sort1">--%>
+            <%--<a href="../jsp/mygallery.jsp" title="未知">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--未知</a>--%>
+        <%--</li>--%>
+    <%--</ul>--%>
+<%--</div>--%>
 
 
 

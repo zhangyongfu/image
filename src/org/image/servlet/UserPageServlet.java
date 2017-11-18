@@ -85,20 +85,21 @@ public class UserPageServlet extends HttpServlet {
         try{
             connection = databaseConnection.getDbConnection();
             if(connection!=null){
-                String sql="select u.id,u.username,s.email,s.birthday,s.sex,s.signature,s.selfintro from selfinf s,users u where u.username=?";
+                String sql="select u.id,u.username,s.head_img,s.email,s.birthday,s.sex,s.signature,s.selfintro from selfinf s,users u where u.username=? and u.id=s.belonguserid";
                 preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1,user.getName());
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()){
                     userInformation.setBelonguserid(resultSet.getInt("id"));
                     userInformation.setName(resultSet.getString("username"));
+                    userInformation.setHead_img(resultSet.getString("head_img"));
                     userInformation.setEmail(resultSet.getString("email"));
                     userInformation.setBirthday(resultSet.getString("birthday"));
                     userInformation.setSex(resultSet.getString("sex"));
                     userInformation.setSignature(resultSet.getString("signature"));
                     userInformation.setSelfintro(resultSet.getString("selfintro"));
                 }
-                request.setAttribute("userInformation",userInformation);
+                httpSession.setAttribute("userInformation",userInformation);
                 request.getRequestDispatcher("jsp/userpage.jsp").forward(request,response);
             }
         }catch (Exception e){
