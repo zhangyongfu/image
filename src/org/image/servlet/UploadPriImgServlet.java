@@ -1,5 +1,10 @@
 package org.image.servlet;
 
+import com.drew.imaging.ImageMetadataReader;
+import com.drew.imaging.ImageProcessingException;
+import com.drew.metadata.Directory;
+import com.drew.metadata.Metadata;
+import com.drew.metadata.Tag;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -68,7 +73,14 @@ public class UploadPriImgServlet extends HttpServlet {
         // 中文处理
 //        upload.setHeaderEncoding("UTF-8");
 
-        String uploadPath = getServletContext().getRealPath("/") + UPLOAD_DIRECTORY;
+        HttpSession httpSession = request.getSession();
+        User user = (User)httpSession.getAttribute("userName");
+        ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
+        String userName = imageUserDaoImpl.getUserName(user);
+
+
+
+        String uploadPath = getServletContext().getRealPath("/") + UPLOAD_DIRECTORY +File.separator + userName ;
 
 //        System.out.println("--"+request.getSession().getServletContext().getRealPath(File.separator)+"---");
 
@@ -89,8 +101,11 @@ public class UploadPriImgServlet extends HttpServlet {
                         String fileName = new File(item.getName()).getName();
                         String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
+
+
+
                         // 在控制台输出文件的上传路径
-//                        System.out.println(filePath);
+                        System.out.println(filePath);
                         // 保存文件到硬盘
                         item.write(storeFile);
 //                        System.out.println(request.getParameter("uploadImg"));
@@ -101,10 +116,8 @@ public class UploadPriImgServlet extends HttpServlet {
 
 
                         UploadPriImageDaoImpl imageAdd = new UploadPriImageDaoImpl();
-                        HttpSession httpSession = request.getSession();
-                        User user = (User)httpSession.getAttribute("userName");
-                        ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
-                        String userName = imageUserDaoImpl.getUserName(user);
+
+
 
                         imageAdd.addImageFilePath(filePath,userName,fileName,fileSize);
 //                           System.out.print("hello");
@@ -116,11 +129,6 @@ public class UploadPriImgServlet extends HttpServlet {
 
 //                        request.setAttribute("message", "文件上传成功!");
 
-
-
-
-
-
                     }
                 }
             }
@@ -131,4 +139,8 @@ public class UploadPriImgServlet extends HttpServlet {
         getServletContext().getRequestDispatcher("/jsp/mygallery.jsp").forward(
                 request, response);
     }
+
+
+
+
 }

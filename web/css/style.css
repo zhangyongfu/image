@@ -43,13 +43,21 @@ ul, ul li{
     left:0;
 }
 
-.logo_l{
+.logo_area{
     width:150px;
     height:55px;
     float:left;
     margin:0 auto;
-    background:url(../images/logo.png) no-repeat left;
 }
+.logo_img{
+    width:55px;
+    height:55px;
+    position: fixed;
+    left:50px;
+    float:left;
+}
+
+
 .top_menu {
     /*width: 500px;*/
     height:55px;
@@ -128,7 +136,7 @@ ul, ul li{
 
 /*.subMenu{*/
     /*font-weight: 300;*/
-    /*text-transform: none;*/
+    /*test-transform: none;*/
     /*display: none;*/
     /*position: absolute;*/
     /*width: 220px;*/
@@ -174,14 +182,14 @@ ul, ul li{
 
 /*.nav_z a:hover{*/
     /*color: #FFFFFF;*/
-    /*text-decoration:underline;*/
+    /*test-decoration:underline;*/
 /*}*/
 /*#navul li{*/
     /*float:left;*/
     /*width:80px;*/
     /*height:55px;*/
     /*position:relative;*/
-    /*text-align:center;*/
+    /*test-align:center;*/
     /*line-height:55px;*/
 /*}*/
 #top_login{
@@ -285,71 +293,71 @@ a{
 
 
 /*left*/
-.leftmunubar{
-    width:200px;
-    position:fixed;
-    top:55px;
-    height:100%;
-    background-color: slategray;
-}
-.leftmunubarline{
-    height:2px;
-    width:100%;
-    background-image:url(../images/left/line_bg.png);
-}
-.leftmunubar dt{
-    padding-left:40px;
-    padding-right:10px;
-    background-repeat:no-repeat;
-    background-position:10px center;
-    color:#f5f5f5;
-    font-size:14px;
-    position:relative;
-    line-height:48px;
-    cursor:pointer;
-}
-.leftmunubar dd{
-    background-color:slategray;
-    padding-left:40px;
-    height:40px;
-    display: none;
-}
-.leftmunubar dd a{
-    color:#f5f5f5;
-    line-height:20px;
-}
-.leftmunubar dt img{
-    position:absolute;
-    right:10px;
-    top:20px;
-}
-.system_log dt{
-    background-image:url(../images/left/system.png);
-}
-.custom dt{
-    background-image:url(../images/left/system.png);
-}
-.channel dt{
-    background-image:url(../images/left/system.png);
-}
-.app dt{
-    background-image:url(../images/left/system.png);
-}
-.cloud dt{
-    background-image:url(../images/left/system.png);
-}
-.syetem_management dt{
-    background-image:url(../images/left/system.png);
-}
-.source dt{
-    background-image:url(../images/left/system.png);
-}
-.statistics dt{
-    background-image:url(../images/left/system.png);
-}
-.leftmunubar dl dd:last-child{
-    padding-bottom:10px;
-}
+/*.leftmunubar{*/
+    /*width:200px;*/
+    /*position:fixed;*/
+    /*top:55px;*/
+    /*height:100%;*/
+    /*background-color: slategray;*/
+/*}*/
+/*.leftmunubarline{*/
+    /*height:2px;*/
+    /*width:100%;*/
+    /*background-image:url(../images/left/line_bg.png);*/
+/*}*/
+/*.leftmunubar dt{*/
+    /*padding-left:40px;*/
+    /*padding-right:10px;*/
+    /*background-repeat:no-repeat;*/
+    /*background-position:10px center;*/
+    /*color:#f5f5f5;*/
+    /*font-size:14px;*/
+    /*position:relative;*/
+    /*line-height:48px;*/
+    /*cursor:pointer;*/
+/*}*/
+/*.leftmunubar dd{*/
+    /*background-color:slategray;*/
+    /*padding-left:40px;*/
+    /*height:40px;*/
+    /*display: none;*/
+/*}*/
+/*.leftmunubar dd a{*/
+    /*color:#f5f5f5;*/
+    /*line-height:20px;*/
+/*}*/
+/*.leftmunubar dt img{*/
+    /*position:absolute;*/
+    /*right:10px;*/
+    /*top:20px;*/
+/*}*/
+/*.system_log dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.custom dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.channel dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.app dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.cloud dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.syetem_management dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.source dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.statistics dt{*/
+    /*background-image:url(../images/left/system.png);*/
+/*}*/
+/*.leftmunubar dl dd:last-child{*/
+    /*padding-bottom:10px;*/
+/*}*/
 
 .uploadDay{
     /*position: relative;*/
@@ -443,15 +451,16 @@ a{
 }
 
 .mygallerylist{
-    position: absolute;
-    top:150px;
+    position: relative;
+    top:10px;
     /*border-right:4px outset blue;*/
     /*border-top:4px outset blue;*/
     /*border-left:4px outset blue;*/
     /*border-bottom:4px outset blue;*/
     /*border: medium solid #0573bd;*/
     /*border:1px;*/
-    left:220px;
+    left:12px;
+    right:12px;
     float: left;
     width:1200px;
 }
@@ -565,3 +574,13 @@ div .desc
 .searchPageGo:hover{
     background-color: royalblue;
 }
+
+
+
+
+/*默认样式，主要是position:fixed实现屏幕绝对定位*/
+#gotoTop{display:none;position:fixed;top:75%;left:50%;cursor:pointer;margin-top:-50px;margin-left:520px;padding:9px 4px;width:20px;text-align:center;border:1px solid #e0e0e0;background:#fff;}
+/*用CSS表达式(expression)来实现ie6下position:fixed效果*/
+/*#gotoTop{_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px")}*/
+/*鼠标进入的反馈效果*/
+#gotoTop.hover{background:#5CB542;color:#fff;text-decoration:none;}

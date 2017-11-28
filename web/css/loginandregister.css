@@ -16,6 +16,10 @@ html{
     height:360px;
     width:450px;
     background-color: lightblue;
+
+    -webkit-box-shadow: #666 3px 3px 10px;
+    -moz-box-shadow: #666 3px 3px 10px;
+    box-shadow: #666 5px 5px 10px;
 }
 .goregister{
     position: absolute;
@@ -26,6 +30,11 @@ html{
     background-color: lightblue;
     z-index: 999;
 
+
+    -webkit-box-shadow: #666 3px 3px 10px;
+    -moz-box-shadow: #666 3px 3px 10px;
+    box-shadow: #666 5px 5px 10px;
+
 }
 
 #loginform{
@@ -35,7 +44,7 @@ position: relative;
     margin-left:65px;;
     margin-top:20px;
     background-color: transparent;
-/*text-align: center;*/
+/*test-align: center;*/
 text-align: left;
     font-size:20px;
 }
@@ -46,11 +55,19 @@ position: relative;
     margin-left:75px;;
     margin-top:20px;
     background-color: transparent;
-/*text-align: center;*/
+/*test-align: center;*/
 text-align: left;
     font-size:20px;
 
 }
+.logo_area{
+    width:150px;
+    height:55px;
+    float:left;
+    margin:0 auto;
+}
+
+
 .goregister input,.gologin input{
     margin:12px 75px 20px 0px;
     width: 300px;
@@ -112,14 +129,14 @@ text-align: left;
 
 #registfail{
     font-size: 20px;
-    /*text-align: center;*/
+    /*test-align: center;*/
 }
 #registfail a:hover{
     color: #0573bd;
 }
 #loginfail{
     font-size: 20px;
-    /*text-align: center;*/
+    /*test-align: center;*/
 }
 #loginfail a:hover{
     color: #0573bd;

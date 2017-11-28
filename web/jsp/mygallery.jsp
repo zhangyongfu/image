@@ -1,6 +1,8 @@
 <%@ page import="org.image.model.User" %>
 <%@ page import="org.image.DAO.UploadPriImageDaoImpl" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.io.File" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-11-2
@@ -13,26 +15,24 @@
     <title>Title</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../css/gallerystyle.css" rel="stylesheet" type="text/css"/>
-
     <link href="../css/imgdisplay.css" rel="stylesheet" type="text/css" />
-
 
 </head>
 <body>
 
-
 <div id="top_bg">
+    <div class="logo_area">
+        <a class="logo_l" href="/" title="返回首页">
+            <img class="logo_img" src="../images/logo/logo-64.png">
 
-
-    <a class="logo_l" href="../" title="返回首页"></a>
+        </a>
+    </div>
     <form class="searchBar">
         <input class="searchImg" type="search"  placeholder="搜索图片.."
                onfocus="this.style.backgroundColor='gainsboro'"
                onblur="this.style.backgroundColor='beige'">
         <input class="goSearch" type="submit" value="搜索">
     </form>
-
-
     <div class="nav_z">
         <nav class="top_menu">
             <ul class="primary_menu">
@@ -54,8 +54,6 @@
             </ul>
         </nav>
 
-
-
         <%
             HttpSession httpSession = request.getSession();
             User user = (User)httpSession.getAttribute("userName");
@@ -75,6 +73,16 @@
         </p>
     </div>
 </div>
+
+
+<div>
+    <div class="my_gallery">
+        <p class="my_gallery_start">我的图库</p>
+    </div>
+</div>
+
+
+
 
 <script type="text/javascript">
     function showByUploadTime() {
@@ -97,148 +105,56 @@
 //    }
 </script>
 
-
     <div id="upload" class="upload_img">
         <a href="../jsp/uploadImages.jsp" title="上传图片">
             <img src="../images/icons/upload.png"></a>
         <%--<a href="/jsp/test.jsp" title="上传图片">上传图片</a>--%>
     </div>
-<div class="funclist">
-    <ul>
-        <li id="sort" onclick="showByUploadTime()">
-            <a title="上传时间排序">
-                <img src="../images/icons/up.png">
-                上传时间</a>
-        </li>
-        <li id="share" onclick="showByImgSize()">
-            <a href="../jsp/shareImages.jsp" title="图片大小排序">
-                <img src="../images/icons/up.png">
-                图片大小</a>
-        </li>
-        <li id="upload1" onclick="showByImgName()">
-            <a href="../jsp/mygallery.jsp" title="图片名称排序">
-                <img src="../images/icons/up.png">
-                图片名称</a>
-        </li>
-        <li id="sort1">
-            <a href="../jsp/mygallery.jsp" title="未知">
-                <img src="../images/icons/up.png">
-                未知</a>
-        </li>
-    </ul>
-</div>
+<%--<div class="funclist">--%>
+    <%--<ul>--%>
+        <%--<li id="sort" onclick="showByUploadTime()">--%>
+            <%--<a title="上传时间排序">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--上传时间</a>--%>
+        <%--</li>--%>
+        <%--<li id="share" onclick="showByImgSize()">--%>
+            <%--<a href="../jsp/shareImages.jsp" title="图片大小排序">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--图片大小</a>--%>
+        <%--</li>--%>
+        <%--<li id="upload1" onclick="showByImgName()">--%>
+            <%--<a href="../jsp/mygallery.jsp" title="图片名称排序">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--图片名称</a>--%>
+        <%--</li>--%>
+        <%--<li id="sort1">--%>
+            <%--<a href="../jsp/mygallery.jsp" title="未知">--%>
+                <%--<img src="../images/icons/up.png">--%>
+                <%--未知</a>--%>
+        <%--</li>--%>
+    <%--</ul>--%>
+<%--</div>--%>
+
+<%--<div class="mygallerylist" id="default_display">--%>
+<%--<%--%>
+    <%--UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();--%>
+    <%--List<String> paths = uploadImage.getImageFilePath(user.getName());--%>
 
 
+    <%--for(String path:paths) {--%>
+        <%--String[] strings = path.split("/");--%>
+        <%--String p = strings[strings.length - 1];--%>
+        <%--request.setAttribute("ph", p);--%>
 
-<div class="mygallerylist" id="default_display">
-<%
-    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
-    List<String> paths = uploadImage.getImageFilePath(user.getName());
-
-
-    for(String path:paths) {
-        String[] strings = path.split("/");
-        String p = strings[strings.length - 1];
-        request.setAttribute("ph", p);
-
-%>
-    <div class="img" title="${ph}">
-        <a target="_blank" href="#">
-            <img src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
-        </a>
-        <div class="desc">
-            我的图片${ph}
-        </div>
-    </div>
-
-<%
-        request.removeAttribute("ph");
-    }
-%>
-
-</div>
-
-<%--
-
-<div class="mygallerylist" id="hideall">
-<%
-    UploadPriImageDaoImpl showImgByUploadtime = new UploadPriImageDaoImpl();
-    List<String> pathsbyUploadTime = showImgByUploadtime.getImagesUploadTime();
-
-    for(String path:pathsbyUploadTime) {
-        String[] strings = path.split("/");
-        String img = strings[strings.length - 1];
-        request.setAttribute("i", img);
-
-%>
-    <div class="img" title="${ph}">
-        <a target="_blank" href="#">
-            <img src="http://localhost:8080/i/img/${i}" alt="Ballade" width="250" height="170px">
-        </a>
-        <div class="desc">
-            我的图片${ph}
-        </div>
-    </div>
-
-<%
-        request.removeAttribute("ph");
-    }
-%>
-
-</div>
---%>
-
-<%--
-<div class="mygallerylist" id="default_display">
-<%
-    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
-    List<String> paths = uploadImage.getImageFilePath(user.getName());
-
-    for(String path:paths) {
-        String[] strings = path.split("/");
-        String p = strings[strings.length - 1];
-        request.setAttribute("ph", p);
-
-%>
-    <div class="img" title="${ph}">
-        <a target="_blank" href="#">
-            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
-        </a>
-        <div class="desc">
-            我的图片${ph}
-        </div>
-    </div>
-
-<%
-        request.removeAttribute("ph");
-    }
-%>
-
-</div>
-
-
-<div class="mygallerylist" id="default_display">
-<%
-    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
-    List<String> paths = uploadImage.getImageFilePath(user.getName());
-
-    for(String path:paths) {
-        String[] strings = path.split("/");
-        String p = strings[strings.length - 1];
-        request.setAttribute("ph", p);
-
-%>
-    <div class="img" title="${ph}">
-        <a target="_blank" href="#">
-            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
-        </a>
-        <div class="desc">
-            我的图片${ph}
-        </div>
-    </div>
-
-    --%>
-
+<%--%>--%>
+    <%--<div class="img" title="${ph}">--%>
+        <%--<a target="_blank" href="#">--%>
+            <%--<img src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">--%>
+        <%--</a>--%>
+        <%--<div class="desc">--%>
+            <%--我的图片${ph}--%>
+        <%--</div>--%>
+    <%--</div>--%>
 
 <%--<%--%>
         <%--request.removeAttribute("ph");--%>
@@ -247,14 +163,61 @@
 
 <%--</div>--%>
 
+<div class="show_myimg_list">
+    <div class="myimglist">
+        <div class="myimguploadDay">
+            <ul>
+                <li class="myimgtime_title">
+                    <%--<%--%>
+                    <%--Date today = new Date();--%>
+                    <%--SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");--%>
+                    <%--String dateString = formatter.format(today);--%>
+                    <%--out.print(dateString);--%>
+                    <%--%>--%>
+                    最近一个月上传精选
+                </li>
+                <li class="myimgmore">
+                    <a href="showImage.jsp">
+
+                        更多>>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mygallerylist" id="default_display">
+            <%
+                UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+                List<String> paths = uploadImage.getImageFilePath(user.getName());
 
 
+                if(null != paths && paths.size() != 0){
 
+                    Collections.reverse(paths);
+                    for(int i =0;i<8;i++) {
+                        String[] strings = paths.get(i).split("/");
+                        String p = strings[strings.length - 1];
+                        String path = user.getName() + File.separator + p;
+                        request.setAttribute("ph", path);
 
+                %>
+                <div class="img" title="${ph}">
+                    <a target="_blank" href="">
+                        <img src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
+                    </a>
+                    <div class="desc">
+                        <%--我的图片${ph}--%>
+                        我的图片<%=p%>
+                    </div>
+                </div>
 
-
-
-
+                <%
+                        request.removeAttribute("ph");
+                    }
+                }
+            %>
+        </div>
+    </div>
 
         <%
     }

@@ -27,11 +27,11 @@ public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        response.setContentType("text/html;charset=GB18030");
+//        response.setContentType("test/html;charset=GB18030");
 
         //获得需要登录的用户名和密码。
 //        response.setCharacterEncoding("UTF-8");
-//        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("test/html;charset=UTF-8");
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 

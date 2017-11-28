@@ -22,13 +22,12 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
         response.setCharacterEncoding("UTF-8");
-        String tel = request.getParameter("tel");
-        String name = request.getParameter("name");
-        String password = request.getParameter("password");
+        String tel = request.getParameter("tel").trim();
+        String name = request.getParameter("name").trim();
+        String password = request.getParameter("password").trim();
 
         //对注册信息进行判断，信息不能为空，并不能为空字符。满足条件时，将此用户加入数据库。
-        if(tel != null && name != null &&
-                password != null && !"".equals(tel) &&
+        if(!"".equals(tel) &&
                 !"".equals(name) && !"".equals(password)){
 
             User user = new User(tel,name,password);
