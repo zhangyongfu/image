@@ -134,6 +134,103 @@
         <%--</li>--%>
     <%--</ul>--%>
 <%--</div>--%>
+<<<<<<< HEAD
+=======
+
+
+
+<div class="mygallerylist" id="default_display">
+<%
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+    List<String> paths = uploadImage.getImageFilePath(user.getName());
+
+
+    for(String path:paths) {
+        String[] strings = path.split("/");
+        String p = strings[strings.length - 1];
+        request.setAttribute("ph", p);
+
+%>
+    <div class="img" title="${ph}">
+        <a target="_blank" href="#">
+            <img src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
+        </a>
+        <div class="desc">
+            我的图片${ph}
+        </div>
+    </div>
+
+<%
+        request.removeAttribute("ph");
+    }
+%>
+
+</div>
+
+<%--
+
+<div class="mygallerylist" id="hideall">
+<%
+    UploadPriImageDaoImpl showImgByUploadtime = new UploadPriImageDaoImpl();
+    List<String> pathsbyUploadTime = showImgByUploadtime.getImagesUploadTime();
+
+    for(String path:pathsbyUploadTime) {
+        String[] strings = path.split("/");
+        String img = strings[strings.length - 1];
+        request.setAttribute("i", img);
+
+%>
+    <div class="img" title="${ph}">
+        <a target="_blank" href="#">
+            <img src="http://localhost:8080/i/img/${i}" alt="Ballade" width="250" height="170px">
+        </a>
+        <div class="desc">
+            我的图片${ph}
+        </div>
+    </div>
+
+<%
+        request.removeAttribute("ph");
+    }
+%>
+
+</div>
+--%>
+
+<%--
+<div class="mygallerylist" id="default_display">
+<%
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+    List<String> paths = uploadImage.getImageFilePath(user.getName());
+
+    for(String path:paths) {
+        String[] strings = path.split("/");
+        String p = strings[strings.length - 1];
+        request.setAttribute("ph", p);
+
+%>
+    <div class="img" title="${ph}">
+        <a target="_blank" href="#">
+            <img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">
+        </a>
+        <div class="desc">
+            我的图片${ph}
+        </div>
+    </div>
+
+<%
+        request.removeAttribute("ph");
+    }
+%>
+
+</div>
+
+
+<div class="mygallerylist" id="default_display">
+<%
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+    List<String> paths = uploadImage.getImageFilePath(user.getName());
+>>>>>>> 10144f13396918a9111b287b58a50568b94917cf
 
 <%--<div class="mygallerylist" id="default_display">--%>
 <%--<%--%>

@@ -13,6 +13,9 @@ function editHead(o) {
 function cancalhead() {
     document.getElementById("headid").style.display="none";  //隐藏弹出层
     document.getElementById("hidebgid").style.display="none";  //隐藏隐藏层
+    var urlofhead=document.getElementById("userhead").src;
+    document.getElementById("changehead").src=urlofhead;
+    document.getElementById("updatehead").value="";
 
 }
 
@@ -63,6 +66,13 @@ window.onload = function() {
     }
 
 
+    var tr= document.getElementById("userinformationtable").getElementsByTagName("tr");
+    for (var i=0;i<tr.length;i++){
+        i%2==0?tr[i].className="on":tr[i].className="off";
+    }
+
+
+
 }
 
 function changeinfo(o) {
@@ -79,6 +89,7 @@ function backinfor(o) {
     alter.className="hide";
 
 }
+
 
 
 
