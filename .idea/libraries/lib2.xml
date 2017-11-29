@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="lib2">
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
     </CLASSES>
     <JAVADOC />
@@ -8,5 +9,20 @@
       <root url="jar://$USER_HOME$/.ideaLibSources/metadata-extractor-2.8.1-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+=======
+<<<<<<< HEAD
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+=======
+      <root url="file://$USER_HOME$/tomcat/apache-tomcat-8.0.46/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/tomcat/apache-tomcat-8.0.46/lib" recursive="false" />
+>>>>>>> 10144f13396918a9111b287b58a50568b94917cf
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
   </library>
 </component>

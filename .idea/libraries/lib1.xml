@@ -1,12 +1,14 @@
 <component name="libraryTable">
   <library name="lib1">
-    <CLASSES>
-      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
+<<<<<<< HEAD
     <SOURCES>
       <root url="jar://$USER_HOME$/.ideaLibSources/metadata-extractor-2.8.1-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+=======
+    <SOURCES />
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
   </library>
 </component>

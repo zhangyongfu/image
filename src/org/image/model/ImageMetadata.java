@@ -25,6 +25,7 @@ public class ImageMetadata {
         UploadPubImages uploadPubImages = new UploadPubImages();
         String imgPath = uploadPubImages.getPubImgFilePath(imgId);
 
+<<<<<<< HEAD
 
         try {
             File imgFile = new File(imgPath);
@@ -41,6 +42,27 @@ public class ImageMetadata {
             }
         }
         catch (IOException e) {
+=======
+//        String[] strings = paths.get(i).split("/");
+//        String p = strings[strings.length - 1];
+//        request.setAttribute("ph", p);
+
+
+
+//        File imgFile = new File("/home/zyj/IdeaProjects/i/img/zhang/008.jpg");
+        File imgFile = new File(imgPath);
+        try {
+            Metadata metadata = ImageMetadataReader.readMetadata(imgFile);
+            for (Directory directory : metadata.getDirectories()) {
+                for (Tag tag : directory.getTags()) {
+                    imgMetadata.put(tag.getTagName(),tag.getDescription());
+//                    System.out.println(tag);
+                }
+            }
+        } catch (ImageProcessingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
             e.printStackTrace();
         }
 

@@ -29,10 +29,19 @@ ul, ul li{
 
     left:0;
 }
+<<<<<<< HEAD
 .logo_area{
     width:150px;
+=======
+
+.logo_img{
+    width:55px;
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
     height:55px;
+    position: fixed;
+    left:50px;
     float:left;
+<<<<<<< HEAD
     margin:0 auto;
 }
 .logo_img{
@@ -41,6 +50,8 @@ ul, ul li{
     position: fixed;
     left:50px;
     float:left;
+=======
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
 }
 
 .top_menu {

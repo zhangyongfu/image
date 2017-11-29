@@ -21,27 +21,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/code-idea/tomcat/apache-tomcat-9.0.0.M26/lib/mysql-connector-java-5.1.44-bin.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/code-idea/tomcat/apache-tomcat-9.0.0.M26/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/code-idea/tomcat/apache-tomcat-9.0.0.M26/lib" recursive="false" />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
+<<<<<<< HEAD
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -55,9 +37,23 @@
     <orderEntry type="library" name="jython-standalone-2.7.0" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="library" name="lib2" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="jython-standalone-2.7.01" level="project" />
     <orderEntry type="library" name="metadata-extractor-2.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.drewnoakes:metadata-extractor:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.adobe.xmp:xmpcore:5.1.2" level="project" />
+=======
+    <orderEntry type="library" name="Maven: com.drewnoakes:metadata-extractor:2.10.1" level="project" />
+    <orderEntry type="library" name="Maven: com.adobe.xmp:xmpcore:5.1.3" level="project" />
+    <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="jython-standalone-2.7.01" level="project" />
+    <orderEntry type="library" name="jstl" level="project" />
+    <orderEntry type="library" name="jar" level="project" />
+=======
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="library" name="commons-fileupload-1.3.31" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.7-bin" level="project" />
+>>>>>>> 10144f13396918a9111b287b58a50568b94917cf
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
   </component>
 </module>

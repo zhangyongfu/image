@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class Testt {
 
+<<<<<<< HEAD
     private static long imgId;
 
     public static void getSelectImgId(long id){
@@ -24,6 +25,17 @@ public class Testt {
 
 //        Testt t = new Testt();
 //        Map<String,String> m = t.getNeedData(imgId);
+=======
+    private long imgId;
+
+    public long getSelectImgId(HttpServletRequest request){
+        String n = request.getParameter("imgId");
+//        System.out.print(Long.parseLong(n));
+
+        long num = Long.parseLong(n);
+        this.imgId = num;
+        return num;
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
     }
 
     public Map<String,String> getNeedData(long id){
@@ -55,8 +67,13 @@ public class Testt {
 //        }
 
 
+<<<<<<< HEAD
 
         System.out.println("imgid: " + imgId);
+=======
+        Testt testt = new Testt();
+
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
 
     }
 

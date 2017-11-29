@@ -134,8 +134,13 @@
         <%--</li>--%>
     <%--</ul>--%>
 <%--</div>--%>
+<<<<<<< HEAD
 <%--<<<<<<< HEAD--%>
 <%--=======--%>
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
 
 
 
@@ -226,11 +231,19 @@
 <%--</div>--%>
 
 
+<<<<<<< HEAD
 <%--<div class="mygallerylist" id="default_display">--%>
 <%--<%--%>
     <%--UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();--%>
     <%--List<String> paths = uploadImage.getImageFilePath(user.getName());--%>
 <%-->>>>>>> 10144f13396918a9111b287b58a50568b94917cf--%>
+=======
+<div class="mygallerylist" id="default_display">
+<%
+    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+    List<String> paths = uploadImage.getImageFilePath(user.getName());
+>>>>>>> 10144f13396918a9111b287b58a50568b94917cf
+>>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
 
 <%--<div class="mygallerylist" id="default_display">--%>
 <%--<%--%>
