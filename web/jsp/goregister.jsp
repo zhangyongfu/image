@@ -12,13 +12,17 @@
 <head>
     <title>注册</title>
     <link href="../css/loginandregister.css" rel="stylesheet" type="text/css" />
-    <%--<link href="../css/style.css" rel="stylesheet" type="text/css" />--%>
+    <%--<link href="../css/style.css" rel="stylesheet" type="test/css" />--%>
     <link href="../css/topMenuStyle.css" rel="stylesheet" type="text/css" />
 
     <div id="top_bg">
         <div class="top">
-            <a class="logo_l" href="/" title="返回首页"></a>
+            <div class="logo_area">
+                <a class="logo_l" href="/" title="返回首页">
+                    <img class="logo_img" src="../images/logo/logo-64.png">
 
+                </a>
+            </div>
             <form class="searchBar" action="SearchImgPage" method="get">
                 <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
                        onfocus="this.style.backgroundColor='gainsboro'"
@@ -55,11 +59,16 @@
 以下共8个方法，两两为一组，四组均为重复性代码，未来将改进，现在先实现。
 --%>
 <script type="text/javascript">
+
+    function trim(str){ //删除左右两端的空格
+        return str.replace(/(^\s*)|(\s*$)/g, "");
+    }
+
     function name_blur() {
-        var name = document.getElementById('name').value;
+        var name = trim(document.getElementById('name').value);
         var error_text_span = document.getElementById("show_name_error_text");
-//        字母、数字、下划线组成，字母开头，4-16位。
-        if(!/^[a-zA-z]\w{3,15}$/.test(name)){
+//        字母、数字、下划线组成，字母开头，2-16位。
+        if(!/^[a-zA-z]\w{1,15}$/.test(name)){
 //            如果输入不正确
             error_text_span.style.display='inline';
             document.getElementById('name').style.borderColor='red';
@@ -156,7 +165,7 @@
         <%--onblur="checkBlur(this.value);" onfocus="checkFocus();"--%>
                onfocus="name_focus();" onblur="name_blur();">
         <span id="show_name_error_text" style="color:red;display: none;font-size: 13px;">
-            用户名输入不正确或长度不对
+            用户名输入不正确或长度不对,不能有空格
         </span>
         <br/>
         <%--<span id="checkText"></span><br/>--%>
@@ -181,7 +190,7 @@
         </span>
         <br/>
         <input type="text" id="varify_code" name="varifycode" placeholder="输入验证码" style="width:120px;">
-        <button style="position: relative;float: left;top:12px;width:120px;height: 40px;border:none;background-color: mediumslateblue;margin-right: 10px;">点击发送验证码</button>
+        <button style="cursor:pointer; position: relative;float: left;top:12px;width:120px;height: 40px;border:none;background-color: mediumslateblue;margin-right: 10px;">点击发送验证码</button>
         <input id="register" type="submit" value="注册"/><br/>
         <span id="cannotlogin"><a href="help.jsp">无法注册？</a> </span>
     </form>

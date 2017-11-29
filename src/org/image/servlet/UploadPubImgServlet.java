@@ -69,6 +69,7 @@ public class UploadPubImgServlet extends HttpServlet {
 //        upload.setHeaderEncoding("UTF-8");
 
         String uploadPath = getServletContext().getRealPath("/") + UPLOAD_DIRECTORY;
+        System.out.println("+++" + getServletContext().getRealPath("/") +"+++++");
 
 
         // 如果目录不存在则创建

@@ -23,7 +23,7 @@ body{
     left: 5%;
     top: 5%;
     bottom: 5%;
-
+    border-radius:25px;
     /*background-color:silver;*/
 
 }
@@ -37,6 +37,7 @@ body{
     height: 100%;
     /*background-color: #0573bd;*/
     background-image: url("../images/snow.jpg");
+    border-radius:25px;
 
 }
 .b{
@@ -44,6 +45,7 @@ body{
     height: 100%;
     /*background-color: blueviolet;*/
     background-image: url("../images/hill.jpg");
+    border-radius:25px;
 
 }
 .aa{
@@ -138,6 +140,7 @@ table{
 .intro{
     width: 500px;
     height: 150px;
+    text-align: left;
     resize: none;
 }
 
@@ -197,4 +200,18 @@ table{
 
 .test{
     z-Index:1;
+    border-radius:25px;
+
+}
+
+.arrow{
+    position: absolute;
+    right: 0px;
+    margin-top: 0px;
+    padding: 5px;
+}
+
+.changeheadtop{
+    background-color: silver;
+    padding: 5px;
 }

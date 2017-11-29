@@ -30,7 +30,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
         try{
             connection = databaseConnection.getDbConnection();
             if(connection != null){
-                String sql = "select id,tel,username from users where username=? and email=?";
+                String sql = "select id,tel,username from users where username=? and tel=?";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -76,7 +76,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
      * @param password password参数指定些用户的密码。
      * @return 返回与姓名与密码相匹配的用户User。
      */
-    @Override
+
     public User findImageUser(String name, String password) {
 
         User user = null;
@@ -118,7 +118,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
      * @param user user参数指定需要删除的用户。
      * @return 返回被删除的用户。
      */
-    @Override
+
     public User deleteImageUser(User user) {
         return null;
     }
@@ -132,7 +132,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
      * @param name name参数指定需要查找的用户姓名。
      * @return 返回通过指定用户姓名所查找到的用户。
      */
-    @Override
+
     public User findImageUser(String name) {
 /*        User user = null;
 
@@ -173,7 +173,7 @@ public class ImageUserDaoImpl implements ImageUserDao {
      *
      * @param user user为所需要添加的用户，即要加入数据库的用户。
      */
-    @Override
+
     public void addImageUser(User user) {
         try {
             connection = databaseConnection.getDbConnection();

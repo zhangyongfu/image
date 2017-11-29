@@ -42,7 +42,7 @@ public class SearchPageServlet extends HttpServlet {
 //                request.setAttribute("ph", p);
             }
 
-            System.out.println("text:" + IndexPageSearchText);
+            System.out.println("test:" + IndexPageSearchText);
             response.sendRedirect("/jsp/searchResult.jsp");
 
         } else {

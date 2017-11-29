@@ -29,13 +29,20 @@ ul, ul li{
 
     left:0;
 }
-
-.logo_l{
+.logo_area{
     width:150px;
     height:55px;
     float:left;
-    background:url(../images/logo.png) no-repeat left;
+    margin:0 auto;
 }
+.logo_img{
+    width:55px;
+    height:55px;
+    position: fixed;
+    left:50px;
+    float:left;
+}
+
 .top_menu {
     /*width: 500px;*/
     height:55px;
@@ -91,6 +98,7 @@ ul, ul li{
 
 .search_list{
     background-image: url(../images/background2.jpg);
+    /*background-color: #FFFFFF;*/
     height:510px;
     /*background-repeat:no-repeat;*/
 

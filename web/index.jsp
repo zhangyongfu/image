@@ -12,6 +12,7 @@
 <%@ page import="org.image.model.UploadPubImages" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="org.image.model.PubImg" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -20,29 +21,32 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"  />
   <title>Image</title>
-  <%--<link href="css/style.css" rel="stylesheet" type="text/css" />--%>
+  <%--<link href="css/style.css" rel="stylesheet" type="test/css" />--%>
     <link href="css/topMenuStyle.css" rel="stylesheet" type="text/css" />
 
     <div id="top_bg">
       <div class="top">
-        <a class="logo_l" href="/" title="返回首页"></a>
+        <a class="logo_l" href="/" title="返回首页">
+          <img class="logo_img" src="images/logo/logo-64.png">
+        </a>
 
         <nav class="top_menu">
           <ul class="primary_menu">
             <li class="menu_item"><a href="/" style="color:white">首页</a></li>
             <li class="menu_item"><a>图库</a>
               <ul class="sub_menu">
-                <li class="sub_menu_item"> <a href="/jsp/pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
+                <li class="sub_menu_item"> <a href="jsp/pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
                 <%--<li class="sub_menu_item"> <a href="/jsp/test.jsp" target="_blank">公共图库</a></li>--%>
-                <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
-                <li class="sub_menu_item"> <a href="/jsp/mygallery.jsp" target="_blank">创建图库</a></li>
+                <li class="sub_menu_item"> <a href="jsp/mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
+                <li class="sub_menu_item"> <a href="jsp/mygallery.jsp" target="_blank">创建图库</a></li>
               </ul>
             </li>
             <li class="menu_item"><a>关于</a>
               <ul class="sub_menu">
-                <li class="sub_menu_item"> <a href="/jsp/about.jsp" target="_blank">网站</a></li>
-                <li class="sub_menu_item"> <a href="/jsp/about.jsp" target="_blank">团队</a></li>
-                <li class="sub_menu_item"> <a href="/jsp/about.jsp" target="_blank">反馈</a></li>
+                <li class="sub_menu_item"> <a href="jsp/webBuild.jsp" target="_blank">网站</a></li>
+                <li class="sub_menu_item"> <a href="jsp/about.jsp" target="_blank">团队</a></li>
+                <li class="sub_menu_item"> <a href="jsp/about.jsp" target="_blank">反馈</a></li>
+                <li class="sub_menu_item"> <a href="jsp/about.jsp" target="_blank">联系我们</a></li>
               </ul>
             </li>
           </ul>
@@ -98,8 +102,9 @@
       <a href="/">
 
 
-      <img src="images/icons/logo1.png">
-        IMAGE LOGO
+      <%--<img src="images/icons/logo1.png">--%>
+      <img src="images/logo/logo-128.png">
+        bro pics
       </a>
     </div>
 
@@ -115,8 +120,8 @@
 
   </form>
   <%--<%--%>
-    <%--HttpSession text = request.getSession();--%>
-    <%--String searchText = (String)text.getAttribute("searchText");--%>
+    <%--HttpSession test = request.getSession();--%>
+    <%--String searchText = (String)test.getAttribute("searchText");--%>
     <%--out.print(searchText);--%>
   <%--%>--%>
   </div>
@@ -167,15 +172,21 @@
 
 
           for(int i =0;i<15;i++) {
-            String[] strings = paths.get(i).split("/");
-            String p = strings[strings.length - 1];
-            request.setAttribute("ph", p);
+
+              String imgPath = paths.get(i);
+              long imgId = uploadPubImages.getPubImgId(imgPath);
+
+
+
+              String[] strings = paths.get(i).split("/");
+              String p = strings[strings.length - 1];
+              request.setAttribute("ph", p);
 
         %>
 
         <div class="img" title="${ph}">
-          <a href="" target="_blank">
-          <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+          <a href="/jsp/showImage.jsp?imgId=<%=imgId%>" target="_blank">
+            <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
           </a>
         </div>
 
@@ -192,5 +203,7 @@
       </p>
     </div>
   </div>
+
+  <a href="jsp/test.jsp">askjfaljfa</a>
   </body>
 </html>

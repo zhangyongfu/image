@@ -1,0 +1,68 @@
+
+
+.imgAndMetaData{
+    position: absolute;
+    top:70px;
+    left:10px;
+}
+.metaDataMassage{
+    position: absolute;
+    /*top:70px;*/
+    left:900px;
+    overflow: auto;
+    background-color: beige;
+    height:460px;
+
+    width: 340px;
+}
+
+.showPrimaryImg{
+    position: relative;
+    margin:0;
+    padding:0;
+    left:20px;
+    /*top:60px;*/
+    width:850px;
+    height:460px;
+    background-color: #bebebe;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.showPrimaryImg img{
+
+    /*padding: 40px 50px 40px 50px;*/
+    position: relative;
+    margin:auto;
+    /*top:50%;*/
+
+    /*left:0;*/
+    /*width:90%;*/
+    max-width:850px;
+    max-height:460px;
+    width:auto;
+    height:auto;
+}
+
+
+.metaDataTable,.metaDataTable td,.metaDataTable th{
+    border:1px ridge blue;
+}
+
+.metaDataTable{
+    position: relative;
+
+    width:auto;
+    border-collapse: collapse;
+    /*text-align: center;*/
+    background-color: aliceblue;
+
+
+
+}
+
+.imgDetail{
+    position: relative;
+    top:20px;
+}

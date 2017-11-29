@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="metadata-extractor-2.8.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/metadata-extractor-2.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/metadata-extractor-2.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

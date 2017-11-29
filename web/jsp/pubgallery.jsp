@@ -21,12 +21,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"  />
     <title>Image</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
-    <%--<link href="css/topMenuStyle.css" rel="stylesheet" type="text/css" />--%>
+    <%--<link href="css/topMenuStyle.css" rel="stylesheet" type="test/css" />--%>
 
     <div id="top_bg">
         <div class="top">
-            <a class="logo_l" href="/" title="返回首页"></a>
+            <div class="logo_area">
+                <a class="logo_l" href="/" title="返回首页">
+                    <img class="logo_img" src="../images/logo/logo-64.png">
 
+                </a>
+            </div>
             <form class="searchBar" action="SearchImgPage" method="get">
                 <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
                        onfocus="this.style.backgroundColor='gainsboro'"
@@ -165,8 +169,8 @@
     </div>
   </div>--%>
 <%--
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript">
+  <script type="test/javascript" src="js/jquery.js"></script>
+  <script type="test/javascript">
       $(".leftmunubar dt").css({"background-color":"slategray"});
       $(".leftmunubar dt img").attr("src","images/left/select_xl01.png");
       $(function(){
@@ -186,19 +190,22 @@
   </script>
 --%>
 
+<div  id="top">
+
+</div>
 
 <div class="show_img_list">
     <div class="list">
         <div class="uploadDay">
             <ul>
                 <li class="time_title">
-                    <%
-                        Date today = new Date();
-                        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                        String dateString = formatter.format(today);
-                        out.print(dateString);
-                    %>
-                    最新上传
+                    <%--<%--%>
+                        <%--Date today = new Date();--%>
+                        <%--SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");--%>
+                        <%--String dateString = formatter.format(today);--%>
+                        <%--out.print(dateString);--%>
+                    <%--%>--%>
+                    最近一个月上传精选
                 </li>
                 <li class="more">
                     <a href="">
@@ -217,14 +224,17 @@
 
                     Collections.reverse(paths);
                     for(int i =0;i<8;i++) {
+                        String imgPath = paths.get(i);
+                        long imgId = uploadPubImages.getPubImgId(imgPath);
+
                         String[] strings = paths.get(i).split("/");
                         String p = strings[strings.length - 1];
                         request.setAttribute("ph", p);
                 %>
                 <div class="img" title="${ph}">
-                    <%--<a target="_blank" href="#">--%>
+                    <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
                     <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                    <%--</a>--%>
+                    </a>
                     <div class="desc">
                         图片&nbsp;${ph}
                     </div>
@@ -240,13 +250,13 @@
             <div class="uploadDay">
                 <ul>
                     <li class="time_title">
-                        <%
-                            Date today1 = new Date();
-                            SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
-                            String dateString1 = formatter1.format(today1);
-                            out.print(dateString1);
-                        %>
-                        最新上传
+                        <%--<%--%>
+                            <%--Date today1 = new Date();--%>
+                            <%--SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");--%>
+                            <%--String dateString1 = formatter1.format(today1);--%>
+                            <%--out.print(dateString1);--%>
+                        <%--%>--%>
+                        智能分类精选
                     </li>
                     <li class="more">
                         <a href="">
@@ -259,14 +269,17 @@
             <div class="allImgs">
                 <%
                     for(int i =0;i<8;i++) {
+                        String imgPath = paths.get(i);
+                        long imgId = uploadPubImages.getPubImgId(imgPath);
+
                         String[] strings = paths.get(i).split("/");
                         String p = strings[strings.length - 1];
                         request.setAttribute("ph", p);
                 %>
                 <div class="img" title="${ph}">
-                    <%--<a target="_blank" href="#">--%>
+                    <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
                     <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                    <%--</a>--%>
+                    </a>
                     <div class="desc">
                         图片&nbsp;${ph}
                     </div>
@@ -281,13 +294,13 @@
             <div class="uploadDay">
                 <ul>
                     <li class="time_title">
-                        <%
-                            Date today2 = new Date();
-                            SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
-                            String dateString2 = formatter2.format(today2);
-                            out.print(dateString2);
-                        %>
-                        最新上传
+                        <%--<%--%>
+                            <%--Date today2 = new Date();--%>
+                            <%--SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");--%>
+                            <%--String dateString2 = formatter2.format(today2);--%>
+                            <%--out.print(dateString2);--%>
+                        <%--%>--%>
+                        按上传时间分类精选
                     </li>
                     <li class="more">
                         <a href="">
@@ -299,14 +312,17 @@
             <div class="allImgs">
                 <%
                     for(int i =0;i<8;i++) {
+                        String imgPath = paths.get(i);
+                        long imgId = uploadPubImages.getPubImgId(imgPath);
+
                         String[] strings = paths.get(i).split("/");
                         String p = strings[strings.length - 1];
                         request.setAttribute("ph", p);
                 %>
                 <div class="img" title="${ph}">
-                    <%--<a target="_blank" href="#">--%>
+                    <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
                     <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                    <%--</a>--%>
+                    </a>
                     <div class="desc">
                         图片&nbsp;${ph}
                     </div>
@@ -321,13 +337,13 @@
             <div class="uploadDay">
                 <ul>
                     <li class="time_title">
-                        <%
-                            Date today3 = new Date();
-                            SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy-MM-dd");
-                            String dateString3 = formatter3.format(today3);
-                            out.print(dateString3);
-                        %>
-                        最新上传
+                        <%--<%--%>
+                            <%--Date today3 = new Date();--%>
+                            <%--SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy-MM-dd");--%>
+                            <%--String dateString3 = formatter3.format(today3);--%>
+                            <%--out.print(dateString3);--%>
+                        <%--%>--%>
+                        按图片主题色调分类精选
                     </li>
                     <li class="more">
                         <a href="">
@@ -339,14 +355,17 @@
             <div class="allImgs">
                 <%
                     for(int i =0;i<8;i++) {
+                        String imgPath = paths.get(i);
+                        long imgId = uploadPubImages.getPubImgId(imgPath);
+
                         String[] strings = paths.get(i).split("/");
                         String p = strings[strings.length - 1];
                         request.setAttribute("ph", p);
                 %>
                 <div class="img" title="${ph}">
-                    <%--<a target="_blank" href="#">--%>
-                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                    <%--</a>--%>
+                    <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
+                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    </a>
                     <div class="desc">
                         图片&nbsp;${ph}
                     </div>
@@ -361,13 +380,13 @@
             <div class="uploadDay">
                 <ul>
                     <li class="time_title">
-                        <%
-                            Date today4 = new Date();
-                            SimpleDateFormat formatter4 = new SimpleDateFormat("yyyy-MM-dd");
-                            String dateString4 = formatter4.format(today4);
-                            out.print(dateString4);
-                        %>
-                        最新上传
+                        <%--<%--%>
+                            <%--Date today4 = new Date();--%>
+                            <%--SimpleDateFormat formatter4 = new SimpleDateFormat("yyyy-MM-dd");--%>
+                            <%--String dateString4 = formatter4.format(today4);--%>
+                            <%--out.print(dateString4);--%>
+                        <%--%>--%>
+                        其它分类精选
                     </li>
                     <li class="more">
                         <a href="">
@@ -379,14 +398,17 @@
             <div class="allImgs">
                 <%
                     for(int i =0;i<8;i++) {
+                        String imgPath = paths.get(i);
+                        long imgId = uploadPubImages.getPubImgId(imgPath);
+
                         String[] strings = paths.get(i).split("/");
                         String p = strings[strings.length - 1];
                         request.setAttribute("ph", p);
                 %>
                 <div class="img" title="${ph}">
-                    <%--<a target="_blank" href="#">--%>
-                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
-                    <%--</a>--%>
+                    <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
+                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    </a>
                     <div class="desc">
                         图片&nbsp;${ph}
                     </div>
@@ -405,9 +427,29 @@
         </p>
     </div>
 </div>
-<button class="back_to_top">
-    返回顶部
-</button>
+<%--返回顶部--%>
+<div id="back_to_top" title="回到顶部"></div>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(window).scroll(function(){
+        var sc=$(window).scrollTop();
+        if(sc>200){
+            $("#back_to_top").css("display","block");
+            $("#back_to_top").css("right","20px")
+        }else{
+            $("#back_to_top").css("display","none");
+        }
+    });
+    $("#back_to_top").click(function(){
+        var sc=$(window).scrollTop();
+        $('body,html').animate({scrollTop:0},500);
+    });
+</script>
+<style>
+    #back_to_top {position: fixed;width:48px;bottom:100px;
+        right:100px; height:48px;cursor:pointer;display:none;
+        background:url(../images/icons/back_to_top-48.png) no-repeat;}
+</style>
 
 </body>
 </html>

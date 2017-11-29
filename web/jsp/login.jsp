@@ -10,13 +10,17 @@
 <head>
     <title>登录</title>
     <link href="../css/loginandregister.css" rel="stylesheet" type="text/css" />
-    <%--<link href="../css/style.css" rel="stylesheet" type="text/css" />--%>
+    <%--<link href="../css/style.css" rel="stylesheet" type="test/css" />--%>
     <link href="../css/topMenuStyle.css" rel="stylesheet" type="text/css" />
 
     <div id="top_bg">
         <div class="top">
-            <a class="logo_l" href="/" title="返回首页"></a>
+            <div class="logo_area">
+                <a class="logo_l" href="/" title="返回首页">
+                    <img class="logo_img" src="../images/logo/logo-64.png">
 
+                </a>
+            </div>
             <form class="searchBar" action="SearchImgPage" method="get">
                 <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
                        onfocus="this.style.backgroundColor='gainsboro'"

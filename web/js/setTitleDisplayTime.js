@@ -11,8 +11,8 @@ tFadeOut=null;
 tFadeIn=null;
 tFadeWaiting=null;
 
-document.write("<style type='text/css'id='defaultPopStyle'>");
-document.write(".cPopText { text-align: left; background-color: #F8F8F5;color:#000000; border: 1px #000000 solid;font-color: font-size: 12px; padding-right: 4px; padding-left: 4px;height: auto;  padding-top: 2px; padding-bottom: 2px; filter: Alpha(Opacity=0)}");
+document.write("<style type='test/css'id='defaultPopStyle'>");
+document.write(".cPopText { test-align: left; background-color: #F8F8F5;color:#000000; border: 1px #000000 solid;font-color: font-size: 12px; padding-right: 4px; padding-left: 4px;height: auto;  padding-top: 2px; padding-bottom: 2px; filter: Alpha(Opacity=0)}");
 document.write("</style>");
 document.write("<div id='dypopLayer' style='min-width:100px;position:absolute;z-index:1000;' class='cPopText'></div>");
 

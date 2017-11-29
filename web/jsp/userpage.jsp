@@ -1,4 +1,5 @@
-<%@ page import="org.image.model.UserInformation" %><%--
+<%@ page import="org.image.model.UserInformation" %>
+<%@ page import="java.io.File" %><%--
   Created by IntelliJ IDEA.
   User: zyj
   Date: 17-11-1
@@ -18,13 +19,17 @@
 <body>
 
 <%
-    UserInformation userInformation = (UserInformation) request.getAttribute("userInformation");
+    HttpSession httpSession=request.getSession();
+    UserInformation userInformation = (UserInformation) httpSession.getAttribute("userInformation");
+    String userHeadpath=userInformation.getHead_img();
+    String[] headpath=userHeadpath.split("/");
+    String headPath="http://localhost:8080/i/UserHead/"+headpath[headpath.length-1];
 %>
 
 <div class="main">
     <div class="test">
         <div class="areas a">
-            <div> <img src="../images/head.png" alt="头像" width="80px" height="80px" onclick="editHead(this)"></div>
+            <div> <img src="<%out.print(headPath); %>" id="userhead" alt="头像" width="80px" height="80px" onclick="editHead(this)"></div>
             <div class="leftdiv" id="tagbut">
                 <button class="on" type="button">基本信息</button><br/>
                 <button class="off" type="button">帐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;户</button>
@@ -50,7 +55,7 @@
             <nav class="ab">
                 <div id="infor" class="show">
                     <input class="alterbut" type="button" value="修改" onclick="changeinfo(this)"/><br/>
-                    <table>
+                    <table id="userinformationtable">
                         <tr>
                             <td class="textpad">姓名</td>
                             <td>
@@ -132,7 +137,7 @@
                                 <td>
                                     <input class="sex" type="radio" name="sex" value="male" />男
                                     <input class="sex" type="radio" name="sex" value="female"/>女
-                                    <input class="sex" type="radio" name="sex" value="null" checked/>保密
+                                    <input class="sex" type="radio" name="sex" value="secrecy" checked/>保密
                                 </td>
                             </tr>
                             <tr>
@@ -144,11 +149,7 @@
                             <tr>
                                 <td class="textpad">自我介绍</td>
                                 <td>
-                                    <textarea class="intro" name="selfIntro">
-                                        <%
-                                            out.print(userInformation.getSelfintro());
-                                        %>
-                                    </textarea>
+                                    <textarea class="intro" name="selfIntro"><%out.print(userInformation.getSelfintro().trim());%></textarea>
                                 </td>
                             </tr>
                         </table>
@@ -192,16 +193,42 @@
     </div>
 
     <div id="headid" class="headarea">
-        <p>修改图片</p>
-        <img src="" alt="head" width="50px" height="50px">
-        <dl>
-            <dt>选择图片</dt>
-            <dd><input type="text"></dd>
-        </dl>
-        <p>从相册选择</p>
-        <input type="button" value="取消" onclick="cancalhead()"/>
+        <form action="/updatehead" enctype="multipart/form-data" method="post">
+            <div class="changeheadtop">
+                <span>修改图片</span>
+                <img src="../images/arrow-back.png" width="20px" height="20px" class="arrow" onclick="cancalhead()"/>
+            </div>
+            <div id="testa">
+                <img src="<%out.print(headPath); %>" id="changehead" alt="head" width="100px" height="100px" style="margin-top: 10px">
+            </div>
+            <dl>
+                <dt style="margin-top: 10px">选择图片</dt>
+                <dd style="margin-top: 5px">
+                    <input type="file" accept="image/*" id="updatehead" name="updatename" onchange="ichangehead()"/>
+                    <input type="text" name="belongid" class="hide" value="<%out.print(userInformation.getBelonguserid());%>"/>
+                </dd>
+            </dl>
+            <input type="submit" value="提交" style="margin-top: 5px"/>
     </div>
+    </from>
 </div>
+
+<script>
+    function ichangehead() {
+        var test=document.getElementById("testa");
+        var img=test.querySelector('img');
+        var input_file=document.querySelector('input[type=file]').files[0];
+        var reader=new FileReader();
+        reader.addEventListener("load", function () {
+            img.src = reader.result;
+        }, false);
+
+        if (input_file) {
+            reader.readAsDataURL(input_file);
+        }
+    }
+
+</script>
 
 <%--隐藏背景--%>
 <div id="hidebgid" class="hidebg"></div>

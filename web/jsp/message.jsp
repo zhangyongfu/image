@@ -9,7 +9,7 @@
 <html>
 <head>
 <%--<<<<<<< HEAD:web/jsp/message.jsp--%>
-    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
+    <%--<meta http-equiv="Content-Type" content="test/html; charset=UTF-8">--%>
     <%--<title>文件上传结果</title>--%>
 <%--</head>--%>
 <%--<body>--%>

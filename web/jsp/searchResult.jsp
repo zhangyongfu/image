@@ -78,7 +78,7 @@
         HttpSession resultSession = request.getSession();
         List<String> result = (List<String>)resultSession.getAttribute("result");
         String SearchText = (String)resultSession.getAttribute("searchText");
-        request.setAttribute("text",SearchText);
+        request.setAttribute("test",SearchText);
 
         for(String path:result) {
             String[] strings = path.split("/");

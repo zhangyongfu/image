@@ -25,3 +25,15 @@
     font-size: 15px;
     color:black;
 }
+.logo_area{
+    width:150px;
+    height:55px;
+    float:left;
+    margin:0 auto;
+}
+
+
+.web_build_page_title{
+    text-align: center;
+    color: darkcyan;
+}
