@@ -1,0 +1,128 @@
+
+.show_myimg_list{
+    position: relative;
+    left:160px;
+    top:110px;
+    float: left;
+    /*width: 670px;*/
+    padding: 0;
+}
+
+.myimglist{
+    /*position: relative;*/
+    /*top:110px;*/
+    /*border-right:4px outset blue;*/
+    /*border-top:4px outset blue;*/
+    /*border-left:4px outset blue;*/
+    /*border-bottom:4px outset blue;*/
+    /*border: medium solid #0573bd;*/
+    /*border:1px;*/
+    /*left:-100px;*/
+
+    /*display: table-cell;*/
+    /*margin:0 auto;*/
+    width:1110px;
+    height:530px;
+
+    margin-bottom: 25px;
+    padding: 0px;
+    background: #FFFFFF;
+    border: 2px solid #D6E6CC;
+
+}
+
+
+.myimguploadDay{
+    /*position: relative;*/
+    /*bottom:12px;*/
+    /*!*background-color: #bebebe;*!*/
+    /*!*width:1200px;*!*/
+    /*left:-550px;*/
+
+
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 2px 5px 5px 5px;
+    background: #D6E6CC;
+    border: 1px solid #D6E6CC;
+    /*letter-spacing: -.5px;*/
+    color: #FFFFFF;
+
+}
+
+.myimgtime_title{
+    height: 30px;
+    margin-bottom: 3px;
+    padding: 5px 0px 2px 5px;
+    text-align: left;
+    color: #000;
+
+}
+.myimgmore{
+    float: right;
+    margin-top: -35px;
+    padding-right: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+}
+.mygallerylist{
+    position: relative;
+    top:10px;
+    /*border-right:4px outset blue;*/
+    /*border-top:4px outset blue;*/
+    /*border-left:4px outset blue;*/
+    /*border-bottom:4px outset blue;*/
+    /*border: medium solid #0573bd;*/
+    /*border:1px;*/
+    left:12px;
+    /*right:12px;*/
+    float: left;
+    width:1200px;
+}
+div .img
+{
+
+    border:1px solid #bebebe;
+    height:auto;
+    background-color: cornflowerblue;
+    width:260px;
+    /*margin-bottom: 15px;*/
+    /*margin-right: 10px;*/
+    float:left;
+    margin:10px 5px;
+    text-align:center;
+}
+div .desc
+{
+    text-align:center;
+    font-weight:normal;
+    font-size:15px;
+    width:250px;
+    height:24px;
+    background-color: transparent;
+    color: #000;
+    margin:5px 3px 5px 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#calltologin{
+    text-align: center;
+    position: fixed;
+    top:8%;
+    left:0;
+    font-style: inherit;
+    font-size: 20px;
+    color:black;
+}
+
+
+
+
+
+
+
+

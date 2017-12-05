@@ -21,7 +21,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"  />
   <title>Image</title>
-  <%--<link href="css/style.css" rel="stylesheet" type="test/css" />--%>
+  <link href="css/style.css" rel="stylesheet" type="test/css" />
     <link href="css/topMenuStyle.css" rel="stylesheet" type="text/css" />
 
     <div id="top_bg">
@@ -90,6 +90,110 @@
 
       </div>
     </div>
+
+
+
+    <style type="text/css">
+      .index_div{
+        position: relative;
+        top:5px;
+        left:15px;
+        float: left;
+        /*width: 1280px;*/
+        padding: 0;
+      }
+      .index_img{
+        position: relative;
+        color: deepskyblue;
+
+
+        margin-bottom: 50px;
+        padding: 0;
+        background: #FFFFFF;
+        height:600px;
+        border: 2px solid #D6E6CC;
+
+      }
+      .index_div_title{
+        position: relative;
+        top:0;
+        height: 30px;
+        margin-bottom: 10px;
+        padding: 2px 5px 5px 5px;
+        background: #D6E6CC;
+        border: 1px solid #D6E6CC;
+        /*letter-spacing: -.5px;*/
+        color: #FFFFFF;
+      }
+      .index_img_title{
+        height: 30px;
+        margin-bottom: 3px;
+        padding: 5px 0px 2px 5px;
+        text-align: left;
+        color: #000;
+        list-style-type: none;
+      }
+      .index_img_title_right{
+        float: right;
+        margin-top: -35px;
+        padding-right: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: normal;
+        font-size: 18px;
+        color: #000;
+        list-style-type: none;
+      }
+      .index_beauty_img{
+
+        position: relative;
+        left:13px;
+        width:1300px;
+      }
+      .img{
+
+        height:auto;
+        width:246px;
+        margin-bottom: 15px;
+        margin-right: 10px;
+        float:left;
+      }
+
+      .img a{
+        position: relative;
+        margin:0;
+        padding:0;
+        /*left:20px;*/
+        /*top:60px;*/
+        width:246px;
+        height:170px;
+        background-color: transparent;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .img a img{
+
+        /*padding: 40px 50px 40px 50px;*/
+        position: relative;
+        margin:auto;
+        /*top:50%;*/
+
+        /*left:0;*/
+        /*width:90%;*/
+        max-width:250px;
+        max-height:170px;
+        width:auto;
+        height:auto;
+      }
+      .copyright_text{
+
+        text-align: center;
+      }
+
+
+
+    </style>
   </head>
   <body>
 
@@ -164,6 +268,7 @@
 
 
         //      UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
+
         UploadPubImages uploadPubImages = new UploadPubImages();
 
         List<String> paths = uploadPubImages.getPubImgFilePath();
@@ -185,8 +290,8 @@
         %>
 
         <div class="img" title="${ph}">
-          <a href="/jsp/showImage.jsp?imgId=<%=imgId%>" target="_blank">
-            <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+          <a href="./jsp/showImage.jsp?imgId=<%=imgId%>" target="_blank">
+            <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
           </a>
         </div>
 
@@ -201,9 +306,10 @@
       <p>
         Copyright © 2017 Image group. All rights reserved.
       </p>
+
     </div>
   </div>
 
-  <a href="jsp/test.jsp">askjfaljfa</a>
+  <%--<a href="jsp/test.jsp">askjfaljfa</a>--%>
   </body>
 </html>

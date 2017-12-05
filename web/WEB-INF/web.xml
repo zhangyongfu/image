@@ -40,17 +40,20 @@
 
 -->
 
-<<<<<<< HEAD
-=======
 
-    <servlet>
-        <servlet-name>TestServlet</servlet-name>
-        <servlet-class>org.image.servlet.TestServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/TestImg</url-pattern>
-    </servlet-mapping>
 
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>org.image.charset.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
 </web-app>

@@ -23,12 +23,12 @@
 
                 </a>
             </div>
-            <form class="searchBar" action="SearchImgPage" method="get">
-                <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
-                       onfocus="this.style.backgroundColor='gainsboro'"
-                       onblur="this.style.backgroundColor='beige'">
-                <input class="goSearch" type="submit" value="搜索">
-            </form>
+            <%--<form class="searchBar" action="SearchImgPage" method="get">--%>
+                <%--<input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."--%>
+                       <%--onfocus="this.style.backgroundColor='gainsboro'"--%>
+                       <%--onblur="this.style.backgroundColor='beige'">--%>
+                <%--<input class="goSearch" type="submit" value="搜索">--%>
+            <%--</form>--%>
 
 
             <nav class="top_menu">

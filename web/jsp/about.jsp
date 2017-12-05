@@ -14,22 +14,24 @@
     <title>关于</title>
 
 
+    <%--<jsp:include page="topmenu.jsp"></jsp:include>--%>
+    <%@include file="topmenu.jsp"%>
     <link href="../css/about.css" rel="stylesheet" type="text/css" />
-    <link href="../css/topMenuStyle.css" rel="stylesheet" type="text/css" />
+    <%--<link href="../css/topMenuStyle.css" rel="stylesheet" type="text/css" />--%>
 
-    <div id="top_bg">
+<%--    <div id="top_bg">
         <div class="top">
             <div class="logo_area">
                 <a class="logo_l" href="/" title="返回首页">
                     <img class="logo_img" src="../images/logo/logo-64.png">
                 </a>
             </div>
-            <form class="searchBar" action="SearchImgPage" method="get">
-                <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
-                       onfocus="this.style.backgroundColor='gainsboro'"
-                       onblur="this.style.backgroundColor='beige'">
-                <input class="goSearch" type="submit" value="搜索">
-            </form>
+            &lt;%&ndash;<form class="searchBar" action="SearchImgPage" method="get">&ndash;%&gt;
+                &lt;%&ndash;<input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."&ndash;%&gt;
+                       &lt;%&ndash;onfocus="this.style.backgroundColor='gainsboro'"&ndash;%&gt;
+                       &lt;%&ndash;onblur="this.style.backgroundColor='beige'">&ndash;%&gt;
+                &lt;%&ndash;<input class="goSearch" type="submit" value="搜索">&ndash;%&gt;
+            &lt;%&ndash;</form>&ndash;%&gt;
 
 
             <nav class="top_menu">
@@ -52,7 +54,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div>--%>
 
 </head>
 <body>
@@ -292,15 +294,15 @@
 
 </p>
 
-<%
-    DatabaseConnection databaseConnection = new DatabaseConnection();
-    ImageUserDaoImpl imageUserDao = new ImageUserDaoImpl();
-    String email = request.getParameter("email");
-    String name = request.getParameter("name");
-    String password = request.getParameter("password");
-    User user = new User(email,name,password);
-    imageUserDao.addImageUser(user);
-%>
+<%--<%--%>
+    <%--DatabaseConnection databaseConnection = new DatabaseConnection();--%>
+    <%--ImageUserDaoImpl imageUserDao = new ImageUserDaoImpl();--%>
+    <%--String email = request.getParameter("email");--%>
+    <%--String name = request.getParameter("name");--%>
+    <%--String password = request.getParameter("password");--%>
+    <%--User user = new User(email,name,password);--%>
+    <%--imageUserDao.addImageUser(user);--%>
+<%--%>--%>
 
 <%--<tr>
     <td><%=u.getEmail() %></td>

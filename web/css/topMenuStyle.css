@@ -27,31 +27,41 @@ ul, ul li{
     position:fixed;
     z-index:1;
 
-    left:0;
+    /*left:0;*/
 }
-<<<<<<< HEAD
-.logo_area{
-    width:150px;
-=======
 
-.logo_img{
-    width:55px;
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
-    height:55px;
+.logo_area{
     position: fixed;
+    width:150px;
+
+    height:55px;
+    /*position: fixed;*/
     left:50px;
     float:left;
-<<<<<<< HEAD
+
+    margin:0 auto;
+}
+
+.search_menu{
+    position: fixed;
+    /*width:150px;*/
+
+    height:55px;
+    /*position: fixed;*/
+    left:130px;
+    top:10px;
+    float:left;
+
     margin:0 auto;
 }
 .logo_img{
-    width:55px;
-    height:55px;
     position: fixed;
     left:50px;
+    width:55px;
+    height:55px;
+
     float:left;
-=======
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
+
 }
 
 .top_menu {
@@ -129,12 +139,15 @@ ul, ul li{
     bottom:5px;
 }
 
-.searchBar{
-    float:left;
-}
+/*.searchBar{*/
+    /*position: relative;*/
+
+    /*float:left;*/
+/*}*/
 .searchImg{
     position: fixed;
     top:10px;
+    left:130px;
     height:35px;
     border-radius:5px;
     background-color: beige;
@@ -143,10 +156,10 @@ ul, ul li{
     width:280px;
 }
 .goSearch{
+
     position: fixed;
     top:10px;
-
-    left:435px;
+    left:420px;
     float: left;
     height:35px;
     background:beige;
@@ -245,7 +258,7 @@ a{
 }
 .searchPageImg{
     width: 500px;
-    height: 30px;
+    height: 33px;
 }
 
 .searchPageGo{
@@ -260,54 +273,23 @@ a{
     background-color: royalblue;
 }
 
-.index_div{
-    position: relative;
-    top:5px;
-    left:30px;
-    float: left;
-    /*width: 670px;*/
-    padding: 0;
-}
-.index_img{
-    position: relative;
-    color: deepskyblue;
+
+/*.all_img_div{*/
+    /*position: relative;*/
+    /*top:5px;*/
+    /*left:30px;*/
+    /*float: left;*/
+    /*!*width: 670px;*!*/
+    /*padding: 0;*/
+/*}*/
 
 
-    margin-bottom: 50px;
-    padding: 0;
-    background: #FFFFFF;
-    height:600px;
-    border: 2px solid #D6E6CC;
 
-}
-.index_div_title{
-    height: 30px;
-    margin-bottom: 10px;
-    padding: 2px 5px 5px 5px;
-    background: #D6E6CC;
-    border: 1px solid #D6E6CC;
-    /*letter-spacing: -.5px;*/
-    color: #FFFFFF;
-}
 
-.index_img_title{
-    height: 30px;
-    margin-bottom: 3px;
-    padding: 5px 0px 2px 5px;
-    text-align: left;
-    color: #000;
-    list-style-type: none;
-}
-.index_img_title_right{
-    float: right;
-    margin-top: -35px;
-    padding-right: 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: normal;
-    font-size: 18px;
-    color: #000;
-    list-style-type: none;
-}
+
+
+
+
 .index_img_title_right a:hover{
     color: blue;
 }
@@ -320,22 +302,4 @@ a{
     /*letter-spacing: -.5px;*/
     color: #FFFFFF;
 }
-.index_beauty_img{
 
-    position: relative;
-    left:13px;
-    width:1300px;
-}
-
-.img{
-
-    height:auto;
-    width:246px;
-    margin-bottom: 15px;
-    margin-right: 10px;
-    float:left;
-}
-.copyright_text{
-
-    text-align: center;
-}

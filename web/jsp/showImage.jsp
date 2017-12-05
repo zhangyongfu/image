@@ -10,15 +10,14 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.image.model.UploadPubImages" %>
 <%@ page import="org.image.model.Testt" %>
-<<<<<<< HEAD
+
 <%@ page import="com.drew.metadata.Metadata" %>
 <%@ page import="com.drew.imaging.ImageMetadataReader" %>
 <%@ page import="com.drew.metadata.Directory" %>
 <%@ page import="com.drew.metadata.Tag" %>
 <%@ page import="com.drew.imaging.ImageProcessingException" %>
 <%@ page import="java.io.IOException" %>
-=======
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
+
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f"%>
@@ -32,14 +31,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<<<<<<< HEAD
+
 
 
 <html>
 <head>
     <title>Title</title>
     <link href="../css/showImage.css" rel="stylesheet" type="text/css" />
-    <%--<link href="../css/loginandregister.css" rel="stylesheet" type="text/css" />--%>
 
     <link href="../css/topMenuStyle.css" rel="stylesheet" type="text/css" />
 
@@ -51,12 +49,6 @@
 
                 </a>
             </div>
-            <form class="searchBar" action="SearchImgPage" method="get">
-                <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
-                       onfocus="this.style.backgroundColor='gainsboro'"
-                       onblur="this.style.backgroundColor='beige'">
-                <input class="goSearch" type="submit" value="搜索">
-            </form>
 
 
             <nav class="top_menu">
@@ -173,61 +165,12 @@
     <%--</div>--%>
 
 </div>
-=======
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-<%
-
-    String imgId_str = request.getParameter("imgId");
-    long imgId = Long.parseLong(imgId_str);
-
-//    request.setAttribute("imgId",imgId);
-
-//    Testt tt = new Testt();
-//    tt.getSelectImgId(request);
-//    out.print("img_id: " + imgId);
-
-    UploadPubImages uploadPubImages = new UploadPubImages();
-
-    if(imgId != -1){
-//        try{
-//            Map<String,String> data = new ImageMetadata().getAllMetadata(imgId);
-//
-//            for(Map.Entry<String,String> entry:data.entrySet()){
-//                out.println(entry.getKey() + ":" + entry.getValue());
-//
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//
-//            Testt t = new Testt();
-//            try {
-//                Map<String, String> data = t.getNeedData(208);
-//                for (Map.Entry<String, String> entry : data.entrySet()) {
-//                    out.println(entry.getKey() + ":" + entry.getValue());
-//
-//                }
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
 
 
-        String imgPath = uploadPubImages.getPubImgFilePath(imgId);
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
 
 
-        String[] strings = imgPath.split("/");
-        String p = strings[strings.length - 1];
-        request.setAttribute("ph", p);
-    }
-
-%>
-<img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="70%" height="80%">
-
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
+</script>
 </body>
 </html>

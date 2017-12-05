@@ -17,86 +17,88 @@
 <html>
 <head>
 
+    <%@include file="topmenu.jsp"%>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"  />
     <title>Image</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <%--<link href="css/topMenuStyle.css" rel="stylesheet" type="test/css" />--%>
 
-    <div id="top_bg">
-        <div class="top">
-            <div class="logo_area">
-                <a class="logo_l" href="/" title="返回首页">
-                    <img class="logo_img" src="../images/logo/logo-64.png">
+    <%--<div id="top_bg">--%>
+        <%--<div class="top">--%>
+            <%--<div class="logo_area">--%>
+                <%--<a class="logo_l" href="/" title="返回首页">--%>
+                    <%--<img class="logo_img" src="../images/logo/logo-64.png">--%>
 
-                </a>
-            </div>
-            <form class="searchBar" action="SearchImgPage" method="get">
-                <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
-                       onfocus="this.style.backgroundColor='gainsboro'"
-                       onblur="this.style.backgroundColor='beige'">
-                <input class="goSearch" type="submit" value="搜索">
-            </form>
+                <%--</a>--%>
+            <%--</div>--%>
+            <%--<form class="searchBar" action="SearchImgPage" method="get">--%>
+                <%--<input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."--%>
+                       <%--onfocus="this.style.backgroundColor='gainsboro'"--%>
+                       <%--onblur="this.style.backgroundColor='beige'">--%>
+                <%--<input class="goSearch" type="submit" value="搜索">--%>
+            <%--</form>--%>
 
 
-            <nav class="top_menu">
-                <ul class="primary_menu">
-                    <li class="menu_item"><a href="/">首页</a></li>
-                    <li class="menu_item"><a style="color:white">图库</a>
-                        <ul class="sub_menu">
-                            <li class="sub_menu_item"> <a href="pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
-                            <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
-                            <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank">创建图库</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu_item"><a>关于</a>
-                        <ul class="sub_menu">
-                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">网站</a></li>
-                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">团队</a></li>
-                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">反馈</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <%--<nav class="top_menu">--%>
+                <%--<ul class="primary_menu">--%>
+                    <%--<li class="menu_item"><a href="/">首页</a></li>--%>
+                    <%--<li class="menu_item"><a style="color:white">图库</a>--%>
+                        <%--<ul class="sub_menu">--%>
+                            <%--<li class="sub_menu_item"> <a href="pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>--%>
+                            <%--<li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>--%>
+                            <%--<li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank">创建图库</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li class="menu_item"><a>关于</a>--%>
+                        <%--<ul class="sub_menu">--%>
+                            <%--<li class="sub_menu_item"> <a href="about.jsp" target="_blank">网站</a></li>--%>
+                            <%--<li class="sub_menu_item"> <a href="about.jsp" target="_blank">团队</a></li>--%>
+                            <%--<li class="sub_menu_item"> <a href="about.jsp" target="_blank">反馈</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                <%--</ul>--%>
+            <%--</nav>--%>
 
-            <%
-                HttpSession httpSession = request.getSession();
-                User user = (User)httpSession.getAttribute("userName");
-                if(user != null){
-            %>
-            <ul id="">
-                <li id="top_login_success">
-                    <a class="show_user" href="/userinformation" title="<%=user.getName()%>">
-                        <%
-                            out.print(user.getName());
-                        %>
-                    </a>
-                </li>
-                <form id="loginout" action="/loginout" method="post">
-                    <input type="submit" title="注销" value="注销">
+            <%--<%--%>
+                <%--HttpSession httpSession = request.getSession();--%>
+                <%--User user = (User)httpSession.getAttribute("userName");--%>
+                <%--if(user != null){--%>
+            <%--%>--%>
+            <%--<ul id="">--%>
+                <%--<li id="top_login_success">--%>
+                    <%--<a class="show_user" href="/userinformation" title="<%=user.getName()%>">--%>
+                        <%--<%--%>
+                            <%--out.print(user.getName());--%>
+                        <%--%>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
+                <%--<form id="loginout" action="/loginout" method="post">--%>
+                    <%--<input type="submit" title="注销" value="注销">--%>
 
-                </form>
-            </ul>
-            <%
-            }
-            else{
-            %>
-            <ul>
-                <li id="top_login">
-                    <a id="login" href="/jsp/login.jsp">登录</a>
-                    |
-                    <a id="register" href="/jsp/goregister.jsp">注册</a>
-                </li>
-            </ul>
-            <%
-                }
-            %>
-            <div>
+                <%--</form>--%>
+            <%--</ul>--%>
+            <%--<%--%>
+            <%--}--%>
+            <%--else{--%>
+            <%--%>--%>
+            <%--<ul>--%>
+                <%--<li id="top_login">--%>
+                    <%--<a id="login" href="/jsp/login.jsp">登录</a>--%>
+                    <%--|--%>
+                    <%--<a id="register" href="/jsp/goregister.jsp">注册</a>--%>
+                <%--</li>--%>
+            <%--</ul>--%>
+            <%--<%--%>
+                <%--}--%>
+            <%--%>--%>
+            <%--<div>--%>
 
-            </div>
+            <%--</div>--%>
 
-        </div>
-    </div>
+        <%--</div>--%>
+    <%--</div>--%>
 
     <%--
         <style>
@@ -208,7 +210,7 @@
                     最近一个月上传精选
                 </li>
                 <li class="more">
-                    <a href="">
+                    <a href="/QueryAllImagesServlet?classify=fromLastMonth">
 
                     更多>>
                     </a>
@@ -389,7 +391,7 @@
                         其它分类精选
                     </li>
                     <li class="more">
-                        <a href="">
+                        <a href="./test.jsp">
                         更多>>
                         </a>
                     </li>
@@ -427,6 +429,8 @@
         </p>
     </div>
 </div>
+
+
 <%--返回顶部--%>
 <div id="back_to_top" title="回到顶部"></div>
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>

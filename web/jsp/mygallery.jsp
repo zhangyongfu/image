@@ -12,43 +12,52 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+    <%@include file="topmenu.jsp"%>
     <title>Title</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
-    <link href="../css/gallerystyle.css" rel="stylesheet" type="text/css"/>
-    <link href="../css/imgdisplay.css" rel="stylesheet" type="text/css" />
+    <link href="../css/mygallerypage.css" rel="stylesheet" type="text/css" />
+    <%--<link href="css/topMenuStyle.css" rel="stylesheet" type="test/css" />--%>
+
+
+
+    <%--<link href="../css/gallerystyle.css" rel="stylesheet" type="text/css"/>--%>
+    <%--<link href="../css/imgdisplay.css" rel="stylesheet" type="text/css" />--%>
 
 </head>
 <body>
 
-<div id="top_bg">
-    <div class="logo_area">
-        <a class="logo_l" href="/" title="返回首页">
-            <img class="logo_img" src="../images/logo/logo-64.png">
+<%--<div id="top_bg">
+    <div class="top">
+        <div class="logo_area">
+            <a class="logo_l" href="/" title="返回首页">
+                <img class="logo_img" src="../images/logo/logo-64.png">
 
-        </a>
-    </div>
-    <form class="searchBar">
-        <input class="searchImg" type="search"  placeholder="搜索图片.."
-               onfocus="this.style.backgroundColor='gainsboro'"
-               onblur="this.style.backgroundColor='beige'">
-        <input class="goSearch" type="submit" value="搜索">
-    </form>
-    <div class="nav_z">
+            </a>
+        </div>
+        <form class="searchBar" action="SearchImgPage" method="get">
+            <input class="searchImg" type="search" name="searchText" placeholder="搜索图片.."
+                   onfocus="this.style.backgroundColor='gainsboro'"
+                   onblur="this.style.backgroundColor='beige'">
+            <input class="goSearch" type="submit" value="搜索">
+        </form>
+
+
         <nav class="top_menu">
             <ul class="primary_menu">
-                <li class="menu_item"><a href="../">首页</a></li>
+                <li class="menu_item"><a href="/">首页</a></li>
                 <li class="menu_item"><a style="color:white">图库</a>
                     <ul class="sub_menu">
-                        <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp">公共图库</a></li>
-                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp">私人图库</a></li>
-                        <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp">创建图库</a></li>
+                        <li class="sub_menu_item"> <a href="pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
+                        <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
+                        <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank">创建图库</a></li>
                     </ul>
                 </li>
                 <li class="menu_item"><a>关于</a>
                     <ul class="sub_menu">
-                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">网站</a></li>
-                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">团队</a></li>
-                        <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">反馈</a></li>
+                        <li class="sub_menu_item"> <a href="about.jsp" target="_blank">网站</a></li>
+                        <li class="sub_menu_item"> <a href="about.jsp" target="_blank">团队</a></li>
+                        <li class="sub_menu_item"> <a href="about.jsp" target="_blank">反馈</a></li>
                     </ul>
                 </li>
             </ul>
@@ -57,22 +66,65 @@
         <%
             HttpSession httpSession = request.getSession();
             User user = (User)httpSession.getAttribute("userName");
-            if(user != null){       //为了测试，先将此行注释
+            if(user != null){
         %>
+        <ul id="">
+            <li id="top_login_success">
+                <a class="show_user" href="/userinformation" title="<%=user.getName()%>">
+                    <%
+                        out.print(user.getName());
+                    %>
+                </a>
+            </li>
+            <form id="loginout" action="/loginout" method="post">
+                <input type="submit" title="注销" value="注销">
 
-        <%--遍历用户个人的图库--%>
-        <p id="wel_show">
-            亲爱的
-            <a href="/userinformation">
-                <%
-                    out.print(user.getName());
-//                    out.print(request.getServletContext().getRealPath("/"));
-                %>
-            </a>
-            ,欢迎你。
-        </p>
+            </form>
+        </ul>
+        <%
+        }
+        else{
+        %>
+        <ul>
+            <li id="top_login">
+                <a id="login" href="/jsp/login.jsp">登录</a>
+                |
+                <a id="register" href="/jsp/goregister.jsp">注册</a>
+            </li>
+        </ul>
+        <%
+            }
+        %>
+        <div>
+
+        </div>
+
     </div>
-</div>
+</div>--%>
+
+<style type="text/css">
+
+    .my_gallery{
+        position: fixed;
+        left:20px;
+        top:55px;
+    }
+
+    .my_gallery_start{
+
+        /*font-style: italic;*/
+        font-size: 25px;
+        color:blue;
+    }
+    .upload_img{
+        position: fixed;
+        top:120px;
+        left:10px;
+    }
+
+
+
+</style>
 
 
 <div>
@@ -134,116 +186,10 @@
         <%--</li>--%>
     <%--</ul>--%>
 <%--</div>--%>
-<<<<<<< HEAD
+
 <%--<<<<<<< HEAD--%>
 <%--=======--%>
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
 
-
-
-<%--<div class="mygallerylist" id="default_display">--%>
-<%--<%--%>
-    <%--UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();--%>
-    <%--List<String> paths = uploadImage.getImageFilePath(user.getName());--%>
-
-
-    <%--for(String path:paths) {--%>
-        <%--String[] strings = path.split("/");--%>
-        <%--String p = strings[strings.length - 1];--%>
-        <%--request.setAttribute("ph", p);--%>
-
-<%--%>--%>
-    <%--<div class="img" title="${ph}">--%>
-        <%--<a target="_blank" href="#">--%>
-            <%--<img src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">--%>
-        <%--</a>--%>
-        <%--<div class="desc">--%>
-            <%--我的图片${ph}--%>
-        <%--</div>--%>
-    <%--</div>--%>
-
-<%--<%--%>
-        <%--request.removeAttribute("ph");--%>
-    <%--}--%>
-<%--%>--%>
-
-<%--</div>--%>
-
-<%--&lt;%&ndash;--%>
-
-<%--<div class="mygallerylist" id="hideall">--%>
-<%--<%--%>
-    <%--UploadPriImageDaoImpl showImgByUploadtime = new UploadPriImageDaoImpl();--%>
-    <%--List<String> pathsbyUploadTime = showImgByUploadtime.getImagesUploadTime();--%>
-
-    <%--for(String path:pathsbyUploadTime) {--%>
-        <%--String[] strings = path.split("/");--%>
-        <%--String img = strings[strings.length - 1];--%>
-        <%--request.setAttribute("i", img);--%>
-
-<%--%>--%>
-    <%--<div class="img" title="${ph}">--%>
-        <%--<a target="_blank" href="#">--%>
-            <%--<img src="http://localhost:8080/i/img/${i}" alt="Ballade" width="250" height="170px">--%>
-        <%--</a>--%>
-        <%--<div class="desc">--%>
-            <%--我的图片${ph}--%>
-        <%--</div>--%>
-    <%--</div>--%>
-
-<%--<%--%>
-        <%--request.removeAttribute("ph");--%>
-    <%--}--%>
-<%--%>--%>
-
-<%--</div>--%>
-<%--&ndash;%&gt;--%>
-
-<%--&lt;%&ndash;--%>
-<%--<div class="mygallerylist" id="default_display">--%>
-<%--<%--%>
-    <%--UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();--%>
-    <%--List<String> paths = uploadImage.getImageFilePath(user.getName());--%>
-
-    <%--for(String path:paths) {--%>
-        <%--String[] strings = path.split("/");--%>
-        <%--String p = strings[strings.length - 1];--%>
-        <%--request.setAttribute("ph", p);--%>
-
-<%--%>--%>
-    <%--<div class="img" title="${ph}">--%>
-        <%--<a target="_blank" href="#">--%>
-            <%--<img id="allImages" src="http://localhost:8080/i/img/${ph}" alt="Ballade" width="250" height="170px">--%>
-        <%--</a>--%>
-        <%--<div class="desc">--%>
-            <%--我的图片${ph}--%>
-        <%--</div>--%>
-    <%--</div>--%>
-
-<%--<%--%>
-        <%--request.removeAttribute("ph");--%>
-    <%--}--%>
-<%--%>--%>
-
-<%--</div>--%>
-
-
-<<<<<<< HEAD
-<%--<div class="mygallerylist" id="default_display">--%>
-<%--<%--%>
-    <%--UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();--%>
-    <%--List<String> paths = uploadImage.getImageFilePath(user.getName());--%>
-<%-->>>>>>> 10144f13396918a9111b287b58a50568b94917cf--%>
-=======
-<div class="mygallerylist" id="default_display">
-<%
-    UploadPriImageDaoImpl uploadImage = new UploadPriImageDaoImpl();
-    List<String> paths = uploadImage.getImageFilePath(user.getName());
->>>>>>> 10144f13396918a9111b287b58a50568b94917cf
->>>>>>> 472da5ee6696686ed4172cc20fb193e5da6f18c5
 
 <%--<div class="mygallerylist" id="default_display">--%>
 <%--<%--%>
@@ -329,17 +275,17 @@
         </div>
     </div>
 
-        <%
-    }
-    else{
-        %>
-<p id="calltologin">
-    你好像还没有登录哦
-    <a href="/jsp/login.jsp">返回登录</a>
-</p>
-<%
-    }
-%>
+        <%--&lt;%&ndash;&lt;%&ndash;%>--%>
+<%--//    }--%>
+<%--//    else{--%>
+<%--//        %>--%>
+<%--//<p id="calltologin">--%>
+<%--//    你好像还没有登录哦--%>
+<%--//    <a href="../jsp/login.jsp">返回登录</a>--%>
+<%--//</p>--%>
+<%--//<%--%>
+<%--//    }--%>
+<%--//%>--%>
 
 </body>
 </html>
