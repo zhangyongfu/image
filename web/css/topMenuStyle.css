@@ -3,6 +3,12 @@
 
 html {
     margin: 0 auto;
+    background: url(../images/background/0336.jpg) fixed #bebebe;
+
+    /*background: white;*/
+    background-size: cover;
+    width:100%;
+
 }
 img{
     vertical-align:middle;
@@ -25,13 +31,16 @@ ul, ul li{
     width:100%;
     background:mediumslateblue;
     position:fixed;
-    z-index:1;
+    top:0;
+    z-index:3;
 
     /*left:0;*/
 }
 
 .logo_area{
     position: fixed;
+    top:0;
+
     width:150px;
 
     height:55px;
@@ -56,6 +65,8 @@ ul, ul li{
 }
 .logo_img{
     position: fixed;
+    top:0;
+
     left:50px;
     width:55px;
     height:55px;
@@ -68,6 +79,8 @@ ul, ul li{
     /*width: 500px;*/
     height:55px;
     position: fixed;
+    top:0;
+
     left:500px;
     text-align: center;
     /*margin: 0 auto;*/
@@ -118,10 +131,13 @@ ul, ul li{
 
 
 .search_list{
-    background-image: url(../images/background2.jpg);
+    /*background-image: url(../images/background2.jpg);*/
     /*background-color: #FFFFFF;*/
     height:510px;
     /*background-repeat:no-repeat;*/
+
+
+
 
 }
 .web_logo{
@@ -147,7 +163,7 @@ ul, ul li{
 .searchImg{
     position: fixed;
     top:10px;
-    left:130px;
+    left:0;
     height:35px;
     border-radius:5px;
     background-color: beige;
@@ -178,7 +194,9 @@ ul, ul li{
 #top_login{
     position: absolute;
     font-size:15px;
-    left:1150px;
+    /*left:1150px;*/
+    right:150px;
+
     top:20px;
     height: 55px;
     float: right;
@@ -188,29 +206,31 @@ ul, ul li{
     font-size:20px;
     top:18px;
     background-color: #0573bd;
-    left:1050px;
+    /*left:1050px;*/
+    right:200px;
     text-align: center;
 
 }
 .show_user{
-    width:80px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /*width:80px;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
 }
 
 #top_login_success a{
-    font-size: 18px;
-    font-style: inherit;
-    float:right;
-    color:skyblue;
+    /*font-size: 18px;*/
+    /*font-style: inherit;*/
+    /*float:right;*/
+    /*color:skyblue;*/
 }
 #loginout input{
     font-size: 18px;
     font-style: inherit;
     color:#bebebe;
     position: fixed;
-    left:1130px;
+    /*left:1130px;*/
+    right:150px;
     top:20px;
     background:transparent;
     border:none;
@@ -220,15 +240,20 @@ ul, ul li{
     cursor: pointer;
 }
 
-#top_login_success a:hover{
+#user_menu_item a:hover{
     font-size: 18px;
     font-style: inherit;
-    color:gainsboro;
+    color:royalblue;
+}
+#user_sub_menu a:hover{
+    font-size: 12px;
+    font-style: inherit;
+    color:#16181b;
 }
 
 
 #top_login #show_user{
-    color:black;
+    color:#16181b;
 
 }
 
@@ -237,7 +262,7 @@ ul, ul li{
 }
 #top_login a{
     color: #000;
-    font-size:15px;
+    font-size:14px;
 }
 body{
     margin:0;
@@ -253,8 +278,12 @@ a{
 
 .searchPageBar{
     position: relative;
-    top:250px;
-    left:400px;
+    top:260px;
+    left:340px;
+    /*float: left;*/
+    /*width: 1280px;*/
+    padding: 0;
+
 }
 .searchPageImg{
     width: 500px;

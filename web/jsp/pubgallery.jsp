@@ -126,8 +126,371 @@
 
     --%>
 
+
+    <style type="text/css">
+
+        .t{
+            width:1200px;
+            margin:0 auto;
+
+            background-color: #888888;
+        }
+
+        .allImgs{
+
+            padding: 2px;
+            display: flex;
+            flex-wrap: wrap;
+
+/*            padding: 2px 20px 10px 20px;
+            padding-bottom: 20px;
+            text-align: justify;*/
+        }
+
+        /*处理最后一行*/
+        .allImgs::after {
+            content: normal;
+            flex-grow: 999999999;
+
+        }
+        .allImgs .img
+        {
+            margin: 2px;
+            position: relative;
+            height: 200px;
+            flex-grow: 1;
+            background-color: gainsboro;
+/*            border:1px solid #bebebe;
+            height:auto;
+            background-color: cornflowerblue;
+            width:260px;
+            !*margin-bottom: 15px;*!
+            !*margin-right: 10px;*!
+            float:left;
+            margin:10px 5px;
+            text-align:center;*/
+        }
+        .allImgs .img a img{
+            max-width: 100%;
+            min-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            vertical-align: bottom;
+        }
+
+
+        .show_img_list{
+            position: absolute;
+            left:240px;
+            top:70px;
+            float: left;
+            /*width: 670px;*/
+            padding: 0;
+        }
+        .list{
+            /*position: relative;*/
+            /*top:110px;*/
+            /*border-right:4px outset blue;*/
+            /*border-top:4px outset blue;*/
+            /*border-left:4px outset blue;*/
+            /*border-bottom:4px outset blue;*/
+            /*border: medium solid #0573bd;*/
+            /*border:1px;*/
+            /*left:-100px;*/
+
+            /*display: table-cell;*/
+            /*margin:0 auto;*/
+            width:1020px;
+            height:auto;
+
+            margin-bottom: 25px;
+            padding: 0;
+            background: #FFFFFF;
+            border: 2px solid #D6E6CC;
+
+        }
+        .uploadDay{
+            /*position: relative;*/
+            /*bottom:12px;*/
+            /*!*background-color: #bebebe;*!*/
+            /*!*width:1200px;*!*/
+            /*left:-550px;*/
+
+
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 2px 5px 5px 5px;
+            background: #D6E6CC;
+            border: 1px solid #D6E6CC;
+            /*letter-spacing: -.5px;*/
+            color: #FFFFFF;
+
+        }
+
+        .time_title{
+            height: 30px;
+            margin-bottom: 3px;
+            padding: 5px 0px 2px 5px;
+            text-align: left;
+            color: #000;
+
+        }
+        .more{
+            float: right;
+            margin-top: -35px;
+            padding-right: 20px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-weight: normal;
+            font-size: 18px;
+            color: #000;
+        }
+
+
+        .menus{
+            position: relative;
+            width:204px;
+            overflow: auto;
+            top:70px;
+            left:20px;
+            /*background-color: #bebebe;*/
+        }
+
+        .menu_frame1{
+            position: relative;
+            /*top:70px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
+        }
+        .menu_frame2{
+            position: relative;
+            /*top:300px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
+        }
+        .menu_frame3{
+            position: relative;
+            /*top:530px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
+
+        }
+        .menu_frame4{
+            position: relative;
+            /*top:760px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
+        }
+        .menu_content{
+            position: relative;
+            color: deepskyblue;
+
+
+            /*margin-bottom: 0;*/
+            padding: 0;
+            background: #FFFFFF;
+            /*height:600px;*/
+            border: 2px solid #D6E6CC;
+            overflow: auto;
+
+        }
+
+        .frame_top{
+            position: relative;
+            top:0;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 2px 5px 5px 5px;
+            background: #D6E6CC;
+            border: 1px solid #D6E6CC;
+            /*letter-spacing: -.5px;*/
+            color: #FFFFFF;
+        }
+
+        .top_title{
+            height: 30px;
+            margin-bottom: 3px;
+            padding: 5px 0 2px 5px;
+            text-align: center;
+            color: #000;
+            list-style-type: none;
+        }
+
+        .inside_content li{
+            list-style: none;
+            text-align: center;
+        }
+
+
+
+
+    </style>
+
 </head>
 <body>
+
+
+<div class="menus">
+    <div class="menu_frame1">
+        <div class="menu_content">
+            <div class="frame_top">
+
+                <li class="top_title">
+                    相关推荐1
+                </li>
+            </div>
+            <div class="inside_content">
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="menu_frame2">
+        <div class="menu_content">
+            <div class="frame_top">
+
+                <li class="top_title">
+                    相关推荐2
+                </li>
+            </div>
+            <div class="inside_content">
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="menu_frame3">
+        <div class="menu_content">
+            <div class="frame_top">
+
+                <li class="top_title">
+                    相关推荐3
+                </li>
+            </div>
+            <div class="inside_content">
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="menu_frame4">
+        <div class="menu_content">
+            <div class="frame_top">
+
+                <li class="top_title">
+                    相关推荐4
+                </li>
+            </div>
+            <div class="inside_content">
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+                </li>
+                <li class="a6">
+                    lasjflask
+                    asdfljkas;dfj
+                    asdllfjkas;dfj
+                    asdflasjd;fljasdf
+                    asdf;asjd;fjasd'fads
+                    fladskjf;aowjf
+
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <%--  <div class="leftmenu">
     <div class="leftmunubar">
@@ -192,6 +555,8 @@
   </script>
 --%>
 
+<div class="t">
+
 <div  id="top">
 
 </div>
@@ -225,7 +590,7 @@
                 if(null != paths && paths.size() != 0){
 
                     Collections.reverse(paths);
-                    for(int i =0;i<8;i++) {
+                    for(int i =0;i<6;i++) {
                         String imgPath = paths.get(i);
                         long imgId = uploadPubImages.getPubImgId(imgPath);
 
@@ -234,12 +599,12 @@
                         request.setAttribute("ph", p);
                 %>
                 <div class="img" title="${ph}">
-                    <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
-                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <a target="_blank" href="../jsp/showImage.jsp?imgbelong=pub&imgId=<%=imgId%>">
+                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
                     </a>
-                    <div class="desc">
+<%--                    <div class="desc">
                         图片&nbsp;${ph}
-                    </div>
+                    </div>--%>
                 </div>
                 <%
                         request.removeAttribute("ph");
@@ -261,7 +626,7 @@
                         智能分类精选
                     </li>
                     <li class="more">
-                        <a href="">
+                        <a href="test.jsp">
 
                         更多>>
                         </a>
@@ -270,7 +635,7 @@
             </div>
             <div class="allImgs">
                 <%
-                    for(int i =0;i<8;i++) {
+                    for(int i =0;i<6;i++) {
                         String imgPath = paths.get(i);
                         long imgId = uploadPubImages.getPubImgId(imgPath);
 
@@ -280,11 +645,8 @@
                 %>
                 <div class="img" title="${ph}">
                     <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
-                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
                     </a>
-                    <div class="desc">
-                        图片&nbsp;${ph}
-                    </div>
                 </div>
                 <%
                         request.removeAttribute("ph");
@@ -305,7 +667,7 @@
                         按上传时间分类精选
                     </li>
                     <li class="more">
-                        <a href="">
+                        <a href="test2.jsp">
                         更多>>
                         </a>
                     </li>
@@ -313,7 +675,7 @@
             </div>
             <div class="allImgs">
                 <%
-                    for(int i =0;i<8;i++) {
+                    for(int i =0;i<6;i++) {
                         String imgPath = paths.get(i);
                         long imgId = uploadPubImages.getPubImgId(imgPath);
 
@@ -323,11 +685,9 @@
                 %>
                 <div class="img" title="${ph}">
                     <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
-                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                    <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
                     </a>
-                    <div class="desc">
-                        图片&nbsp;${ph}
-                    </div>
+
                 </div>
                 <%
                         request.removeAttribute("ph");
@@ -356,7 +716,7 @@
             </div>
             <div class="allImgs">
                 <%
-                    for(int i =0;i<8;i++) {
+                    for(int i =0;i<6;i++) {
                         String imgPath = paths.get(i);
                         long imgId = uploadPubImages.getPubImgId(imgPath);
 
@@ -366,11 +726,9 @@
                 %>
                 <div class="img" title="${ph}">
                     <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
-                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
                     </a>
-                    <div class="desc">
-                        图片&nbsp;${ph}
-                    </div>
+
                 </div>
                 <%
                         request.removeAttribute("ph");
@@ -399,7 +757,7 @@
             </div>
             <div class="allImgs">
                 <%
-                    for(int i =0;i<8;i++) {
+                    for(int i =0;i<6;i++) {
                         String imgPath = paths.get(i);
                         long imgId = uploadPubImages.getPubImgId(imgPath);
 
@@ -409,11 +767,9 @@
                 %>
                 <div class="img" title="${ph}">
                     <a target="_blank" href="../jsp/showImage.jsp?imgId=<%=imgId%>">
-                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade" width="250" height="170px">
+                        <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
                     </a>
-                    <div class="desc">
-                        图片&nbsp;${ph}
-                    </div>
+
                 </div>
                 <%
                         request.removeAttribute("ph");
@@ -454,6 +810,6 @@
         right:100px; height:48px;cursor:pointer;display:none;
         background:url(../images/icons/back_to_top-48.png) no-repeat;}
 </style>
-
+</div>
 </body>
 </html>

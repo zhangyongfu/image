@@ -34,22 +34,30 @@
                     <li class="menu_item"><a href="/">首页</a></li>
                     <li class="menu_item"><a>图库</a>
                         <ul class="sub_menu">
-                            <li class="sub_menu_item"> <a href="pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
-                            <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
-                            <li class="sub_menu_item"> <a href="mygallery.jsp" target="_blank">创建图库</a></li>
+                            <li class="sub_menu_item"> <a href="pubgallery.jsp" title="公共图库">公共图库</a></li>
+                            <li class="sub_menu_item"> <a href="mygallery.jsp" title="私人图库">私人图库</a></li>
+                            <li class="sub_menu_item"> <a href="mygallery.jsp">创建图库</a></li>
                         </ul>
                     </li>
                     <li class="menu_item"><a>关于</a>
                         <ul class="sub_menu">
-                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">网站</a></li>
-                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">团队</a></li>
-                            <li class="sub_menu_item"> <a href="about.jsp" target="_blank">反馈</a></li>
+                            <li class="sub_menu_item"> <a href="about.jsp">网站</a></li>
+                            <li class="sub_menu_item"> <a href="about.jsp">团队</a></li>
+                            <li class="sub_menu_item"> <a href="about.jsp">反馈</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
+
+    <style type="text/css">
+
+        .t{
+            width:1200px;
+            margin:0 auto;
+        }
+    </style>
 
 </head>
 <body>
@@ -73,6 +81,8 @@
 
 </script>
 
+<div class="t">
+
 <div class="gologin">
     <form id="loginform" action="/login" method="post" onsubmit="return checkLogin();">
         <h3>登录</h3>
@@ -86,6 +96,7 @@
         <a href="goregister.jsp" >注册一个</a><br/>
         <input id="login" type="submit" value="登录"/>
     </form>
+</div>
 </div>
 </body>
 </html>

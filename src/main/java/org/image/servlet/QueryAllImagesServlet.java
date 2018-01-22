@@ -1,6 +1,6 @@
 package org.image.servlet;
 
-import net.sf.json.JSONArray;
+
 import net.sf.json.JSONObject;
 import org.image.model.UploadPubImages;
 
@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
@@ -52,37 +53,22 @@ public class QueryAllImagesServlet extends HttpServlet {
 
             Collections.reverse(paths);
 
-            HashMap<Long,String> idsAndNames = getImgIdsAndNames(paths);
+            HashMap<String,String> idsAndNames = getImgIdsAndNames(paths);
 
-/*
-            int index = 0;
-            if(null !=paths && paths.size() != 0) {
-                for (int i = index; i < index + 20; i++) {
-                    String imgPath = paths.get(i);
-                    long imgId = uploadPubImages.getPubImgId(imgPath);
-                    strings = paths.get(i).split("/");
-                    String p = strings[strings.length - 1];
-                    request.setAttribute("ph", p);
-                }
+            JSONObject jsonObject = JSONObject.fromObject(idsAndNames);
+
+            String jsonString = jsonObject.toString();
+
+
+/*            HttpSession httpSession=request.getSession();
+            if(jsonString != null){
+                httpSession.setAttribute("result",jsonString);
             }*/
 
 
-
-
-
-
-/*
-            JSONArray jsonArray = JSONArray.fromObject(names);
-            String jsonString = jsonArray.toString();
-
-
-            request.setAttribute("allpaths",jsonString);
-            request.setAttribute("allpaths",jsonString);
-*/
-
-            JSONObject jsonObject = JSONObject.fromObject(idsAndNames);
-            String jsonString = jsonObject.toString();
             request.setAttribute("idsAndPaths",jsonString);
+
+            System.out.println("hehehehe");
 
             request.getRequestDispatcher("jsp/showAllImages.jsp").forward(request,response);
 //            response.sendRedirect("jsp/showAllImages.jsp");
@@ -113,9 +99,9 @@ public class QueryAllImagesServlet extends HttpServlet {
 
     }
 
-    private HashMap<Long,String> getImgIdsAndNames(List<String> allpaths){
+    private HashMap<String,String> getImgIdsAndNames(List<String> allpaths){
 
-        HashMap<Long,String> result = new HashMap<Long, String>();
+        HashMap<String,String> result = new HashMap<String, String>();
 
         UploadPubImages uploadPubImages = new UploadPubImages();
         for(String path:allpaths){
@@ -127,7 +113,7 @@ public class QueryAllImagesServlet extends HttpServlet {
 
             long imgId = uploadPubImages.getPubImgId(path);
 
-            result.put(imgId,p);
+            result.put(String.valueOf(imgId),p);
 
         }
 

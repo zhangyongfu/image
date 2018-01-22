@@ -13,6 +13,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="org.image.model.PubImg" %>
+<%@ page import="net.sf.json.JSONObject" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -24,80 +25,18 @@
   <link href="css/style.css" rel="stylesheet" type="test/css" />
     <link href="css/topMenuStyle.css" rel="stylesheet" type="text/css" />
 
-    <div id="top_bg">
-      <div class="top">
-        <a class="logo_l" href="/" title="返回首页">
-          <img class="logo_img" src="images/logo/logo-64.png">
-        </a>
-
-        <nav class="top_menu">
-          <ul class="primary_menu">
-            <li class="menu_item"><a href="/" style="color:white">首页</a></li>
-            <li class="menu_item"><a>图库</a>
-              <ul class="sub_menu">
-                <li class="sub_menu_item"> <a href="jsp/pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
-                <%--<li class="sub_menu_item"> <a href="/jsp/test.jsp" target="_blank">公共图库</a></li>--%>
-                <li class="sub_menu_item"> <a href="jsp/mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
-                <li class="sub_menu_item"> <a href="jsp/mygallery.jsp" target="_blank">创建图库</a></li>
-              </ul>
-            </li>
-            <li class="menu_item"><a>关于</a>
-              <ul class="sub_menu">
-                <li class="sub_menu_item"> <a href="jsp/webBuild.jsp" target="_blank">网站</a></li>
-                <li class="sub_menu_item"> <a href="jsp/about.jsp" target="_blank">团队</a></li>
-                <li class="sub_menu_item"> <a href="jsp/about.jsp" target="_blank">反馈</a></li>
-                <li class="sub_menu_item"> <a href="jsp/about.jsp" target="_blank">联系我们</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-
-        <%
-          HttpSession httpSession = request.getSession();
-          User user = (User)httpSession.getAttribute("userName");
-          if(user != null){
-        %>
-        <ul id="">
-          <li id="top_login_success">
-            <a class="show_user" href="/userinformation" title="<%=user.getName()%>">
-              <%
-                out.print(user.getName());
-              %>
-            </a>
-          </li>
-          <form id="loginout" action="/loginout" method="post">
-            <input type="submit" title="注销" value="注销">
-
-          </form>
-        </ul>
-        <%
-          }
-          else{
-              %>
-        <ul>
-          <li id="top_login">
-            <a id="login" href="/jsp/login.jsp">登录</a>
-            |
-            <a id="register" href="/jsp/goregister.jsp">注册</a>
-          </li>
-        </ul>
-        <%
-          }
-        %>
-        <div>
-
-        </div>
-
-      </div>
-    </div>
 
 
 
     <style type="text/css">
+      .t{
+        width:1200px;
+        margin:0 auto;
+      }
       .index_div{
         position: relative;
         top:5px;
-        left:15px;
+        left:0;
         float: left;
         /*width: 1280px;*/
         padding: 0;
@@ -110,7 +49,7 @@
         margin-bottom: 50px;
         padding: 0;
         background: #FFFFFF;
-        height:600px;
+        height:auto;
         border: 2px solid #D6E6CC;
 
       }
@@ -143,48 +82,82 @@
         color: #000;
         list-style-type: none;
       }
-      .index_beauty_img{
-
+/*      .index_beauty_img{
+        padding: 2px;
+        display: flex;
+        flex-wrap: wrap;
         position: relative;
-        left:13px;
+        !*left:13px;*!
         width:1300px;
       }
-      .img{
+      .index_beauty_img::after{
+        content: '';
+        flex-grow: 999999999999;
+        !*min-width: 20%;*!
+      }*/
+      .index_beauty_img {
+        padding: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        /*left:13px;*/
+        width:1200px;
+      }
 
-        height:auto;
+      .index_beauty_img::after {//处理最后一行
+        /*content: '';*/
+        content: normal;
+
+        flex-grow: 999999999;
+
+      }
+      .img{
+        margin: 2px;
+        position: relative;
+        height: 200px;
+        flex-grow: 1;
+        background-color: gainsboro;
+        /*width:246px;*/
+
+/*        height:auto;
         width:246px;
         margin-bottom: 15px;
         margin-right: 10px;
-        float:left;
+        float:left;*/
       }
 
       .img a{
-        position: relative;
+/*        position: relative;
         margin:0;
         padding:0;
-        /*left:20px;*/
-        /*top:60px;*/
+        !*left:20px;*!
+        !*top:60px;*!
         width:246px;
         height:170px;
         background-color: transparent;
         text-align: center;
         display: table-cell;
-        vertical-align: middle;
+        vertical-align: middle;*/
       }
 
       .img a img{
+        max-width: 100%;
+        min-width: 100%;
+        height: 200px;
+        object-fit: cover;
+        vertical-align: bottom;
 
-        /*padding: 40px 50px 40px 50px;*/
+/*        !*padding: 40px 50px 40px 50px;*!
         position: relative;
         margin:auto;
-        /*top:50%;*/
+        !*top:50%;*!
 
-        /*left:0;*/
-        /*width:90%;*/
+        !*left:0;*!
+        !*width:90%;*!
         max-width:250px;
         max-height:170px;
         width:auto;
-        height:auto;
+        height:auto;*/
       }
       .copyright_text{
 
@@ -193,44 +166,233 @@
 
 
 
+      /*user name menu*/
+      #top_login_success{
+        position: fixed;
+        font-size:20px;
+        top:19px;
+        /*background-color: transparent;*/
+        background-color: transparent;
+        /*left:1050px;*/
+        right:150px;
+
+        text-align: center;
+
+      }
+      .user_primary_menu {
+        line-height: 36px;
+        font-weight: bold;
+      }
+
+      .user_sub_menu a{
+
+        /*font-size: 14px;*/
+        color: #23272b;
+        font-size: 12px;
+        display: block;
+
+        /*width:80px;*/
+        /*white-space: nowrap;*/
+        /*overflow: hidden;*/
+        /*text-overflow: ellipsis;*/
+      }
+      .user_sub_menu a:hover{
+        /*color: beige;*/
+        /*color: #b8daff;*/
+        font-size: 12px;
+      }
+      .user_menu_item {
+        display: inline-block;
+        width:80px;
+        position: relative;
+      }
+      .user_menu_item:hover {
+        background-color: transparent;
+      }
+      .user_menu_item:hover .user_sub_menu {
+        display: block;
+      }
+      .user_sub_menu {
+        font-weight: 300;
+        text-transform: none;
+        display: none;
+        position: absolute;
+        width: 80px;
+        background-color: #f0f0f0;
+      }
+      .user_sub_menu_item:hover {
+
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.1);
+      }
+      .user_menu_item:hover {
+        background-color: royalblue;
+      }
+
+      .user_name{
+        color: #FFFFFF;
+        background-color: transparent;
+        /*width:80px;*/
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .user_name:hover{
+        color: royalblue;
+        background-color: transparent;
+      }
+      .user_sub_menu_item:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      .show_user {
+        /*width: 80px;*/
+        /*white-space: nowrap;*/
+        /*overflow: hidden;*/
+        /*text-overflow: ellipsis;*/
+        /*size: 18px;*/
+        /*color: #ffffff;*/
+
+      }
+      .show_user:hover {
+
+        color: #16181b;
+
+      }
+
+
     </style>
   </head>
   <body>
 
-  <div class="search_list">
 
-
-  <form class="searchPageBar" action="/SearchImgPage" method="get">
-
-    <div class="web_logo">
-      <a href="/">
-
-
-      <%--<img src="images/icons/logo1.png">--%>
-      <img src="images/logo/logo-128.png">
-        bro pics
+  <div id="top_bg">
+    <div class="top">
+      <a class="logo_l" href="/" title="返回首页">
+        <img class="logo_img" src="images/logo/logo-64.png">
       </a>
+
+      <nav class="top_menu">
+        <ul class="primary_menu">
+          <li class="menu_item"><a href="/" style="color:white">首页</a></li>
+          <li class="menu_item"><a>图库</a>
+            <ul class="sub_menu">
+              <li class="sub_menu_item"> <a href="jsp/pubgallery.jsp" title="公共图库">公共图库</a></li>
+              <%--<li class="sub_menu_item"> <a href="/jsp/test.jsp" target="_blank">公共图库</a></li>--%>
+              <li class="sub_menu_item"> <a href="jsp/mygallery.jsp" title="私人图库">私人图库</a></li>
+              <li class="sub_menu_item"> <a href="jsp/mygallery.jsp">创建图库</a></li>
+            </ul>
+          </li>
+          <li class="menu_item"><a>关于</a>
+            <ul class="sub_menu">
+              <li class="sub_menu_item"> <a href="jsp/webBuild.jsp">网站</a></li>
+              <li class="sub_menu_item"> <a href="jsp/test3.jsp">团队</a></li>
+              <li class="sub_menu_item"> <a href="websocket/chat.xhtml">群聊</a></li>
+              <li class="sub_menu_item"> <a href="#">反馈</a></li>
+              <li class="sub_menu_item"> <a href="jsp/testTopMenu.jsp">联系我们</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <%
+        HttpSession httpSession = request.getSession();
+        User user = (User)httpSession.getAttribute("userName");
+        if(user != null){
+      %>
+      <ul id="">
+        <li id="top_login_success">
+          <ul class="user_primary_menu">
+            <li class="user_menu_item">
+              <ul class="user_name">
+                <li>
+                  <a class="show_user" href="/userinformation" title="<%=user.getName()%>">
+                    <%--<a class="menu_item" href="/userinformation" title="<%=user.getName()%>">--%>
+                    <%
+                      out.print(user.getName());
+                    %>
+                  </a>
+                </li>
+              </ul>
+              <ul class="user_sub_menu">
+                <li class="user_sub_menu_item"> <a href="/userinformation">个人中心</a></li>
+                <li class="user_sub_menu_item"> <a href="#">我的图库</a></li>
+                <li class="user_sub_menu_item"> <a href="/userinformation">设置</a></li>
+                <li class="user_sub_menu_item"> <a href="/loginout">注销</a></li>
+                <%--<li class="user_sub_menu_item"> <a href="jsp/testTopMenu.jsp">联系我们</a></li>--%>
+              </ul>
+            </li>
+
+          </ul>
+
+        </li>
+      </ul>
+        <%--<form id="loginout" action="/loginout" method="post">--%>
+          <%--<input type="submit" title="注销" value="注销">--%>
+        <%--</form>--%>
+
+      <%
+      }
+      else{
+      %>
+      <ul>
+        <li id="top_login">
+          <a id="login" href="./jsp/login.jsp">登录</a>
+          |
+          <a id="register" href="./jsp/goregister.jsp">注册</a>
+        </li>
+      </ul>
+      <%
+        }
+      %>
+      <div>
+
+      </div>
+
     </div>
-
-    <div class="search_hint">
-      <img src="images/icons/search.png">
-      百万张图片等你搜
-
-    </div>
-
-    <input class="searchPageImg" type="search" name="searchText" placeholder="搜索图片..">
-    <input class="searchPageGo" type="submit" value="搜索">
-
-
-  </form>
-  <%--<%--%>
-    <%--HttpSession test = request.getSession();--%>
-    <%--String searchText = (String)test.getAttribute("searchText");--%>
-    <%--out.print(searchText);--%>
-  <%--%>--%>
   </div>
 
+
+  <div class="t">
+
+    <div class="search_list">
+
+
+      <form class="searchPageBar" action="/SearchImgPage" method="get">
+
+        <div class="web_logo">
+          <a href="/">
+
+
+            <%--<img src="images/icons/logo1.png">--%>
+            <img src="images/logo/logo-128.png">
+            <b style="color: white;">bro pics
+            </b>
+          </a>
+        </div>
+
+        <div class="search_hint">
+          <img src="images/icons/search.png" >
+          <b style="color:white;">搜索图片</b>
+
+
+        </div>
+
+        <input class="searchPageImg" type="search" name="searchText" placeholder="搜索图片..">
+        <input class="searchPageGo" type="submit" value="搜索">
+
+
+      </form>
+      <%--<%--%>
+      <%--HttpSession test = request.getSession();--%>
+      <%--String searchText = (String)test.getAttribute("searchText");--%>
+      <%--out.print(searchText);--%>
+      <%--%>--%>
+    </div>
   <div class="index_div">
+
+
+
 
 
     <div class="index_img">
@@ -261,8 +423,9 @@
       </div>
 
 
-      <div class="index_beauty_img">
+      <%--<section>--%>
 
+      <div class="index_beauty_img">
 
       <%
 
@@ -273,10 +436,20 @@
 
         List<String> paths = uploadPubImages.getPubImgFilePath();
 
+
+/*
+        JSONObject jsonObject = JSONObject.fromObject(paths);
+        String jsonString = jsonObject.toString();
+        request.setAttribute("fromIndexPage",jsonString);
+
+        */
         if(null !=paths && paths.size() != 0){
 
 
-          for(int i =0;i<15;i++) {
+
+
+
+          for(int i =0;i<14;i++) {
 
               String imgPath = paths.get(i);
               long imgId = uploadPubImages.getPubImgId(imgPath);
@@ -290,7 +463,7 @@
         %>
 
         <div class="img" title="${ph}">
-          <a href="./jsp/showImage.jsp?imgId=<%=imgId%>" target="_blank">
+          <a href="./jsp/showImage.jsp?imgbelong=pub&imgId=<%=imgId%>" target="_blank">
             <img src="http://localhost:8080/i/pub_img/${ph}" alt="Ballade">
           </a>
         </div>
@@ -300,7 +473,10 @@
           }
         }
       %>
-    </div>
+      <%--</section>--%>
+
+
+      </div>
     </div>
     <div class="copyright_text">
       <p>
@@ -309,7 +485,7 @@
 
     </div>
   </div>
-
+  </div>
   <%--<a href="jsp/test.jsp">askjfaljfa</a>--%>
   </body>
 </html>

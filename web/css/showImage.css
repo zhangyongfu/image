@@ -3,7 +3,7 @@
 .imgAndMetaData{
     position: absolute;
     top:70px;
-    left:10px;
+
 }
 .metaDataMassage{
     position: absolute;
@@ -11,7 +11,7 @@
     left:900px;
     overflow: auto;
     background-color: beige;
-    height:460px;
+    height:500px;
 
     width: 340px;
 }
@@ -20,14 +20,15 @@
     position: relative;
     margin:0;
     padding:0;
-    left:20px;
+    left:68px;
     /*top:60px;*/
-    width:850px;
-    height:460px;
-    background-color: #bebebe;
+    width:774px;
+    height:500px;
+    /*background-color: beige;*/
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+    overflow: hidden;
 }
 
 .showPrimaryImg img{
@@ -39,10 +40,12 @@
 
     /*left:0;*/
     /*width:90%;*/
-    max-width:850px;
-    max-height:460px;
+    max-width:774px;
+    max-height:500px;
     width:auto;
     height:auto;
+    z-index: 2;
+
 }
 
 

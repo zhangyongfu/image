@@ -14,7 +14,50 @@ public class UploadPriImageDaoImpl implements ImageDao {
     private DatabaseConnection databaseConnection = new DatabaseConnection();
     private Connection connection = null;
 
+    public long getPubImgId(String priImgPath){
 
+
+        long imgId = -1;
+
+        try{
+            connection = databaseConnection.getDbConnection();
+            if(connection != null)
+            {
+
+                String sql = "select img_id,img_path from images where img_path=?;";
+
+//                connection.prepareStatement("create table if not exists pubimages(pubimg_id int(20) not null primary key auto_increment,pubimg_path varchar(255) not null,img_upload_time varchar(255) not null,img_upload_user varchar(255) not null,img_name varchar(255),img_size_MB float not null);");
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1,priImgPath);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()){
+                    imgId = resultSet.getLong("img_id");
+
+                }
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                closeConnection();
+            }
+            catch (Exception e){
+
+                e.printStackTrace();
+            }
+        }
+
+        return imgId;
+
+//        PubImg pubImg = new PubImg();
+//        pubImg.setPubImagePath(pubImgPath);
+//        return pubImg.getPubImageId();
+    }
 
     public List<String> getImageFilePath(String username) {
 
@@ -51,7 +94,44 @@ public class UploadPriImageDaoImpl implements ImageDao {
         return paths;
     }
 
+    public String getPriImgFilePath(long priId) {
 
+        String pubImgPath = null;
+
+        try{
+            connection = databaseConnection.getDbConnection();
+            if(connection != null)
+            {
+                String sql = "select img_id,img_path from images where img_id=?;";
+
+//                connection.prepareStatement("create table if not exists pubimages(pubimg_id int(20) not null primary key auto_increment,pubimg_path varchar(255) not null,img_upload_time varchar(255) not null,img_upload_user varchar(255) not null,img_name varchar(255),img_size_MB float not null);");
+
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                preparedStatement.setLong(1,priId);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()){
+                    pubImgPath = resultSet.getString("img_path");
+                }
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                closeConnection();
+            }
+            catch (Exception e){
+
+                e.printStackTrace();
+            }
+        }
+
+        return pubImgPath;
+    }
 /*
 
     public List<String> getImagesUploadTime() {

@@ -42,8 +42,9 @@ public class SearchPageServlet extends HttpServlet {
 //                request.setAttribute("ph", p);
             }
 
-            System.out.println("test:" + IndexPageSearchText);
-            response.sendRedirect("/jsp/searchResult.jsp");
+//            System.out.println("test:" + IndexPageSearchText);
+//            response.sendRedirect("/jsp/searchResult.jsp");
+            request.getRequestDispatcher("/jsp/searchResult.jsp").forward(request,response);
 
         } else {
             System.out.println("search fail");

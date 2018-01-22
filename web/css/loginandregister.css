@@ -1,5 +1,5 @@
 html{
-    background-image: url(../images/background2.jpg);
+    background-image: url(../images/background/0336.jpg);
 }
 
 #title{
@@ -10,9 +10,10 @@ html{
 
 }
 .gologin{
-    position: absolute;
+    position: relative;
     top:130px;
-    left:450px;
+    /*left:450px;*/
+    margin:0 auto;
     height:360px;
     width:450px;
     background-color: lightblue;
@@ -22,13 +23,17 @@ html{
     box-shadow: #666 5px 5px 10px;
 }
 .goregister{
-    position: absolute;
-    top:55px;
-    left:450px;
+    position: relative;
+    top:35px;
+
+    margin:0 auto;
+
+    padding-bottom:20px;
+
     height:auto;
     width:450px;
     background-color: lightblue;
-    z-index: 999;
+    /*z-index: 999;*/
 
 
     -webkit-box-shadow: #666 3px 3px 10px;
@@ -40,6 +45,7 @@ html{
 #loginform{
 /*width:60%;*/
 position: relative;
+    top:24px;
     width:auto;
     margin-left:65px;;
     margin-top:20px;
@@ -51,6 +57,7 @@ text-align: left;
 #registerform{
 /*width:60%;*/
 position: relative;
+    top:24px;
     width:auto;
     margin-left:75px;;
     margin-top:20px;

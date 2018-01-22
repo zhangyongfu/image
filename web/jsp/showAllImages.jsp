@@ -31,10 +31,10 @@
             background-color: #5CB542;
         }
         .all_img_div{
-            position: relative;
+            position: absolute;
             top:70px;
-            left:220px;
-            float: left;
+            left:240px;
+            /*float: left;*/
             width: 1050px;
             /*margin-bottom:60px;*/
             padding: 0;
@@ -67,7 +67,7 @@
         .all_img_title{
             height: 30px;
             margin-bottom: 3px;
-            padding: 5px 0px 2px 5px;
+            padding: 5px 0 2px 5px;
             text-align: center;
             color: #000;
             list-style-type: none;
@@ -75,80 +75,130 @@
         .index_beauty_img{
 
             position: relative;
-            left:13px;
-            width:1030px;
+            /*left:13px;*/
+            /*width:1030px;*/
         }
 
-/*        .img a{
-
-            !*height:auto;*!
-            !*width:246px;*!
-            margin-bottom: 6px;
-            margin-right: 6px;
-            float:left;
-
+        #img_id{
+            padding: 2px;
+            display: flex;
+            flex-wrap: wrap;
             position: relative;
-            padding:0;
-            !*left:20px;*!
-            !*top:60px;*!
-            width:246px;
-            height:170px;
-            background-color: transparent;
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
+            /*left:13px;*/
+            /*width:1300px;*/
         }
-        .img img{
-            !*padding: 40px 50px 40px 50px;*!
-            position: relative;
-            margin:auto;
-            !*top:50%;*!
+        #img_id::after{
 
-            !*left:0;*!
-            !*width:90%;*!
-            max-width:246px;
-            max-height:170px;
-            width:auto;
-            height:auto;
-        }*/
+            /*content: '';*/
+            content: normal;
 
-        .img_div{
 
-            height:auto;
-            width:246px;
-            margin-bottom: 6px;
-            margin-right: 6px;
-            float:left;
+            flex-grow: 999999999;
         }
 
-        .img_div a{
+        #img_id div{
+            margin: 2px;
             position: relative;
-            margin:0;
-            padding:0;
+            height: 200px;
+            flex-grow: 1;
+            background-color: gainsboro;
+        }
+        #img_id div a img{
+            max-width: 100%;
+            min-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            vertical-align: bottom;
+        }
+
+        .menus{
+            position: relative;
+            width:204px;
+            overflow: auto;
+            top:70px;
+            left:20px;
+            /*background-color: #bebebe;*/
+        }
+
+        .menu_frame1{
+            position: relative;
+            /*top:70px;*/
             /*left:20px;*/
-            /*top:60px;*/
-            width:246px;
-            height:170px;
-            background-color: transparent;
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
         }
-
-        .img_div a img{
-
-            /*padding: 40px 50px 40px 50px;*/
+        .menu_frame2{
             position: relative;
-            margin:auto;
-            /*top:50%;*/
-
-            /*left:0;*/
-            /*width:90%;*/
-            max-width:246px;
-            max-height:170px;
-            width:auto;
-            height:auto;
+            /*top:300px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
         }
+        .menu_frame3{
+            position: relative;
+            /*top:530px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
+
+        }
+        .menu_frame4{
+            position: relative;
+            /*top:760px;*/
+            /*left:20px;*/
+            float: left;
+            width: 200px;
+            /*margin-bottom:60px;*/
+            padding: 2px 2px 5px 2px;
+        }
+        .menu_content{
+            position: relative;
+            color: deepskyblue;
+
+
+            /*margin-bottom: 0;*/
+            padding: 0;
+            background: #FFFFFF;
+            /*height:600px;*/
+            border: 2px solid #D6E6CC;
+            overflow: auto;
+
+        }
+
+        .frame_top{
+            position: relative;
+            top:0;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 2px 5px 5px 5px;
+            background: #D6E6CC;
+            border: 1px solid #D6E6CC;
+            /*letter-spacing: -.5px;*/
+            color: #FFFFFF;
+        }
+
+        .top_title{
+            height: 30px;
+            margin-bottom: 3px;
+            padding: 5px 0 2px 5px;
+            text-align: center;
+            color: #000;
+            list-style-type: none;
+        }
+
+        .inside_content li{
+            list-style: none;
+            text-align: center;
+        }
+
+
+
 
     </style>
 </head>
@@ -165,18 +215,18 @@
                     <li class="menu_item"><a href="/">首页</a></li>
                     <li class="menu_item"><a>图库</a>
                         <ul class="sub_menu">
-                            <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp" target="_blank" title="公共图库">公共图库</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/pubgallery.jsp" title="公共图库">公共图库</a></li>
                             <%--<li class="sub_menu_item"> <a href="/jsp/test.jsp" target="_blank">公共图库</a></li>--%>
-                            <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank" title="私人图库">私人图库</a></li>
-                            <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" target="_blank">创建图库</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp" title="私人图库">私人图库</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/mygallery.jsp">创建图库</a></li>
                         </ul>
                     </li>
                     <li class="menu_item"><a>关于</a>
                         <ul class="sub_menu">
-                            <li class="sub_menu_item"> <a href="../jsp/webBuild.jsp" target="_blank">网站</a></li>
-                            <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">团队</a></li>
-                            <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">反馈</a></li>
-                            <li class="sub_menu_item"> <a href="../jsp/about.jsp" target="_blank">联系我们</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/webBuild.jsp">网站</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/about.jsp">团队</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/about.jsp">反馈</a></li>
+                            <li class="sub_menu_item"> <a href="../jsp/about.jsp">联系我们</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -187,7 +237,154 @@
 
         </div>
     </div>
+    <div class="menus">
+        <div class="menu_frame1">
+            <div class="menu_content">
+                <div class="frame_top">
 
+                    <li class="top_title">
+                        相关推荐1
+                    </li>
+                </div>
+                <div class="inside_content">
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="menu_frame2">
+            <div class="menu_content">
+                <div class="frame_top">
+
+                    <li class="top_title">
+                        相关推荐2
+                    </li>
+                </div>
+                <div class="inside_content">
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="menu_frame3">
+            <div class="menu_content">
+                <div class="frame_top">
+
+                    <li class="top_title">
+                        相关推荐3
+                    </li>
+                </div>
+                <div class="inside_content">
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="menu_frame4">
+            <div class="menu_content">
+                <div class="frame_top">
+
+                    <li class="top_title">
+                        相关推荐4
+                    </li>
+                </div>
+                <div class="inside_content">
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+                    </li>
+                    <li class="a6">
+                        lasjflask
+                        asdfljkas;dfj
+                        asdllfjkas;dfj
+                        asdflasjd;fljasdf
+                        asdf;asjd;fjasd'fads
+                        fladskjf;aowjf
+
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="all_img_div">
         <div class="all_img">
@@ -241,16 +438,20 @@
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         (function ($) {
+
+
             var pos = 0;
             var LIST_ITEM_SIZE = 60;
-
+            var imgIdsAndNames=${idsAndPaths};
             var index = 0;
             //滚动条距底部的距离
             var BOTTOM_OFFSET = 0;
             createListItems();
+//            sendJsonData();
             $(document).ready(function () {
                 $(window).scroll(function () {
                     var $currentWindow = $(window);
@@ -271,6 +472,26 @@
                     }
                 });
             });
+            
+            function sendJsonData() {
+
+                $.ajax({
+                    type:"post",
+                    url:"/ShowImageDetail",
+                    dataType:"text",
+                    data:{"imgsData":JSON.stringify(imgIdsAndNames)},
+                    success:function () {
+                       alert("yes");
+
+                    },
+                    error:function () {
+
+                       alert("error");
+                    }
+                });
+            }
+            
+            
             function createListItems() {
 
                 var imgLength = ${len};
@@ -283,7 +504,7 @@
                 var mylist = mydocument.getElementById("img_id");
                 var docFragments = mydocument.createDocumentFragment();
                 <%--var pathsList=${allpaths};--%>
-                var imgIdsAndNames=${idsAndPaths};
+
 
 
                 for(var idAndName in imgIdsAndNames){
@@ -300,11 +521,12 @@
 //                        var show_img='<a class="i"/>';
 
                         var divItem = mydocument.createElement("div");
-                        divItem.className="img_div";
+//                        divItem.className="img_div";
 
                         var aItem = mydocument.createElement("a");
                         aItem.setAttribute("target","_blank");
-                        aItem.setAttribute("href","../jsp/showImage.jsp?imgId=" + imgIds[i]);
+                        aItem.setAttribute("href","/ShowImageDetail?imgbelong=pub&from=allimages&imgId=" + imgIds[i]);
+//                        aItem.setAttribute("href","/ShowImageDetail");
 
                         var imgItem = mydocument.createElement("img");
 //                        imgItem.className="a_img";
@@ -324,6 +546,11 @@
                 mylist.appendChild(docFragments);
             }
         })(jQuery);
+
+
+
+
+
 
     </script>
 
@@ -350,5 +577,37 @@
             right:100px; height:48px;cursor:pointer;display:none;
             background:url(../images/icons/back_to_top-48.png) no-repeat;}
     </style>
+
+
+
+<%--<script type="javascript">
+
+    //获取浏览器页面可见高度和宽度
+    var _PageHeight = document.documentElement.clientHeight,
+        _PageWidth = document.documentElement.clientWidth;
+    //计算loading框距离顶部和左部的距离（loading框的宽度为215px，高度为61px）
+    var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,
+        _LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;
+    //在页面未加载完毕之前显示的loading Html自定义内容
+    var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#f3f8ff;opacity:0.8;filter:alpha(opacity=80);z-index:10000;"><div style="position: absolute; cursor1: wait; left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px; background: #fff url(/Content/loading.gif) no-repeat scroll 5px 10px; border: 2px solid #95B8E7; color: #696969; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';
+    //呈现loading效果
+    document.write(_LoadingHtml);
+
+    //window.onload = function () {
+    //    var loadingMask = document.getElementById('loadingDiv');
+    //    loadingMask.parentNode.removeChild(loadingMask);
+    //};
+
+    //监听加载状态改变
+    document.onreadystatechange = completeLoading;
+
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState == "complete") {
+            var loadingMask = document.getElementById('loadingDiv');
+            loadingMask.parentNode.removeChild(loadingMask);
+        }
+    }
+</script>--%>
 </body>
 </html>
