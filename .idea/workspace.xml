@@ -7,53 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c3ae0c6-8f67-4e69-8fd4-0c8a3f4c2415" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/image/mapping/Employeer.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/image/resources/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/image/servlet/ChangeImgServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/CookieFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/HTMLFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/websocket/chat/ChatAnnotation.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.iml" afterPath="$PROJECT_DIR$/image.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/image/DAO/UploadPriImageDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/image/DAO/UploadPriImageDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/image/readme" afterPath="$PROJECT_DIR$/src/main/java/org/image/readme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/image/servlet/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/org/image/servlet/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/image/servlet/QueryAllImagesServlet.java" afterPath="$PROJECT_DIR$/src/main/java/org/image/servlet/QueryAllImagesServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/image/servlet/SearchPageServlet.java" afterPath="$PROJECT_DIR$/src/main/java/org/image/servlet/SearchPageServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/image/servlet/ShowImgMetadataServlet.java" afterPath="$PROJECT_DIR$/src/main/java/org/image/servlet/ShowImgMetadataServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/loginandregister.css" afterPath="$PROJECT_DIR$/web/css/loginandregister.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/mygallerypage.css" afterPath="$PROJECT_DIR$/web/css/mygallerypage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/showImage.css" afterPath="$PROJECT_DIR$/web/css/showImage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/topMenuStyle.css" afterPath="$PROJECT_DIR$/web/css/topMenuStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/userInf.css" afterPath="$PROJECT_DIR$/web/css/userInf.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/about.jsp" afterPath="$PROJECT_DIR$/web/jsp/about.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/goregister.jsp" afterPath="$PROJECT_DIR$/web/jsp/goregister.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/login.jsp" afterPath="$PROJECT_DIR$/web/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/mygallery.jsp" afterPath="$PROJECT_DIR$/web/jsp/mygallery.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/pubgallery.jsp" afterPath="$PROJECT_DIR$/web/jsp/pubgallery.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/searchResult.jsp" afterPath="$PROJECT_DIR$/web/jsp/searchResult.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/showAllImages.jsp" afterPath="$PROJECT_DIR$/web/jsp/showAllImages.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/showImage.jsp" afterPath="$PROJECT_DIR$/web/jsp/showImage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/test.jsp" afterPath="$PROJECT_DIR$/web/jsp/test.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/topmenu.jsp" afterPath="$PROJECT_DIR$/web/jsp/topmenu.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -925,12 +879,12 @@
       <workItem from="1516527949103" duration="9953000" />
       <workItem from="1516545174056" duration="156000" />
       <workItem from="1516597338029" duration="5036000" />
-      <workItem from="1516628330794" duration="2950000" />
+      <workItem from="1516628330794" duration="4155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255000000" />
+    <option name="totallyTimeSpent" value="256205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,7 +897,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="24" width="1374" height="748" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3361204" sideWeight="0.5120846" order="0" side_tool="true" content_ui="tabs" />
@@ -963,7 +916,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.335" sideWeight="0.4879154" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.335" sideWeight="0.4879154" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27677226" sideWeight="0.4811083" order="0" side_tool="false" content_ui="combo" />
@@ -1250,8 +1203,8 @@
         <state relative-caret-position="54">
           <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding>
-            <element signature="e#0#3435#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#3435#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
