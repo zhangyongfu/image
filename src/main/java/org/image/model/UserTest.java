@@ -3,22 +3,24 @@ package org.image.model;
 
 
 
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.image.model.User;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 public class UserTest {
-//    @Test
+    @Test
     public void find(){
         try {
             //加载mybatis的配置文件
-            InputStream inputStream = Resources.getResourceAsStream("resources/mybatis-config.xml");
+            InputStream inputStream = Resources.getResourceAsStream("java/org/image/mybatis-config.xml");
             //通过sqlSession工厂创建者build出一个数据库会话工程
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
             //打开一个数据库会话

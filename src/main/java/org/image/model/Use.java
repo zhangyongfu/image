@@ -1,3 +1,4 @@
+/*
 package org.image.model;
 
 import org.apache.ibatis.io.Resources;
@@ -37,3 +38,4 @@ public class Use {
         new Use().find();
     }
 }
+*/

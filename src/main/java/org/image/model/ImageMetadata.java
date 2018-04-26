@@ -23,11 +23,13 @@ public class ImageMetadata {
         Map<String,String> imgMetadata = new HashMap<String, String>();
 
         UploadPubImages uploadPubImages = new UploadPubImages();
-        String imgPath = uploadPubImages.getPubImgFilePath(imgId);
+        String imgName = uploadPubImages.getPubImgFileName(imgId);
+        String imagePath = "/root/webdata/imagedata/";
+//        String imagePath = "/home/zyj/IdeaProjects/image/i/imagedata/";
 
 
         try {
-            File imgFile = new File(imgPath);
+            File imgFile = new File(imagePath + "pub_img/" + imgName);
             try {
                 Metadata metadata = ImageMetadataReader.readMetadata(imgFile);
                 for (Directory directory : metadata.getDirectories()) {

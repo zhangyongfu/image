@@ -37,6 +37,9 @@ public class ShowImgMetadataServlet extends HttpServlet {
         String from = request.getParameter("from");
         HttpSession httpSession = request.getSession();
 
+        String imagePath = "/root/webdata/imagedata/";
+//        String imagePath = "/home/zyj/IdeaProjects/image/i/imagedata/";
+
         Long imgNum = Long.parseLong(imgId);
 
 
@@ -51,11 +54,9 @@ public class ShowImgMetadataServlet extends HttpServlet {
 
             imgNum = imgNum - 1;
 
-            String imgPath = uploadPubImages.getPubImgFilePath(imgNum);
+            String imgName = uploadPubImages.getPubImgFileName(imgNum);
+            String imgPath = imagePath + "pub_img/" + imgName;
 
-
-            String[] strings = imgPath.split("/");
-            String p = strings[strings.length - 1];
 
 
             metaData = getMetadataByPath(imgPath);
@@ -71,7 +72,7 @@ public class ShowImgMetadataServlet extends HttpServlet {
 //            request.setAttribute("imgMeta",jsonStr);
 
             request.setAttribute("imgId",imgNum);
-            request.setAttribute("imgName",p);
+            request.setAttribute("imgName",imgName);
             request.setAttribute("imgPath",imgPath);
 
 //            System.out.println("imgId : " + imgNum);
@@ -89,11 +90,9 @@ public class ShowImgMetadataServlet extends HttpServlet {
 
             imgNum = imgNum + 1;
 
-            String imgPath = uploadPubImages.getPubImgFilePath(imgNum);
+            String imgName = uploadPubImages.getPubImgFileName(imgNum);
 
-            String[] strings = imgPath.split("/");
-            String p = strings[strings.length - 1];
-
+            String imgPath = imagePath + "pub_img/" + imgName;
 
             metaData = getMetadataByPath(imgPath);
 
@@ -109,7 +108,7 @@ public class ShowImgMetadataServlet extends HttpServlet {
 //            request.setAttribute("metadata",metaData);
 
             request.setAttribute("imgId",imgNum);
-            request.setAttribute("imgName",p);
+            request.setAttribute("imgName",imgName);
 
             request.getRequestDispatcher("jsp/showImage.jsp").forward(request,response);
 
@@ -119,10 +118,9 @@ public class ShowImgMetadataServlet extends HttpServlet {
         else {
 
             UploadPubImages uploadPubImages = new UploadPubImages();
-            String imgPath = uploadPubImages.getPubImgFilePath(imgNum);
+            String imgName = uploadPubImages.getPubImgFileName(imgNum);
 
-            String[] strings = imgPath.split("/");
-            String p = strings[strings.length - 1];
+            String imgPath = imagePath + "pub_img/" + imgName;
 
             Map<String,String> metaData = getMetadataByPath(imgPath);
 
@@ -134,7 +132,7 @@ public class ShowImgMetadataServlet extends HttpServlet {
 
 
             request.setAttribute("imgId",imgNum);
-            request.setAttribute("imgName",p);
+            request.setAttribute("imgName",imgName);
 
             request.getRequestDispatcher("jsp/showImage.jsp").forward(request,response);
 

@@ -15,7 +15,7 @@ public class DatabaseConnection {
     public Connection getDbConnection() throws Exception{
         Connection connection = null;
         try{
-            String dbUrl = "jdbc:mysql://localhost:3306/user";
+            String dbUrl = "jdbc:mysql://localhost:3306/user?useSSL=false";
             String name = "root";
             String password = "271035";
 //            String password = "634626";

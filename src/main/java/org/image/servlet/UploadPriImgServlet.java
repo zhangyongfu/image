@@ -45,7 +45,13 @@ public class UploadPriImgServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,HttpServletResponse response)
             throws ServletException, IOException {
 
+
         response.setCharacterEncoding("UTF-8");
+
+        request.setCharacterEncoding("utf-8");
+
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html");
         // 检测是否为多媒体上传
         if (!ServletFileUpload.isMultipartContent(request)) {
             // 如果不是则停止
@@ -78,9 +84,19 @@ public class UploadPriImgServlet extends HttpServlet {
         ImageUserDaoImpl imageUserDaoImpl = new ImageUserDaoImpl();
         String userName = imageUserDaoImpl.getUserName(user);
 
+//        String uploadUserPath = getServletContext().getRealPath("/") + UPLOAD_DIRECTORY;
+//        String uploadUserPath = "/home/zyj/IdeaProjects/image/i/imagedata/" + UPLOAD_DIRECTORY;
+        String uploadUserPath = "/root/webdata/imagedata/" + UPLOAD_DIRECTORY;
+
+        // 如果目录不存在则创建
+        File uploadUserDir = new File(uploadUserPath);
+        if (!uploadUserDir.exists()) {
+            uploadUserDir.mkdir();
+        }
 
 
-        String uploadPath = getServletContext().getRealPath("/") + UPLOAD_DIRECTORY +File.separator + userName ;
+
+        String uploadPath = uploadUserPath +File.separator + userName ;
 
 //        System.out.println("--"+request.getSession().getServletContext().getRealPath(File.separator)+"---");
 
@@ -93,7 +109,10 @@ public class UploadPriImgServlet extends HttpServlet {
         try {
             List<FileItem> formItems = upload.parseRequest(request);
 
+
+
             if (formItems != null && formItems.size() > 0) {
+
                 // 迭代表单数据
                 for (FileItem item : formItems) {
                     // 处理不在表单中的字段

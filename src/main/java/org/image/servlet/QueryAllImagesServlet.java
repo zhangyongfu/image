@@ -2,6 +2,7 @@ package org.image.servlet;
 
 
 import net.sf.json.JSONObject;
+import org.image.DAO.UploadPriImageDaoImpl;
 import org.image.model.UploadPubImages;
 
 import javax.servlet.ServletException;
@@ -23,12 +24,19 @@ public class QueryAllImagesServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        request.setCharacterEncoding("utf-8");
+
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html");
         PrintWriter printWriter = response.getWriter();
 
 //        response.setCharacterEncoding("gbk");
 //        response.setContentType("text/html;charset=gbk");
 
         String classify = request.getParameter("classify");
+        String currentPage = request.getParameter("pg");
+        String belong = request.getParameter("belong");
 /*
         int index = 0;
         if(null !=paths && paths.size() != 0) {
@@ -43,21 +51,23 @@ public class QueryAllImagesServlet extends HttpServlet {
 
         if("fromLastMonth".equals(classify)){
 
-            UploadPubImages uploadPubImages = new UploadPubImages();
-            List<String> paths = uploadPubImages.getPubImgFilePath();
+            if("pub".equals(belong)){
+
+                UploadPubImages uploadPubImages = new UploadPubImages();
+                List<String> names = uploadPubImages.getPubImgFileNames();
 
 //            List<String> names = getImgNameByPath(paths);
 
-            long imgLength = paths.size();
-            request.setAttribute("len",imgLength);
+                long imgLength = names.size();
+                request.setAttribute("len",imgLength);
 
-            Collections.reverse(paths);
+                Collections.reverse(names);
 
-            HashMap<String,String> idsAndNames = getImgIdsAndNames(paths);
+                HashMap<String,String> idsAndNames = getImgIdsAndNames(names);
 
-            JSONObject jsonObject = JSONObject.fromObject(idsAndNames);
+                JSONObject jsonObject = JSONObject.fromObject(idsAndNames);
 
-            String jsonString = jsonObject.toString();
+                String jsonString = jsonObject.toString();
 
 
 /*            HttpSession httpSession=request.getSession();
@@ -66,12 +76,47 @@ public class QueryAllImagesServlet extends HttpServlet {
             }*/
 
 
-            request.setAttribute("idsAndPaths",jsonString);
+                request.setAttribute("idsAndPaths",jsonString);
+                request.setAttribute("currentPage",currentPage);
 
-            System.out.println("hehehehe");
+//            System.out.println("hehehehe");
 
-            request.getRequestDispatcher("jsp/showAllImages.jsp").forward(request,response);
-//            response.sendRedirect("jsp/showAllImages.jsp");
+                request.getRequestDispatcher("jsp/showAllImages.jsp").forward(request,response);
+//            response.sendRedirect("jsp/showAllImages.jsp.bak");
+            } else if ("pri".equals(belong)) {
+
+                UploadPubImages uploadPubImages = new UploadPubImages();
+                List<String> names = uploadPubImages.getPubImgFileNames();
+
+//            List<String> names = getImgNameByPath(paths);
+
+                long imgLength = names.size();
+                request.setAttribute("len",imgLength);
+
+                Collections.reverse(names);
+
+                HashMap<String,String> idsAndNames = getImgIdsAndNames(names);
+
+                JSONObject jsonObject = JSONObject.fromObject(idsAndNames);
+
+                String jsonString = jsonObject.toString();
+
+
+/*            HttpSession httpSession=request.getSession();
+            if(jsonString != null){
+                httpSession.setAttribute("result",jsonString);
+            }*/
+
+
+                request.setAttribute("idsAndPaths",jsonString);
+                request.setAttribute("currentPage",currentPage);
+
+//            System.out.println("hehehehe");
+
+                request.getRequestDispatcher("jsp/showpriimages.jsp").forward(request,response);
+//            response.sendRedirect("jsp/showAllImages.jsp.bak");
+            }
+
 
         }
         else             printWriter.println("error");
@@ -99,21 +144,21 @@ public class QueryAllImagesServlet extends HttpServlet {
 
     }
 
-    private HashMap<String,String> getImgIdsAndNames(List<String> allpaths){
+    private HashMap<String,String> getImgIdsAndNames(List<String> allNames){
 
         HashMap<String,String> result = new HashMap<String, String>();
 
         UploadPubImages uploadPubImages = new UploadPubImages();
-        for(String path:allpaths){
+        for(String name:allNames){
 
 //            String imgPath = path;
 
-            String[] strings = path.split("/");
-            String p = strings[strings.length - 1];
 
-            long imgId = uploadPubImages.getPubImgId(path);
+            long imgId = uploadPubImages.getPubImgId("compressed_25_" + name);
 
-            result.put(String.valueOf(imgId),p);
+            result.put(String.valueOf(imgId),name);
+//            System.out.println("path:" + path);
+
 
         }
 
